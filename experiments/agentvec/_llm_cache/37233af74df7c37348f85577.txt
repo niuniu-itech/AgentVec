@@ -1,0 +1,30 @@
+```c
+#include <riscv_vector.h>
+
+void agentvec_kernel(const float *a, const float *b, const float *c, float *out, int n) {
+    // The first block is a dead code block with no side effects, so it is omitted.
+    // The parameter 'c' (z8_) and 'b' (z6_) are unused.
+    (void)c;
+    (void)b;
+
+    // Vector reduction: sum of a[i] * a[i]
+    size_t vl;
+    float sum = 0.0f;
+    vfloat32m1_t vsum = __riscv_vfmv_v_f_f32m1(0.0f, 1);
+
+    const float *ptr = a;
+    size_t remaining = n;
+
+    while (remaining > 0) {
+        vl = __riscv_vsetvl_e32m1(remaining);
+        vfloat32m1_t va = __riscv_vle32_v_f32m1(ptr, vl);
+        vfloat32m1_t vsq = __riscv_vfmul_vv_f32m1(va, va, vl);
+        vsum = __riscv_vfredusum_vs_f32m1_f32m1(vsq, vsum, vl);
+        ptr += vl;
+        remaining -= vl;
+    }
+
+    sum = __riscv_vfmv_f_s_f32m1_f32(vsum);
+    out[0] = sqrtf(sum);
+}
+```

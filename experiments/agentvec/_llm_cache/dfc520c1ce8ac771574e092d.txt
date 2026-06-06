@@ -1,0 +1,1 @@
+{"pattern":"reduce","dtype":"f32","reduce_op":"sum","elem":"a*a","postproc":"sqrt"}

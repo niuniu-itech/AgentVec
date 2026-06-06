@@ -1,0 +1,49 @@
+```c
+#include <riscv_vector.h>
+
+void gemm(int N, const double *A, const double *B, double *C) {
+    for (int i = 0; i < N; ++i) {
+        const double *a_row = A + i * N;
+        double *c_row = C + i * N;
+
+        // Zero out the row of C
+        int n = N;
+        double *c_ptr = c_row;
+        while (n > 0) {
+            size_t vl = __riscv_vsetvl_e64m1(n);
+            vfloat64m1_t c_vec = __riscv_vfmv_v_f_f64m1(0.0, vl);
+            __riscv_vse64_v_f64m1(c_ptr, c_vec, vl);
+            c_ptr += vl;
+            n -= vl;
+        }
+
+        // Compute C[i, :] += A[i, k] * B[k, :]
+        for (int k = 0; k < N; ++k) {
+            double a_ik = a_row[k];
+            const double *b_row = B + k * N;
+            double *c_ptr = c_row;
+            int len = N;
+
+            // Broadcast scalar A[i][k] to vector
+            vfloat64m1_t a_vec = __riscv_vfmv_v_f_f64m1(a_ik, 1);
+            a_vec = __riscv_vfmv_v_f_f64m1(a_ik, __riscv_vsetvl_e64m1(N)); 
+
+            while (len > 0) {
+                size_t vl = __riscv_vsetvl_e64m1(len);
+                
+                vfloat64m1_t c_vec = __riscv_vle64_v_f64m1(c_ptr, vl);
+                vfloat64m1_t b_vec = __riscv_vle64_v_f64m1(b_row, vl);
+                
+                // Fused multiply-add: c_vec += a_vec * b_vec
+                c_vec = __riscv_vfmacc_vv_f64m1(c_vec, a_vec, b_vec, vl);
+                
+                __riscv_vse64_v_f64m1(c_ptr, c_vec, vl);
+                
+                b_row += vl;
+                c_ptr += vl;
+                len -= vl;
+            }
+        }
+    }
+}
+```

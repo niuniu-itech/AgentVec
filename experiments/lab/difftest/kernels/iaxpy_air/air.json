@@ -1,0 +1,41 @@
+{
+  "s_algo": {
+    "pattern": "map",
+    "elem_op": {
+      "op": "sub",
+      "args": [
+        {
+          "op": "mulc",
+          "val": 3.0,
+          "args": [
+            {
+              "op": "load",
+              "src": "a"
+            }
+          ]
+        },
+        {
+          "op": "load",
+          "src": "b"
+        }
+      ]
+    },
+    "reduce_op": null,
+    "reduce_src": null
+  },
+  "c_phy": {
+    "dtype": "i32",
+    "dep": "none",
+    "dep_distance": 0,
+    "alias": "disjoint"
+  },
+  "m_map": {
+    "access": "unit_stride",
+    "stride": 1,
+    "bound": "n"
+  },
+  "v_meta": {
+    "status": "DRAFT",
+    "proof": ""
+  }
+}

@@ -1,0 +1,1 @@
+{"name": "pipe_copy_opus48", "dtype": "f32", "reduce": false, "tier": "float_ulp", "rtol": 0.0, "sizes": [1, 7, 64, 1000, 4096]}

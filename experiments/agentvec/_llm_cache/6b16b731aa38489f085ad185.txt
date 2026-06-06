@@ -1,0 +1,5 @@
+t1 = reduce(x, +) / n; // calculate mean
+t2 = map(x, _ - t1); // center data
+t3 = reduce(t2, ^2) / n; // calculate variance
+t4 = 1 / sqrt(t3 + 1e-5); // calculate reciprocal std
+t5 = map(t2, _ * t4); // normalize

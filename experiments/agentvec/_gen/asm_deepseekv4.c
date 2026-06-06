@@ -1,0 +1,21 @@
+#include <riscv_vector.h>
+
+void kern(int n, double a, const double *x, double *y) {
+    size_t vl;
+    vfloat64m8_t va = __riscv_vfmv_v_f_f64m8(a, __riscv_vsetvlmax_e64m8());
+    int i = 0;
+    for (; i + 8 <= n; i += 8) {
+        vl = __riscv_vsetvl_e64m8(8);
+        vfloat64m8_t vx = __riscv_vle64_v_f64m8(x + i, vl);
+        vfloat64m8_t vy = __riscv_vle64_v_f64m8(y + i, vl);
+        vy = __riscv_vfmacc_vv_f64m8(va, vx, vy, vl);
+        __riscv_vse64_v_f64m8(y + i, vy, vl);
+    }
+    if (i < n) {
+        vl = __riscv_vsetvl_e64m8(n - i);
+        vfloat64m8_t vx = __riscv_vle64_v_f64m8(x + i, vl);
+        vfloat64m8_t vy = __riscv_vle64_v_f64m8(y + i, vl);
+        vy = __riscv_vfmacc_vv_f64m8(va, vx, vy, vl);
+        __riscv_vse64_v_f64m8(y + i, vy, vl);
+    }
+}

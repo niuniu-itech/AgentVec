@@ -1,0 +1,1 @@
+t1=reduce_sum(x); t2=map_div(t1, n); t3=map_sub(x, t2); t4=map_square(t3); t5=reduce_sum(t4); t6=map_div(t5, n); t7=map_add(t6, 1e-5); t8=map_sqrt(t7); t9=map_recip(t8); t10=map_mul(t3, t9);

@@ -1,0 +1,7 @@
+{
+  "pattern": "reduce",
+  "dtype": "f32",
+  "reduce_op": "sum",
+  "elem": "a*b",
+  "postproc": "none"
+}

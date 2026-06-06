@@ -1,0 +1,201 @@
+{
+  "diff": {
+    "mini_agentvec_asum": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "mini_agentvec_dot": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "mini_agentvec_nrm2": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "mini_direct_rvv_asum": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "mini_direct_rvv_dot": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "mini_direct_rvv_nrm2": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "mini_gcc_autovec_asum": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "mini_gcc_autovec_dot": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "mini_gcc_autovec_nrm2": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "mini_idiom_nrm2": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "mini_vectrans_asum": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "mini_vectrans_dot": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "mini_vectrans_nrm2": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    }
+  },
+  "vcount": {
+    "mini_gcc_autovec_dot": "9",
+    "mini_vectrans_dot": "10",
+    "mini_direct_rvv_dot": "10",
+    "mini_agentvec_dot": "12",
+    "mini_gcc_autovec_asum": "8",
+    "mini_vectrans_asum": "10",
+    "mini_direct_rvv_asum": "10",
+    "mini_agentvec_asum": "11",
+    "mini_gcc_autovec_nrm2": "8",
+    "mini_vectrans_nrm2": "9",
+    "mini_direct_rvv_nrm2": "9",
+    "mini_agentvec_nrm2": "11",
+    "mini_idiom_nrm2": "0"
+  }
+}

@@ -1,0 +1,6 @@
+t1 = map(x[i] → x[i]) over all i, then reduce with sum → s  
+t2 = t1 / n → mean  
+t3 = map(x[i] → (x[i] - mean)²) over all i, then reduce with sum → v  
+t4 = t3 / n → var  
+t5 = 1.0 / sqrt(var + 1e-5) → rstd  
+t6 = map(x[i] → (x[i] - mean) * rstd) over all i → y[i]
