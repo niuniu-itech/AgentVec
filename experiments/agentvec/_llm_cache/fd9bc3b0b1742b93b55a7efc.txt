@@ -1,0 +1,1 @@
+t1=map(x[i] -> x[i]); t2=reduce(t1, max); t3=map(t1, t2 -> expf(x[i]-t2)); t4=reduce(t3, sum); t5=map(t3, t4 -> t3/t4)

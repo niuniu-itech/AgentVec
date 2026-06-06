@@ -1,0 +1,45 @@
+#include <riscv_vector.h>
+#include <math.h>
+
+void softmax(int n, const float *x, float *y) {
+    // Find maximum value
+    float m = -3.4e38f;
+    int vl;
+    for (int i = 0; i < n; i += vl) {
+        vl = __riscv_vsetvl_e32m8(n - i);
+        vfloat32m8_t vec_x = __riscv_vle32_v_f32m8(x + i, vl);
+        vfloat32m8_t vec_m = __riscv_vfmv_v_f_f32m8(m, vl);
+        vbool4_t mask = __riscv_vmfgt_vv_f32m8_b4(vec_x, vec_m, vl);
+        m = __riscv_vfmv_f_s_f32m8_f32(__riscv_vfredmax_vs_f32m8_f32m8(vec_x, __riscv_vfmv_v_f_f32m8(m, vl), mask, vl));
+    }
+
+    // Compute exponentials and sum
+    float s = 0.0f;
+    for (int i = 0; i < n; i += vl) {
+        vl = __riscv_vsetvl_e32m8(n - i);
+        vfloat32m8_t vec_x = __riscv_vle32_v_f32m8(x + i, vl);
+        vfloat32m8_t vec_m = __riscv_vfmv_v_f_f32m8(m, vl);
+        vfloat32m8_t vec_diff = __riscv_vfsub_vv_f32m8(vec_x, vec_m, vl);
+        
+        // Compute expf for each element using scalar expf
+        vfloat32m8_t vec_exp;
+        for (int j = 0; j < vl; j++) {
+            float val;
+            __riscv_vse32_v_f32m8(&val, vec_diff, 1);
+            val = expf(val);
+            __riscv_vle32_v_f32m8(&val, &vec_exp, 1);
+        }
+        
+        __riscv_vse32_v_f32m8(y + i, vec_exp, vl);
+        s += __riscv_vfmv_f_s_f32m8_f32(__riscv_vfredusum_vs_f32m8_f32m8(vec_exp, __riscv_vfmv_v_f_f32m8(0.0f, vl), vl));
+    }
+
+    // Normalize
+    for (int i = 0; i < n; i += vl) {
+        vl = __riscv_vsetvl_e32m8(n - i);
+        vfloat32m8_t vec_y = __riscv_vle32_v_f32m8(y + i, vl);
+        vfloat32m8_t vec_s = __riscv_vfmv_v_f_f32m8(s, vl);
+        vfloat32m8_t vec_result = __riscv_vfdiv_vv_f32m8(vec_y, vec_s, vl);
+        __riscv_vse32_v_f32m8(y + i, vec_result, vl);
+    }
+}

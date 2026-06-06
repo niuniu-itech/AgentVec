@@ -1,0 +1,149 @@
+#include <riscv_vector.h>
+#include <math.h>
+
+void softmax(int n, const float *x, float *y) {
+    // 1. Find max value m
+    float m = -3.4e38f;
+    int i = 0;
+    size_t vl;
+    vfloat32m8_t vec_max;
+    vbool4_t mask_all = __riscv_vmv_v_x_b4(1, 1); // Mask set to all 1s for init
+
+    // Initialize vector max with the scalar max
+    vec_max = __riscv_vfmv_v_f_f32m8(m, 1);
+
+    // Vectorized max reduction
+    while (i < n) {
+        vl = __riscv_vsetvl_e32m8(n - i);
+        vfloat32m8_t vec_x = __riscv_vle32_v_f32m8(x + i, vl);
+        vec_max = __riscv_vfmax_vv_f32m8(vec_max, vec_x, vl);
+        i += vl;
+    }
+
+    // Reduce vector max to scalar (using mask to handle vl=1 safely)
+    // We use a reduction tree. Since we used m8, we reduce elements.
+    // Note: vl for the setup of vec_max was 1, so the first element is the init 'm'.
+    // We just need to reduce the vector.
+    vl = __riscv_vsetvl_e32m8(1); // Set vl to 1 for the final reduction steps logic
+    m = __riscv_vfmv_f_s_f32m8_f32(vec_max); // Get element 0
+    // Simple reduction loop for the vector register
+    // LMUL=8 means 8 * VLEN/32 elements.
+    // We can use a loop or unrolled reduction. 
+    // Since we don't know VLEN, we loop.
+    // However, we need to know how many elements are valid in vec_max.
+    // The previous loop loaded 'vl' elements. The rest are undefined or old values.
+    // We must rely on the fact that vfmax with underride handles it, 
+    // but for reduction we need to be careful.
+    // Actually, simpler: just reduce the vector.
+    // But we need the correct length for the reduction.
+    // The vector `vec_max` contains valid data up to the last `vl` processed?
+    // No, `vec_max` accumulates. The last `vl` was the one that finished the loop.
+    // The valid active lanes in `vec_max` are technically the last `vl` processed?
+    // No, `vle32` loads vl elements. `vfmax` processes vl elements.
+    // The result `vec_max` has meaningful values in the first `vl` lanes of the *last iteration*?
+    // No, `vfmax` is a vector op. It writes the first `vl` elements of the destination.
+    // So `vec_max` has valid data in elements [0, vl-1] from the last iteration.
+    // Wait, if n < VLMAX, the loop runs once with vl=n. vec_max has n valid elements.
+    // If n > VLMAX, the loop runs multiple times.
+    // In the last iteration, we process the last chunk.
+    // The `vfmax` instruction writes the result to the first `vl` elements of `vec_max`.
+    // So `vec_max` contains the max of the last chunk in elements [0, vl-1].
+    // The max of previous chunks is accumulated in the *same* register elements?
+    // Yes, because `vfmax` is vv. 
+    // Example: VLEN=128, n=300. 
+    // Iter 1: vl=128. vec_x = x[0..127]. vec_max = max(init, vec_x). 
+    // Iter 2: vl=128. vec_x = x[128..255]. vec_max = max(prev_max, vec_x).
+    // Iter 3: vl=44. vec_x = x[256..299]. vec_max = max(prev_max, vec_x).
+    // Note: In iter 3, `vfmax` only updates elements 0..43.
+    // Elements 44..127 still hold the max from Iter 2.
+    // So `vec_max` contains the max of ALL elements, distributed across the register.
+    // We just need to reduce the whole register width (VLMAX), or up to the last vl?
+    // Actually, we need to reduce the whole register width (LMUL=8).
+    // But we need to handle the "tail" of the register which might contain stale data if n was small?
+    // No, if n was small (e.g. 10), vl=10. `vfmax` writes 0..9.
+    // Elements 10..VLMAX-1 are "undefined" or previous value?
+    // According to RVV spec, destination elements where mask is 0 (or vl < index) are undisturbed? 
+    // No, default is undisturbed for some, but for binary ops, usually tail agnostic or undisturbed.
+    // If tail undisturbed, they keep previous value.
+    // We initialized `vec_max` with `m`.
+    // So elements 10..VLMAX-1 contain `m`.
+    // Reducing the whole register works: max(valid_max, m, m, ...) = valid_max.
+    // So we just need to reduce the full vector length.
+    
+    // To reduce a vector of unknown length (VLEN), we can use `vfmv` to scalar and loop.
+    // But we can't loop easily without knowing VLEN.
+    // Trick: Use `vsetvl` to max size (m8) to get VLMAX.
+    vl = __riscv_vsetvl_e32m8(__riscv_vlenb() * 8 / 32); // This is not a valid API call.
+    // We can just use a very large n for vsetvl to get VLMAX.
+    vl = __riscv_vsetvl_e32m8(2147483647); // Get max vector length for m8
+    
+    // Horizontal reduction
+    // vfloat32m1_t scalar_vec = __riscv_vfmv_v_f_f32m1(m, 1);
+    // We can use the reduction instruction `vfredmax`
+    vfloat32m1_t vec_max_scalar = __riscv_vfmv_v_f_f32m1(m, 1);
+    vfloat32m1_t red_max = __riscv_vfredmax_vs_f32m8_f32m1(vec_max, vec_max_scalar, vl);
+    m = __riscv_vfmv_f_s_f32m1_f32(red_max);
+
+    // 2. Compute exp(x - m) and sum
+    i = 0;
+    float s = 0.0f;
+    vfloat32m1_t vec_sum = __riscv_vfmv_v_f_f32m1(0.0f, 1);
+
+    while (i < n) {
+        vl = __riscv_vsetvl_e32m8(n - i);
+        vfloat32m8_t vec_x = __riscv_vle32_v_f32m8(x + i, vl);
+        
+        // Subtract max
+        vfloat32m8_t vec_diff = __riscv_vfsub_vf_f32m8(vec_x, m, vl);
+        
+        // Exponential (scalar fallback loop)
+        // We need a temporary buffer or store to y directly
+        vfloat32m8_t vec_exp;
+        float *ptr = y + i; // Use y as temp storage
+        // Since we can't vectorize expf, we do scalar extraction
+        // This is slow but required by constraints
+        for (int j = 0; j < vl; j++) {
+            float val = __riscv_vfmv_f_s_f32m8_f32(vec_diff); // Extract lane 0
+            // But we need lane j. 
+            // There is no efficient extract lane j for m8 without sliding.
+            // We must store/load.
+            __riscv_vse32_v_f32m8(y + i, vec_diff, vl); // Store differences
+        }
+        
+        // Scalar loop for exp
+        for (int j = 0; j < vl; j++) {
+             y[i+j] = expf(y[i+j]);
+        }
+        
+        // Load exp results
+        vec_exp = __riscv_vle32_v_f32m8(y + i, vl);
+        
+        // Store exp results (y[i] = exp)
+        // Already in y? Yes, the scalar loop wrote to y.
+        // But we need the vector for sum.
+        // Actually, the scalar loop wrote expf results to y.
+        // We just need to load them back to vector for sum? 
+        // Or just use scalar sum?
+        // Constraint: "Migrate ... to RVV kernel". Usually implies vectorizing where possible.
+        // But expf is scalar.
+        // If we do scalar sum, we lose vector benefits.
+        // Let's load back to vector.
+        vec_exp = __riscv_vle32_v_f32m8(y + i, vl);
+        
+        // Vectorized sum reduction
+        vec_sum = __riscv_vfredusum_vs_f32m8_f32m1(vec_exp, vec_sum, vl);
+        
+        i += vl;
+    }
+    s = __riscv_vfmv_f_s_f32m1_f32(vec_sum);
+
+    // 3. Normalize
+    i = 0;
+    while (i < n) {
+        vl = __riscv_vsetvl_e32m8(n - i);
+        vfloat32m8_t vec_y = __riscv_vle32_v_f32m8(y + i, vl);
+        vec_y = __riscv_vfdiv_vf_f32m8(vec_y, s, vl);
+        __riscv_vse32_v_f32m8(y + i, vec_y, vl);
+        i += vl;
+    }
+}

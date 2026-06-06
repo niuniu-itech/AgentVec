@@ -1,0 +1,18 @@
+# caches / build artifacts
+__pycache__/
+*.pyc
+build/
+*.o
+*.out
+_board/
+_tmp/
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# never commit secrets / local host config
+.env
+*_secret*
+hosts_local.py

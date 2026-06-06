@@ -1,0 +1,31 @@
+```c
+#include <riscv_vector.h>
+
+void agentvec_kernel(const float *a, const float *b, const float *c, float *out, int n) {
+    float sum = 0.0f;
+    int i = 0;
+    vfloat32m1_t vsum = vmv_v_f_f32m1(0.0f, 1);
+    vfloat32m1_t va;
+    float tmp[1];
+
+    for (; i + 1 <= n; i += 1) {
+        vint32m1_t vl = __riscv_vsetvl_e32m1(1);
+        if (vl == 0) break;
+        va = vle32_v_f32m1(a + i, vl);
+        vsum = vfmacc_vf_f32m1(vsum, va, vl);
+    }
+
+    if (i < n) {
+        vint32m1_t vl = __riscv_vsetvl_e32m1(n - i);
+        if (vl > 0) {
+            va = vle32_v_f32m1(a + i, vl);
+            vsum = vfmacc_vf_f32m1(vsum, va, vl);
+        }
+    }
+
+    tmp[0] = vfredosum_vs_f32m1_f32(vsum, vsum, 1);
+    sum = tmp[0];
+
+    out[0] = sum;
+}
+```
