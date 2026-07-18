@@ -1,0 +1,1358 @@
+{
+ "B_L1_pk1_mr2_kc128": {
+  "cfg": {
+   "L": 1,
+   "pack": true,
+   "MR": 2,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.116,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L1_pk1_mr2_kc256": {
+  "cfg": {
+   "L": 1,
+   "pack": true,
+   "MR": 2,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.952,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L1_pk1_mr2_kc512": {
+  "cfg": {
+   "L": 1,
+   "pack": true,
+   "MR": 2,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.887,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L1_pk1_mr4_kc128": {
+  "cfg": {
+   "L": 1,
+   "pack": true,
+   "MR": 4,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.586,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L1_pk1_mr4_kc256": {
+  "cfg": {
+   "L": 1,
+   "pack": true,
+   "MR": 4,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.31,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L1_pk1_mr4_kc512": {
+  "cfg": {
+   "L": 1,
+   "pack": true,
+   "MR": 4,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.325,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L1_pk1_mr6_kc128": {
+  "cfg": {
+   "L": 1,
+   "pack": true,
+   "MR": 6,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.732,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L1_pk1_mr6_kc256": {
+  "cfg": {
+   "L": 1,
+   "pack": true,
+   "MR": 6,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.527,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L1_pk1_mr6_kc512": {
+  "cfg": {
+   "L": 1,
+   "pack": true,
+   "MR": 6,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.325,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L1_pk1_mr8_kc128": {
+  "cfg": {
+   "L": 1,
+   "pack": true,
+   "MR": 8,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.751,
+  "in_B": false,
+  "reason": "H: MR 8 > row ceiling 6"
+ },
+ "B_L1_pk1_mr8_kc256": {
+  "cfg": {
+   "L": 1,
+   "pack": true,
+   "MR": 8,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.632,
+  "in_B": false,
+  "reason": "H: MR 8 > row ceiling 6"
+ },
+ "B_L1_pk1_mr8_kc512": {
+  "cfg": {
+   "L": 1,
+   "pack": true,
+   "MR": 8,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.31,
+  "in_B": false,
+  "reason": "H: MR 8 > row ceiling 6"
+ },
+ "B_L1_pk0_mr2_kc128": {
+  "cfg": {
+   "L": 1,
+   "pack": false,
+   "MR": 2,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.082,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L1_pk0_mr2_kc256": {
+  "cfg": {
+   "L": 1,
+   "pack": false,
+   "MR": 2,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.048,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L1_pk0_mr2_kc512": {
+  "cfg": {
+   "L": 1,
+   "pack": false,
+   "MR": 2,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.046,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L1_pk0_mr4_kc128": {
+  "cfg": {
+   "L": 1,
+   "pack": false,
+   "MR": 4,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.159,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L1_pk0_mr4_kc256": {
+  "cfg": {
+   "L": 1,
+   "pack": false,
+   "MR": 4,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.091,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L1_pk0_mr4_kc512": {
+  "cfg": {
+   "L": 1,
+   "pack": false,
+   "MR": 4,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.091,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L1_pk0_mr6_kc128": {
+  "cfg": {
+   "L": 1,
+   "pack": false,
+   "MR": 6,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.174,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L1_pk0_mr6_kc256": {
+  "cfg": {
+   "L": 1,
+   "pack": false,
+   "MR": 6,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.133,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L1_pk0_mr6_kc512": {
+  "cfg": {
+   "L": 1,
+   "pack": false,
+   "MR": 6,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.125,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L1_pk0_mr8_kc128": {
+  "cfg": {
+   "L": 1,
+   "pack": false,
+   "MR": 8,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.25,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L1_pk0_mr8_kc256": {
+  "cfg": {
+   "L": 1,
+   "pack": false,
+   "MR": 8,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.165,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L1_pk0_mr8_kc512": {
+  "cfg": {
+   "L": 1,
+   "pack": false,
+   "MR": 8,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.166,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L2_pk1_mr2_kc128": {
+  "cfg": {
+   "L": 2,
+   "pack": true,
+   "MR": 2,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.564,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L2_pk1_mr2_kc256": {
+  "cfg": {
+   "L": 2,
+   "pack": true,
+   "MR": 2,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.384,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L2_pk1_mr2_kc512": {
+  "cfg": {
+   "L": 2,
+   "pack": true,
+   "MR": 2,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.288,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L2_pk1_mr4_kc128": {
+  "cfg": {
+   "L": 2,
+   "pack": true,
+   "MR": 4,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 2.107,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L2_pk1_mr4_kc256": {
+  "cfg": {
+   "L": 2,
+   "pack": true,
+   "MR": 4,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.773,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L2_pk1_mr4_kc512": {
+  "cfg": {
+   "L": 2,
+   "pack": true,
+   "MR": 4,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.802,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L2_pk1_mr6_kc128": {
+  "cfg": {
+   "L": 2,
+   "pack": true,
+   "MR": 6,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 2.155,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L2_pk1_mr6_kc256": {
+  "cfg": {
+   "L": 2,
+   "pack": true,
+   "MR": 6,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 2.057,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L2_pk1_mr6_kc512": {
+  "cfg": {
+   "L": 2,
+   "pack": true,
+   "MR": 6,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.816,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L2_pk1_mr8_kc128": {
+  "cfg": {
+   "L": 2,
+   "pack": true,
+   "MR": 8,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 2.191,
+  "in_B": false,
+  "reason": "H: MR 8 > row ceiling 6"
+ },
+ "B_L2_pk1_mr8_kc256": {
+  "cfg": {
+   "L": 2,
+   "pack": true,
+   "MR": 8,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 2.114,
+  "in_B": false,
+  "reason": "H: MR 8 > row ceiling 6"
+ },
+ "B_L2_pk1_mr8_kc512": {
+  "cfg": {
+   "L": 2,
+   "pack": true,
+   "MR": 8,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 2.003,
+  "in_B": false,
+  "reason": "H: MR 8 > row ceiling 6"
+ },
+ "B_L2_pk0_mr2_kc128": {
+  "cfg": {
+   "L": 2,
+   "pack": false,
+   "MR": 2,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.124,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L2_pk0_mr2_kc256": {
+  "cfg": {
+   "L": 2,
+   "pack": false,
+   "MR": 2,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.093,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L2_pk0_mr2_kc512": {
+  "cfg": {
+   "L": 2,
+   "pack": false,
+   "MR": 2,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.089,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L2_pk0_mr4_kc128": {
+  "cfg": {
+   "L": 2,
+   "pack": false,
+   "MR": 4,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.244,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L2_pk0_mr4_kc256": {
+  "cfg": {
+   "L": 2,
+   "pack": false,
+   "MR": 4,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.176,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L2_pk0_mr4_kc512": {
+  "cfg": {
+   "L": 2,
+   "pack": false,
+   "MR": 4,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.171,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L2_pk0_mr6_kc128": {
+  "cfg": {
+   "L": 2,
+   "pack": false,
+   "MR": 6,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.363,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L2_pk0_mr6_kc256": {
+  "cfg": {
+   "L": 2,
+   "pack": false,
+   "MR": 6,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.253,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L2_pk0_mr6_kc512": {
+  "cfg": {
+   "L": 2,
+   "pack": false,
+   "MR": 6,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.245,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L2_pk0_mr8_kc128": {
+  "cfg": {
+   "L": 2,
+   "pack": false,
+   "MR": 8,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.381,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L2_pk0_mr8_kc256": {
+  "cfg": {
+   "L": 2,
+   "pack": false,
+   "MR": 8,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.333,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L2_pk0_mr8_kc512": {
+  "cfg": {
+   "L": 2,
+   "pack": false,
+   "MR": 8,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.317,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L4_pk1_mr2_kc128": {
+  "cfg": {
+   "L": 4,
+   "pack": true,
+   "MR": 2,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.545,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L4_pk1_mr2_kc256": {
+  "cfg": {
+   "L": 4,
+   "pack": true,
+   "MR": 2,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.505,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L4_pk1_mr2_kc512": {
+  "cfg": {
+   "L": 4,
+   "pack": true,
+   "MR": 2,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.699,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L4_pk1_mr4_kc128": {
+  "cfg": {
+   "L": 4,
+   "pack": true,
+   "MR": 4,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 2.035,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L4_pk1_mr4_kc256": {
+  "cfg": {
+   "L": 4,
+   "pack": true,
+   "MR": 4,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 2.126,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L4_pk1_mr4_kc512": {
+  "cfg": {
+   "L": 4,
+   "pack": true,
+   "MR": 4,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 2.568,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L4_pk1_mr6_kc128": {
+  "cfg": {
+   "L": 4,
+   "pack": true,
+   "MR": 6,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 2.345,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L4_pk1_mr6_kc256": {
+  "cfg": {
+   "L": 4,
+   "pack": true,
+   "MR": 6,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 2.488,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L4_pk1_mr6_kc512": {
+  "cfg": {
+   "L": 4,
+   "pack": true,
+   "MR": 6,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 2.74,
+  "in_B": true,
+  "reason": "legal+safe"
+ },
+ "B_L4_pk1_mr8_kc128": {
+  "cfg": {
+   "L": 4,
+   "pack": true,
+   "MR": 8,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.732,
+  "in_B": false,
+  "reason": "H: MR 8 > row ceiling 6"
+ },
+ "B_L4_pk1_mr8_kc256": {
+  "cfg": {
+   "L": 4,
+   "pack": true,
+   "MR": 8,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.843,
+  "in_B": false,
+  "reason": "H: MR 8 > row ceiling 6"
+ },
+ "B_L4_pk1_mr8_kc512": {
+  "cfg": {
+   "L": 4,
+   "pack": true,
+   "MR": 8,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.543,
+  "in_B": false,
+  "reason": "H: MR 8 > row ceiling 6"
+ },
+ "B_L4_pk0_mr2_kc128": {
+  "cfg": {
+   "L": 4,
+   "pack": false,
+   "MR": 2,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.257,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L4_pk0_mr2_kc256": {
+  "cfg": {
+   "L": 4,
+   "pack": false,
+   "MR": 2,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.179,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L4_pk0_mr2_kc512": {
+  "cfg": {
+   "L": 4,
+   "pack": false,
+   "MR": 2,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.185,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L4_pk0_mr4_kc128": {
+  "cfg": {
+   "L": 4,
+   "pack": false,
+   "MR": 4,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.585,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L4_pk0_mr4_kc256": {
+  "cfg": {
+   "L": 4,
+   "pack": false,
+   "MR": 4,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.486,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L4_pk0_mr4_kc512": {
+  "cfg": {
+   "L": 4,
+   "pack": false,
+   "MR": 4,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.803,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L4_pk0_mr6_kc128": {
+  "cfg": {
+   "L": 4,
+   "pack": false,
+   "MR": 6,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.715,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L4_pk0_mr6_kc256": {
+  "cfg": {
+   "L": 4,
+   "pack": false,
+   "MR": 6,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.602,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L4_pk0_mr6_kc512": {
+  "cfg": {
+   "L": 4,
+   "pack": false,
+   "MR": 6,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.135,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L4_pk0_mr8_kc128": {
+  "cfg": {
+   "L": 4,
+   "pack": false,
+   "MR": 8,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.856,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L4_pk0_mr8_kc256": {
+  "cfg": {
+   "L": 4,
+   "pack": false,
+   "MR": 8,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.226,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L4_pk0_mr8_kc512": {
+  "cfg": {
+   "L": 4,
+   "pack": false,
+   "MR": 8,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.548,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L8_pk1_mr2_kc128": {
+  "cfg": {
+   "L": 8,
+   "pack": true,
+   "MR": 2,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.234,
+  "in_B": false,
+  "reason": "H: lmul 8 > group ceiling 4"
+ },
+ "B_L8_pk1_mr2_kc256": {
+  "cfg": {
+   "L": 8,
+   "pack": true,
+   "MR": 2,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.5,
+  "in_B": false,
+  "reason": "H: lmul 8 > group ceiling 4"
+ },
+ "B_L8_pk1_mr2_kc512": {
+  "cfg": {
+   "L": 8,
+   "pack": true,
+   "MR": 2,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.589,
+  "in_B": false,
+  "reason": "H: lmul 8 > group ceiling 4"
+ },
+ "B_L8_pk1_mr4_kc128": {
+  "cfg": {
+   "L": 8,
+   "pack": true,
+   "MR": 4,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.257,
+  "in_B": false,
+  "reason": "H: lmul 8 > group ceiling 4"
+ },
+ "B_L8_pk1_mr4_kc256": {
+  "cfg": {
+   "L": 8,
+   "pack": true,
+   "MR": 4,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.412,
+  "in_B": false,
+  "reason": "H: lmul 8 > group ceiling 4"
+ },
+ "B_L8_pk1_mr4_kc512": {
+  "cfg": {
+   "L": 8,
+   "pack": true,
+   "MR": 4,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.573,
+  "in_B": false,
+  "reason": "H: lmul 8 > group ceiling 4"
+ },
+ "B_L8_pk1_mr6_kc128": {
+  "cfg": {
+   "L": 8,
+   "pack": true,
+   "MR": 6,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.94,
+  "in_B": false,
+  "reason": "H: lmul 8 > group ceiling 4"
+ },
+ "B_L8_pk1_mr6_kc256": {
+  "cfg": {
+   "L": 8,
+   "pack": true,
+   "MR": 6,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.282,
+  "in_B": false,
+  "reason": "H: lmul 8 > group ceiling 4"
+ },
+ "B_L8_pk1_mr6_kc512": {
+  "cfg": {
+   "L": 8,
+   "pack": true,
+   "MR": 6,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.178,
+  "in_B": false,
+  "reason": "H: lmul 8 > group ceiling 4"
+ },
+ "B_L8_pk1_mr8_kc128": {
+  "cfg": {
+   "L": 8,
+   "pack": true,
+   "MR": 8,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.046,
+  "in_B": false,
+  "reason": "H: lmul 8 > group ceiling 4"
+ },
+ "B_L8_pk1_mr8_kc256": {
+  "cfg": {
+   "L": 8,
+   "pack": true,
+   "MR": 8,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.31,
+  "in_B": false,
+  "reason": "H: lmul 8 > group ceiling 4"
+ },
+ "B_L8_pk1_mr8_kc512": {
+  "cfg": {
+   "L": 8,
+   "pack": true,
+   "MR": 8,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.146,
+  "in_B": false,
+  "reason": "H: lmul 8 > group ceiling 4"
+ },
+ "B_L8_pk0_mr2_kc128": {
+  "cfg": {
+   "L": 8,
+   "pack": false,
+   "MR": 2,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.327,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L8_pk0_mr2_kc256": {
+  "cfg": {
+   "L": 8,
+   "pack": false,
+   "MR": 2,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.247,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L8_pk0_mr2_kc512": {
+  "cfg": {
+   "L": 8,
+   "pack": false,
+   "MR": 2,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.311,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L8_pk0_mr4_kc128": {
+  "cfg": {
+   "L": 8,
+   "pack": false,
+   "MR": 4,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.51,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L8_pk0_mr4_kc256": {
+  "cfg": {
+   "L": 8,
+   "pack": false,
+   "MR": 4,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.893,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L8_pk0_mr4_kc512": {
+  "cfg": {
+   "L": 8,
+   "pack": false,
+   "MR": 4,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.971,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L8_pk0_mr6_kc128": {
+  "cfg": {
+   "L": 8,
+   "pack": false,
+   "MR": 6,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.873,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L8_pk0_mr6_kc256": {
+  "cfg": {
+   "L": 8,
+   "pack": false,
+   "MR": 6,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 0.86,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L8_pk0_mr6_kc512": {
+  "cfg": {
+   "L": 8,
+   "pack": false,
+   "MR": 6,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.079,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L8_pk0_mr8_kc128": {
+  "cfg": {
+   "L": 8,
+   "pack": false,
+   "MR": 8,
+   "KC": 128,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.173,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L8_pk0_mr8_kc256": {
+  "cfg": {
+   "L": 8,
+   "pack": false,
+   "MR": 8,
+   "KC": 256,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.203,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "B_L8_pk0_mr8_kc512": {
+  "cfg": {
+   "L": 8,
+   "pack": false,
+   "MR": 8,
+   "KC": 512,
+   "MC": 120,
+   "NC": 240
+  },
+  "status": "ok",
+  "gflops": 1.124,
+  "in_B": false,
+  "reason": "H: in_order & strided-operand -> must pack (else collapse)"
+ },
+ "__summary__": {
+  "A_enumerated": 96,
+  "A_built_ok": 96,
+  "A_buildfail": 0,
+  "B_enumerated": 27,
+  "B_built_ok": 27,
+  "A_opt_gflops": 2.74,
+  "A_opt_cfg": "B_L4_pk1_mr6_kc512",
+  "B_opt_gflops": 2.74,
+  "B_opt_cfg": "B_L4_pk1_mr6_kc512",
+  "B_keeps_optimum": true
+ }
+}

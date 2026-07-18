@@ -1,0 +1,35 @@
+{
+  "level": "L2",
+  "board": "SpacemiT K1 (riscv64, VLEN=256)",
+  "metric": "Migration Speedup = AgentVec_speedup / expert_speedup",
+  "ops": {
+    "dgemv": {
+      "best_ms": 1.013,
+      "best_LMUL": 2,
+      "expert_speedup": 0.869,
+      "all_pass": true
+    },
+    "dger": {
+      "best_ms": 1.009,
+      "best_LMUL": 8,
+      "expert_speedup": 1.011,
+      "all_pass": true
+    },
+    "dsymv": {
+      "best_ms": 0.939,
+      "best_LMUL": 1,
+      "expert_speedup": 2.909,
+      "all_pass": true
+    },
+    "dspmv": {
+      "best_ms": 1.009,
+      "best_LMUL": 4,
+      "expert_speedup": 1.011,
+      "all_pass": true
+    }
+  },
+  "mean_ms": 0.992,
+  "rejected": {
+    "dtrsv": "Guard VETO: loop-carried dependence (distance>=1) -> fallback to scalar build (correct, no speedup)"
+  }
+}

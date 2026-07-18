@@ -1,0 +1,1 @@
+{"name": "l2_agentvec_gemv_qwen3635b_deadcode", "dtype": "f32", "reduce": false, "tier": "float_ulp", "rtol": 0.001, "sizes": [2, 7, 16, 64, 128], "level": "L2"}

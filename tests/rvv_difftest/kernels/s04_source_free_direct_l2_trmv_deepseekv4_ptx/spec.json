@@ -1,0 +1,1 @@
+{"name": "s04_source_free_direct_l2_trmv_deepseekv4_ptx", "dtype": "f32", "reduce": false, "tier": "float_ulp", "rtol": 0.001, "sizes": [2, 7, 16, 64, 128], "level": "L2"}

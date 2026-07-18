@@ -1,3 +1,0 @@
-t1 = map over x: find max (reduce with max)  
-t2 = map over x: subtract max, exponentiate → store in y, and sum (reduce with +)  
-t3 = map over y: divide each by sum

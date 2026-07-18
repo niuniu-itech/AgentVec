@@ -1,0 +1,198 @@
+{
+ "board": "SpacemiT K1 (X60, VLEN=256, L1D=32K, L2=512K, line=64B, 1.6GHz, single-thread)",
+ "expert_single_thread_gflops": 2.423,
+ "expert_multi_thread_8c_gflops": 16.273,
+ "baseline_best_prev": {
+  "name": "rank1 m4",
+  "gflops": 1.096,
+  "pct_expert_st": 45
+ },
+ "best_config": {
+  "name": "agentvec_opt (rt6_m4_kc512)",
+  "MR": 6,
+  "LMUL": 4,
+  "MC": 126,
+  "KC": 512,
+  "NC": 256,
+  "pack": true,
+  "gflops_N512": 3.236,
+  "pct_expert_st_N512": 134
+ },
+ "scaling": {
+  "kernel": "agentvec_l3",
+  "spec": {
+   "MR": 6,
+   "L": 4,
+   "MC": 126,
+   "KC": 512,
+   "NC": 256
+  },
+  "ours": {
+   "128": 4.397,
+   "256": 2.759,
+   "384": 3.083,
+   "512": 3.236,
+   "768": 3.347,
+   "1024": 3.279
+  },
+  "expert_st": {
+   "128": 3.648,
+   "256": 2.827,
+   "384": 2.708,
+   "512": 2.415,
+   "768": 2.905,
+   "1024": 2.85
+  },
+  "pct": {
+   "128": 120.53179824561404,
+   "256": 97.59462327555713,
+   "384": 113.84785819793206,
+   "512": 133.99585921325053,
+   "768": 115.21514629948365,
+   "1024": 115.05263157894736
+  }
+ },
+ "sweep_round2": {
+  "r2_mr5_m4": {
+   "status": "ok",
+   "gflops": {
+    "512": 2.757
+   },
+   "pct_expert": 113.78456458935203,
+   "kw": {
+    "MR": 5,
+    "L": 4,
+    "MC": 120,
+    "KC": 256,
+    "NC": 256,
+    "pack": true
+   }
+  },
+  "r2_mr6_nc128": {
+   "status": "ok",
+   "gflops": {
+    "512": 2.689
+   },
+   "pct_expert": 110.97812628972348,
+   "kw": {
+    "MR": 6,
+    "L": 4,
+    "MC": 126,
+    "KC": 256,
+    "NC": 128,
+    "pack": true
+   }
+  },
+  "r2_mr6_nc192": {
+   "status": "ok",
+   "gflops": {
+    "512": 2.82
+   },
+   "pct_expert": 116.38464713165497,
+   "kw": {
+    "MR": 6,
+    "L": 4,
+    "MC": 126,
+    "KC": 256,
+    "NC": 192,
+    "pack": true
+   }
+  },
+  "r2_mr6_kc128": {
+   "status": "ok",
+   "gflops": {
+    "512": 2.361
+   },
+   "pct_expert": 97.4411886091622,
+   "kw": {
+    "MR": 6,
+    "L": 4,
+    "MC": 126,
+    "KC": 128,
+    "NC": 256,
+    "pack": true
+   }
+  },
+  "r2_mr6_kc192": {
+   "status": "ok",
+   "gflops": {
+    "512": 2.683
+   },
+   "pct_expert": 110.73049938093271,
+   "kw": {
+    "MR": 6,
+    "L": 4,
+    "MC": 126,
+    "KC": 192,
+    "NC": 256,
+    "pack": true
+   }
+  },
+  "r2_mr6_kc512": {
+   "status": "ok",
+   "gflops": {
+    "512": 3.204
+   },
+   "pct_expert": 132.23276929426333,
+   "kw": {
+    "MR": 6,
+    "L": 4,
+    "MC": 126,
+    "KC": 512,
+    "NC": 256,
+    "pack": true
+   }
+  },
+  "r2_mr6_mc60": {
+   "status": "ok",
+   "gflops": {
+    "512": 3.135
+   },
+   "pct_expert": 129.3850598431696,
+   "kw": {
+    "MR": 6,
+    "L": 4,
+    "MC": 60,
+    "KC": 256,
+    "NC": 256,
+    "pack": true
+   }
+  },
+  "r2_mr6_mc252": {
+   "status": "ok",
+   "gflops": {
+    "512": 2.912
+   },
+   "pct_expert": 120.18159306644655,
+   "kw": {
+    "MR": 6,
+    "L": 4,
+    "MC": 252,
+    "KC": 256,
+    "NC": 256,
+    "pack": true
+   }
+  },
+  "r2_mr6_big": {
+   "status": "ok",
+   "gflops": {
+    "512": 0.498
+   },
+   "pct_expert": 20.553033429632684,
+   "kw": {
+    "MR": 6,
+    "L": 4,
+    "MC": 252,
+    "KC": 512,
+    "NC": 512,
+    "pack": true
+   }
+  }
+ },
+ "levers": {
+  "LMUL4_vs_LMUL1": "instruction-issue-bound in-order core",
+  "register_tiling": "C accumulators kept in vregs across full Kc loop",
+  "packing": "pack A/B to unit-stride; nopack collapses to 14-52%",
+  "KC512": "single k-block at N=512 -> C written once, full-K reg accumulation"
+ }
+}

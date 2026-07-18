@@ -1,4 +1,0 @@
-1. t1 = reduce(x, -inf, max);  
-2. t2 = map(x, i => exp(x[i] - t1));  
-3. t3 = reduce(t2, 0.0, +);  
-4. t4 = map(t2, v => v / t3);

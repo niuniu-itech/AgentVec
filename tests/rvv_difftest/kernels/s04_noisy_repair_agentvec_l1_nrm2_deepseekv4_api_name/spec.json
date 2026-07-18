@@ -1,0 +1,1 @@
+{"name": "s04_noisy_repair_agentvec_l1_nrm2_deepseekv4_api_name", "dtype": "f32", "reduce": true, "tier": "float_ulp", "rtol": 0.0001, "sizes": [1, 7, 64, 1000, 4096], "level": "L1"}

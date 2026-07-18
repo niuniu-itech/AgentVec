@@ -1,0 +1,132 @@
+{
+  "prompt": "no-example",
+  "arm": "AgentVec",
+  "ops": [
+    "dot",
+    "asum",
+    "nrm2",
+    "max",
+    "min"
+  ],
+  "held_out": [
+    "max",
+    "min"
+  ],
+  "rows": {
+    "DeepSeek-V4": {
+      "dot": "1.0",
+      "asum": "1.0",
+      "nrm2": "1.0",
+      "max": "1.0",
+      "min": "1.0"
+    },
+    "Qwen3.6-35B": {
+      "dot": "1.0",
+      "asum": "1.0",
+      "nrm2": "1.0",
+      "max": "1.0",
+      "min": "1.0"
+    },
+    "GLM-5": {
+      "dot": "1.0",
+      "asum": "1.0",
+      "nrm2": "1.0",
+      "max": "1.0",
+      "min": "1.0"
+    }
+  },
+  "intents": {
+    "nx_dot_deepseekv4": {
+      "reduce_op": "sum",
+      "elem": "a*b",
+      "postproc": "none"
+    },
+    "nx_dot_qwen3635b": {
+      "reduce_op": "sum",
+      "elem": "a*b",
+      "postproc": "none"
+    },
+    "nx_dot_glm5": {
+      "reduce_op": "sum",
+      "elem": "a*b",
+      "postproc": "none"
+    },
+    "nx_asum_deepseekv4": {
+      "reduce_op": "sum",
+      "elem": "abs(a)",
+      "postproc": "none"
+    },
+    "nx_asum_qwen3635b": {
+      "reduce_op": "sum",
+      "elem": "abs(a)",
+      "postproc": "none"
+    },
+    "nx_asum_glm5": {
+      "reduce_op": "sum",
+      "elem": "abs(a)",
+      "postproc": "none"
+    },
+    "nx_nrm2_deepseekv4": {
+      "reduce_op": "sum",
+      "elem": "a*a",
+      "postproc": "sqrt"
+    },
+    "nx_nrm2_qwen3635b": {
+      "reduce_op": "sum",
+      "elem": "a*a",
+      "postproc": "sqrt"
+    },
+    "nx_nrm2_glm5": {
+      "reduce_op": "sum",
+      "elem": "a*a",
+      "postproc": "sqrt"
+    },
+    "nx_max_deepseekv4": {
+      "reduce_op": "max",
+      "elem": "a",
+      "postproc": "none"
+    },
+    "nx_max_qwen3635b": {
+      "reduce_op": "max",
+      "elem": "a",
+      "postproc": "none"
+    },
+    "nx_max_glm5": {
+      "reduce_op": "max",
+      "elem": "a",
+      "postproc": "none"
+    },
+    "nx_min_deepseekv4": {
+      "reduce_op": "min",
+      "elem": "a",
+      "postproc": "none"
+    },
+    "nx_min_qwen3635b": {
+      "reduce_op": "min",
+      "elem": "a",
+      "postproc": "none"
+    },
+    "nx_min_glm5": {
+      "reduce_op": "min",
+      "elem": "a",
+      "postproc": "none"
+    }
+  },
+  "info": {
+    "nx_dot_deepseekv4": "ok",
+    "nx_dot_qwen3635b": "ok",
+    "nx_dot_glm5": "ok",
+    "nx_asum_deepseekv4": "ok",
+    "nx_asum_qwen3635b": "ok",
+    "nx_asum_glm5": "ok",
+    "nx_nrm2_deepseekv4": "ok",
+    "nx_nrm2_qwen3635b": "ok",
+    "nx_nrm2_glm5": "ok",
+    "nx_max_deepseekv4": "ok",
+    "nx_max_qwen3635b": "ok",
+    "nx_max_glm5": "ok",
+    "nx_min_deepseekv4": "ok",
+    "nx_min_qwen3635b": "ok",
+    "nx_min_glm5": "ok"
+  }
+}

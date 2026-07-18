@@ -1,0 +1,247 @@
+{
+  "info": {
+    "open_llm_dot_deepseekv4": "ok",
+    "open_av_dot_deepseekv4": "ok",
+    "open_llm_dot_qwen3635b": "ok",
+    "open_av_dot_qwen3635b": "ok",
+    "open_llm_dot_glm5": "ok",
+    "open_av_dot_glm5": "ok",
+    "open_llm_asum_deepseekv4": "ok",
+    "open_av_asum_deepseekv4": "ok",
+    "open_llm_asum_qwen3635b": "ok",
+    "open_av_asum_qwen3635b": "ok",
+    "open_llm_asum_glm5": "ok",
+    "open_av_asum_glm5": "ok",
+    "open_llm_nrm2_deepseekv4": "ok",
+    "open_av_nrm2_deepseekv4": "ok",
+    "open_llm_nrm2_qwen3635b": "ok",
+    "open_av_nrm2_qwen3635b": "ok",
+    "open_llm_nrm2_glm5": "ok",
+    "open_av_nrm2_glm5": "ok"
+  },
+  "res": {
+    "open_av_asum_deepseekv4": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "open_av_asum_glm5": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "open_av_asum_qwen3635b": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "open_av_dot_deepseekv4": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "open_av_dot_glm5": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "open_av_dot_qwen3635b": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "open_av_nrm2_deepseekv4": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "open_av_nrm2_glm5": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "open_av_nrm2_qwen3635b": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "open_llm_asum_deepseekv4": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "open_llm_asum_glm5": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 0,
+      "spr": 0.0,
+      "first_fail": "size7 seed1 vlen128: idx0: 270.8900146484375 vs 51.05000305175781 (|d|=2.198e+02)"
+    },
+    "open_llm_asum_qwen3635b": {
+      "build_error": "/data/lyw/agentvec_lab/difftest/kernels/open_llm_asum_qwen3635b/rvv.c: In function 'agentvec_kernel':\n/data/lyw/agentvec_lab/difftest/kernels/open_llm_asum_qwen3635b/rvv.c:14:26: error: implicit declaration of function 'vmv_v_f_f32_m' [-Wimplicit-function-declaration]\n   14 |     vfloat32m1_t vzero = vmv_v_f_f32_m(vsetvl_e32m1(n), 0.0f);\n      |                          ^~~~~~~~~~~~~\n/data/lyw/age"
+    },
+    "open_llm_dot_deepseekv4": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 0,
+      "spr": 0.0,
+      "first_fail": "size7 seed1 vlen128: idx0: 1720.0985107421875 vs 2375.474365234375 (|d|=6.554e+02)"
+    },
+    "open_llm_dot_glm5": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "open_llm_dot_qwen3635b": {
+      "build_error": "/data/lyw/agentvec_lab/difftest/kernels/open_llm_dot_qwen3635b/rvv.c: In function 'agentvec_kernel':\n/data/lyw/agentvec_lab/difftest/kernels/open_llm_dot_qwen3635b/rvv.c:12:25: error: implicit declaration of function 'vmv_v_f32m1' [-Wimplicit-function-declaration]\n   12 |     vfloat32m1_t vsum = vmv_v_f32m1(0.0f);\n      |                         ^~~~~~~~~~~\n/data/lyw/agentvec_lab/difftest/kernels/"
+    },
+    "open_llm_nrm2_deepseekv4": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "open_llm_nrm2_glm5": {
+      "tier": "float_ulp",
+      "rtol": 0.0001,
+      "sizes": [
+        7,
+        64,
+        1000,
+        4096
+      ],
+      "total": 96,
+      "passed": 96,
+      "spr": 1.0,
+      "first_fail": null
+    },
+    "open_llm_nrm2_qwen3635b": {
+      "build_error": "/data/lyw/agentvec_lab/difftest/kernels/open_llm_nrm2_qwen3635b/rvv.c: In function 'agentvec_kernel':\n/data/lyw/agentvec_lab/difftest/kernels/open_llm_nrm2_qwen3635b/rvv.c:15:25: error: implicit declaration of function 'vmv_v_f_f32m1_m' [-Wimplicit-function-declaration]\n   15 |     vfloat32m1_t vsum = vmv_v_f_f32m1_m(vsetzero_v_f32m1(), 0.0f, 0);\n      |                         ^~~~~~~~~~~~~~~\n/da"
+    }
+  },
+  "summary": {
+    "direct-RVV (pure-LLM)": "4/9 pass",
+    "AgentVec": "9/9 pass"
+  }
+}

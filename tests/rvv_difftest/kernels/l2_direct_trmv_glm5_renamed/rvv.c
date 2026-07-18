@@ -1,0 +1,40 @@
+#include <math.h>
+#define DT float
+#define DT_IS_FLOAT 1
+#define REDUCE 0
+#define A_IS_MATRIX 1
+#define B_IS_MATRIX 0
+#define C_IS_MATRIX 0
+#define OUT_IS_MATRIX 0
+#define SYMMETRIC_A 0
+#define LOWER_TRIANGULAR_A 1
+#define BANDED_A_RADIUS -1
+#include <riscv_vector.h>
+
+void agentvec_kernel(const float *a, const float *b, const float *c, float *out, int n) {
+    (void)c;
+    for (int i = 0; i < n; i++) {
+        float sum = 0.0f;
+        int j = 0;
+        vfloat32m1_t vsum = __riscv_vfmv_v_f_f32m1(0.0f, __riscv_vsetvl_e32m1(1));
+        while (j < i) {
+            int vl = __riscv_vsetvl_e32m1(i - j);
+            vfloat32m1_t va = __riscv_vle32_v_f32m1(&a[i * n + j], vl);
+            vfloat32m1_t vb = __riscv_vle32_v_f32m1(&b[j], vl);
+            vsum = __riscv_vfmacc_vf_f32m1(vsum, va, vb, vl);
+            j += vl;
+        }
+        int vl = __riscv_vsetvl_e32m1(1);
+        vfloat32m1_t vreduce = __riscv_vfmv_v_f_f32m1(0.0f, vl);
+        vl = __riscv_vsetvl_e32m1(i);
+        vreduce = __riscv_vredusum_vs_f32m1_f32m1(vsum, vreduce, vl);
+        sum = __riscv_vfmv_f_s_f32m1_f32(vreduce);
+        if (i > 0) {
+            vl = __riscv_vsetvl_e32m1(1);
+            vfloat32m1_t va = __riscv_vle32_v_f32m1(&a[i * n + i], vl);
+            sum += __riscv_vfmv_f_s_f32m1_f32(va) * b[i];
+        }
+        out[i] = sum;
+    }
+}
+#include "harness.h"

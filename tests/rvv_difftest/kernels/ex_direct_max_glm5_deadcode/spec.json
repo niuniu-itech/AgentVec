@@ -1,0 +1,1 @@
+{"name": "ex_direct_max_glm5_deadcode", "dtype": "f32", "reduce": true, "tier": "float_ulp", "rtol": 1e-06, "sizes": [1, 7, 64, 1000, 4096]}

@@ -1,0 +1,369 @@
+{
+  "config": {
+    "probe": "all",
+    "l1_ops": [
+      "axpy"
+    ],
+    "l2_ops": [
+      "gemv"
+    ],
+    "models": [
+      "DeepSeek-V4"
+    ],
+    "faults": [
+      "api_name"
+    ],
+    "views": [
+      "ptx"
+    ],
+    "arms": [
+      "direct",
+      "agentvec"
+    ],
+    "seeds": 1,
+    "vlens": [
+      "native"
+    ],
+    "remote_root": "/tmp/agentvec_s04_extra/difftest",
+    "gcc": "gcc",
+    "qemu": "native"
+  },
+  "tasks": [
+    {
+      "probe": "noisy_repair",
+      "level": "L1",
+      "operator": "axpy",
+      "variant": "api_name",
+      "model": "DeepSeek-V4",
+      "arm": "direct",
+      "label": "s04_noisy_repair_direct_l1_axpy_deepseekv4_api_name",
+      "status": "generated",
+      "note": {
+        "direct": "repair"
+      }
+    },
+    {
+      "probe": "noisy_repair",
+      "level": "L1",
+      "operator": "axpy",
+      "variant": "api_name",
+      "model": "DeepSeek-V4",
+      "arm": "agentvec",
+      "label": "s04_noisy_repair_agentvec_l1_axpy_deepseekv4_api_name",
+      "status": "generated",
+      "note": {
+        "pattern": "map",
+        "dtype": "f32",
+        "formula": "out = (a * 2.0f) + b"
+      }
+    },
+    {
+      "probe": "noisy_repair",
+      "level": "L2",
+      "operator": "gemv",
+      "variant": "api_name",
+      "model": "DeepSeek-V4",
+      "arm": "direct",
+      "label": "s04_noisy_repair_direct_l2_gemv_deepseekv4_api_name",
+      "status": "generated",
+      "note": {
+        "direct": "repair"
+      }
+    },
+    {
+      "probe": "noisy_repair",
+      "level": "L2",
+      "operator": "gemv",
+      "variant": "api_name",
+      "model": "DeepSeek-V4",
+      "arm": "agentvec",
+      "label": "s04_noisy_repair_agentvec_l2_gemv_deepseekv4_api_name",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "probe": "source_free",
+      "level": "L1",
+      "operator": "axpy",
+      "variant": "ptx",
+      "model": "DeepSeek-V4",
+      "arm": "direct",
+      "label": "s04_source_free_direct_l1_axpy_deepseekv4_ptx",
+      "status": "generated",
+      "note": {
+        "direct": "sourcefree"
+      }
+    },
+    {
+      "probe": "source_free",
+      "level": "L1",
+      "operator": "axpy",
+      "variant": "ptx",
+      "model": "DeepSeek-V4",
+      "arm": "agentvec",
+      "label": "s04_source_free_agentvec_l1_axpy_deepseekv4_ptx",
+      "status": "generated",
+      "note": {
+        "pattern": "map",
+        "dtype": "f32",
+        "formula": "out = a * 2.0 + b"
+      }
+    },
+    {
+      "probe": "source_free",
+      "level": "L2",
+      "operator": "gemv",
+      "variant": "ptx",
+      "model": "DeepSeek-V4",
+      "arm": "direct",
+      "label": "s04_source_free_direct_l2_gemv_deepseekv4_ptx",
+      "status": "generated",
+      "note": {
+        "direct": "sourcefree"
+      }
+    },
+    {
+      "probe": "source_free",
+      "level": "L2",
+      "operator": "gemv",
+      "variant": "ptx",
+      "model": "DeepSeek-V4",
+      "arm": "agentvec",
+      "label": "s04_source_free_agentvec_l2_gemv_deepseekv4_ptx",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    }
+  ],
+  "runner_report": {
+    "vlens": [
+      "native"
+    ],
+    "seeds": 1,
+    "kernels": {
+      "s04_noisy_repair_agentvec_l1_axpy_deepseekv4_api_name": {
+        "tier": "float_ulp",
+        "rtol": 1e-06,
+        "sizes": [
+          1,
+          7,
+          64,
+          1000,
+          4096
+        ],
+        "total": 5,
+        "passed": 5,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "s04_noisy_repair_agentvec_l2_gemv_deepseekv4_api_name": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 5,
+        "passed": 5,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "s04_noisy_repair_direct_l1_axpy_deepseekv4_api_name": {
+        "build_error": "/usr/bin/ld: /lib/riscv64-linux-gnu/Scrt1.o: in function `_start':\n(.text+0x6): undefined reference to `main'\ncollect2: error: ld returned 1 exit status\n"
+      },
+      "s04_noisy_repair_direct_l2_gemv_deepseekv4_api_name": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 5,
+        "passed": 5,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "s04_source_free_agentvec_l1_axpy_deepseekv4_ptx": {
+        "tier": "float_ulp",
+        "rtol": 1e-06,
+        "sizes": [
+          1,
+          7,
+          64,
+          1000,
+          4096
+        ],
+        "total": 5,
+        "passed": 5,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "s04_source_free_agentvec_l2_gemv_deepseekv4_ptx": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 5,
+        "passed": 5,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "s04_source_free_direct_l1_axpy_deepseekv4_ptx": {
+        "tier": "float_ulp",
+        "rtol": 1e-06,
+        "sizes": [
+          1,
+          7,
+          64,
+          1000,
+          4096
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size1 seed1 vlennative: idx0: 20.200000762939453 vs 29.719999313354492 (|d|=9.520e+00)"
+      },
+      "s04_source_free_direct_l2_gemv_deepseekv4_ptx": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 5,
+        "passed": 5,
+        "spr": 1.0,
+        "first_fail": null
+      }
+    }
+  },
+  "summary": {
+    "by_probe": {
+      "noisy_repair": {
+        "direct": {
+          "attempted_generated_kernels": 2,
+          "generated_source_files": 2,
+          "generation_failures": 0,
+          "build_failures": 1,
+          "wrong_or_partial": 0,
+          "fully_passing_kernels": 1,
+          "planned_dynamic_checks": 10,
+          "executed_dynamic_checks": 5,
+          "passed_dynamic_checks": 5,
+          "planned_check_spr": 0.5
+        },
+        "agentvec": {
+          "attempted_generated_kernels": 2,
+          "generated_source_files": 2,
+          "generation_failures": 0,
+          "build_failures": 0,
+          "wrong_or_partial": 0,
+          "fully_passing_kernels": 2,
+          "planned_dynamic_checks": 10,
+          "executed_dynamic_checks": 10,
+          "passed_dynamic_checks": 10,
+          "planned_check_spr": 1.0
+        }
+      },
+      "source_free": {
+        "direct": {
+          "attempted_generated_kernels": 2,
+          "generated_source_files": 2,
+          "generation_failures": 0,
+          "build_failures": 0,
+          "wrong_or_partial": 1,
+          "fully_passing_kernels": 1,
+          "planned_dynamic_checks": 10,
+          "executed_dynamic_checks": 6,
+          "passed_dynamic_checks": 5,
+          "planned_check_spr": 0.5
+        },
+        "agentvec": {
+          "attempted_generated_kernels": 2,
+          "generated_source_files": 2,
+          "generation_failures": 0,
+          "build_failures": 0,
+          "wrong_or_partial": 0,
+          "fully_passing_kernels": 2,
+          "planned_dynamic_checks": 10,
+          "executed_dynamic_checks": 10,
+          "passed_dynamic_checks": 10,
+          "planned_check_spr": 1.0
+        }
+      }
+    },
+    "by_level": {
+      "L1": {
+        "noisy_repair": {
+          "direct": {
+            "planned_dynamic_checks": 5,
+            "passed_dynamic_checks": 0,
+            "planned_check_spr": 0.0
+          },
+          "agentvec": {
+            "planned_dynamic_checks": 5,
+            "passed_dynamic_checks": 5,
+            "planned_check_spr": 1.0
+          }
+        },
+        "source_free": {
+          "direct": {
+            "planned_dynamic_checks": 5,
+            "passed_dynamic_checks": 0,
+            "planned_check_spr": 0.0
+          },
+          "agentvec": {
+            "planned_dynamic_checks": 5,
+            "passed_dynamic_checks": 5,
+            "planned_check_spr": 1.0
+          }
+        }
+      },
+      "L2": {
+        "noisy_repair": {
+          "direct": {
+            "planned_dynamic_checks": 5,
+            "passed_dynamic_checks": 5,
+            "planned_check_spr": 1.0
+          },
+          "agentvec": {
+            "planned_dynamic_checks": 5,
+            "passed_dynamic_checks": 5,
+            "planned_check_spr": 1.0
+          }
+        },
+        "source_free": {
+          "direct": {
+            "planned_dynamic_checks": 5,
+            "passed_dynamic_checks": 5,
+            "planned_check_spr": 1.0
+          },
+          "agentvec": {
+            "planned_dynamic_checks": 5,
+            "passed_dynamic_checks": 5,
+            "planned_check_spr": 1.0
+          }
+        }
+      }
+    }
+  }
+}

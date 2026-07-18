@@ -1,18 +1,25 @@
-# caches / build artifacts
+# Python and test products
 __pycache__/
-*.pyc
+*.py[cod]
+.pytest_cache/
 build/
-*.o
 *.out
-_board/
-_tmp/
+*.bin
 
-# editor / OS
+# Generated model outputs and local measurement products
+_llm_cache/
+_gen/
+artifacts/
+results/local/
+
+# Local editor and environment state
+.venv/
+.env
 .vscode/
 .idea/
 .DS_Store
 
-# never commit secrets / local host config
-.env
+# Credentials and machine-local connection settings
 *_secret*
 hosts_local.py
+id_*

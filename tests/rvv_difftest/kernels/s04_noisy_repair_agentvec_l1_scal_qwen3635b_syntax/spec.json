@@ -1,0 +1,1 @@
+{"name": "s04_noisy_repair_agentvec_l1_scal_qwen3635b_syntax", "dtype": "f32", "reduce": false, "tier": "float_ulp", "rtol": 1e-06, "sizes": [1, 7, 64, 1000, 4096], "level": "L1"}
