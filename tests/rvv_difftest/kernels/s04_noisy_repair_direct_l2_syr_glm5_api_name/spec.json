@@ -1,0 +1,1 @@
+{"name": "s04_noisy_repair_direct_l2_syr_glm5_api_name", "dtype": "f32", "reduce": false, "tier": "float_ulp", "rtol": 0.001, "sizes": [2, 7, 16, 64, 128], "level": "L2"}

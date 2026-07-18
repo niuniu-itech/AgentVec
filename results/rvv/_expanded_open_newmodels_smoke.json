@@ -1,0 +1,214 @@
+{
+  "config": {
+    "operators": [
+      "copy"
+    ],
+    "source_forms": [
+      "clean"
+    ],
+    "models": [
+      "DeepSeek-V4-Pro",
+      "Qwen3.6-35B-A3B",
+      "GLM-5.2"
+    ],
+    "seeds": 1,
+    "sizes": [
+      1,
+      7,
+      64,
+      1000,
+      4096
+    ],
+    "vlens": [
+      "native"
+    ],
+    "dynamic_checks_per_kernel": 5,
+    "remote_root": "/tmp/agentvec_expanded/difftest"
+  },
+  "tasks": [
+    {
+      "label": "ex_direct_copy_deepseekv4pro_clean",
+      "arm": "direct",
+      "operator": "copy",
+      "model": "DeepSeek-V4-Pro",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "ex_agentvec_copy_deepseekv4pro_clean",
+      "arm": "agentvec",
+      "operator": "copy",
+      "model": "DeepSeek-V4-Pro",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "pattern": "map",
+        "dtype": "f32",
+        "formula": "out = a"
+      }
+    },
+    {
+      "label": "ex_direct_copy_qwen3635ba3b_clean",
+      "arm": "direct",
+      "operator": "copy",
+      "model": "Qwen3.6-35B-A3B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "ex_agentvec_copy_qwen3635ba3b_clean",
+      "arm": "agentvec",
+      "operator": "copy",
+      "model": "Qwen3.6-35B-A3B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "pattern": "map",
+        "dtype": "f32",
+        "formula": "out = a"
+      }
+    },
+    {
+      "label": "ex_direct_copy_glm52_clean",
+      "arm": "direct",
+      "operator": "copy",
+      "model": "GLM-5.2",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "ex_agentvec_copy_glm52_clean",
+      "arm": "agentvec",
+      "operator": "copy",
+      "model": "GLM-5.2",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "pattern": "map",
+        "dtype": "f32",
+        "formula": "out = a"
+      }
+    }
+  ],
+  "runner_report": {
+    "vlens": [
+      "native"
+    ],
+    "seeds": 1,
+    "kernels": {
+      "ex_agentvec_copy_deepseekv4pro_clean": {
+        "tier": "float_ulp",
+        "rtol": 1e-06,
+        "sizes": [
+          1,
+          7,
+          64,
+          1000,
+          4096
+        ],
+        "total": 5,
+        "passed": 5,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "ex_agentvec_copy_glm52_clean": {
+        "tier": "float_ulp",
+        "rtol": 1e-06,
+        "sizes": [
+          1,
+          7,
+          64,
+          1000,
+          4096
+        ],
+        "total": 5,
+        "passed": 5,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "ex_agentvec_copy_qwen3635ba3b_clean": {
+        "tier": "float_ulp",
+        "rtol": 1e-06,
+        "sizes": [
+          1,
+          7,
+          64,
+          1000,
+          4096
+        ],
+        "total": 5,
+        "passed": 5,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "ex_direct_copy_deepseekv4pro_clean": {
+        "tier": "float_ulp",
+        "rtol": 1e-06,
+        "sizes": [
+          1,
+          7,
+          64,
+          1000,
+          4096
+        ],
+        "total": 5,
+        "passed": 5,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "ex_direct_copy_glm52_clean": {
+        "tier": "float_ulp",
+        "rtol": 1e-06,
+        "sizes": [
+          1,
+          7,
+          64,
+          1000,
+          4096
+        ],
+        "total": 5,
+        "passed": 5,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "ex_direct_copy_qwen3635ba3b_clean": {
+        "build_error": "/tmp/agentvec_expanded/difftest/kernels/ex_direct_copy_qwen3635ba3b_clean/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded/difftest/kernels/ex_direct_copy_qwen3635ba3b_clean/rvv.c:18:14: warning: implicit declaration of function \u2018__riscv_vle_v_f32m1\u2019; did you mean \u2018__riscv_vle32_v_f32m1\u2019? [-Wimplicit-function-declaration]\n   18 |         va = __riscv_vle_v_f32m1(a + i, vl);\n      |    "
+      }
+    }
+  },
+  "summary": {
+    "direct": {
+      "attempted_generated_kernels": 3,
+      "generated_source_files": 3,
+      "generation_failures": 0,
+      "build_failures": 1,
+      "wrong_or_partial": 0,
+      "fully_passing_kernels": 2,
+      "planned_dynamic_checks": 15,
+      "executed_dynamic_checks": 10,
+      "passed_dynamic_checks": 10,
+      "planned_check_spr": 0.6667
+    },
+    "agentvec": {
+      "attempted_generated_kernels": 3,
+      "generated_source_files": 3,
+      "generation_failures": 0,
+      "build_failures": 0,
+      "wrong_or_partial": 0,
+      "fully_passing_kernels": 3,
+      "planned_dynamic_checks": 15,
+      "executed_dynamic_checks": 15,
+      "passed_dynamic_checks": 15,
+      "planned_check_spr": 1.0
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"name": "s04_noisy_repair_direct_l1_axpy_deepseekv4_api_name", "dtype": "f32", "reduce": false, "tier": "float_ulp", "rtol": 1e-06, "sizes": [1, 7, 64, 1000, 4096], "level": "L1"}

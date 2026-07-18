@@ -1,0 +1,4408 @@
+{
+  "config": {
+    "level": "L2",
+    "operators": [
+      "gemv",
+      "gbmv",
+      "symv",
+      "trmv",
+      "ger",
+      "syr"
+    ],
+    "source_forms": [
+      "clean",
+      "renamed",
+      "deadcode",
+      "typealias",
+      "combined"
+    ],
+    "models": [
+      "DeepSeek-V4",
+      "Qwen3.6-35B",
+      "GLM-5"
+    ],
+    "seeds": 4,
+    "sizes": [
+      2,
+      7,
+      16,
+      64,
+      128
+    ],
+    "vlens": [
+      "native"
+    ],
+    "dynamic_checks_per_kernel": 20,
+    "remote_root": "/tmp/agentvec_expanded_l2/difftest"
+  },
+  "tasks": [
+    {
+      "label": "l2_direct_gemv_deepseekv4_clean",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "DeepSeek-V4",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_deepseekv4_clean",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "DeepSeek-V4",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_qwen3635b_clean",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "Qwen3.6-35B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_qwen3635b_clean",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "Qwen3.6-35B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_glm5_clean",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "GLM-5",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_glm5_clean",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "GLM-5",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_deepseekv4_renamed",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "DeepSeek-V4",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_deepseekv4_renamed",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "DeepSeek-V4",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_qwen3635b_renamed",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "Qwen3.6-35B",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_qwen3635b_renamed",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "Qwen3.6-35B",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_glm5_renamed",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "GLM-5",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_glm5_renamed",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "GLM-5",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_deepseekv4_deadcode",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "DeepSeek-V4",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_deepseekv4_deadcode",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "DeepSeek-V4",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_qwen3635b_deadcode",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "Qwen3.6-35B",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_qwen3635b_deadcode",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "Qwen3.6-35B",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_glm5_deadcode",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "GLM-5",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_glm5_deadcode",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "GLM-5",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_deepseekv4_typealias",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "DeepSeek-V4",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_deepseekv4_typealias",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "DeepSeek-V4",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_qwen3635b_typealias",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "Qwen3.6-35B",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_qwen3635b_typealias",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "Qwen3.6-35B",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_glm5_typealias",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "GLM-5",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_glm5_typealias",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "GLM-5",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_deepseekv4_combined",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "DeepSeek-V4",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_deepseekv4_combined",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "DeepSeek-V4",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_qwen3635b_combined",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "Qwen3.6-35B",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_qwen3635b_combined",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "Qwen3.6-35B",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gemv_glm5_combined",
+      "arm": "direct",
+      "operator": "gemv",
+      "model": "GLM-5",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gemv_glm5_combined",
+      "arm": "agentvec",
+      "operator": "gemv",
+      "model": "GLM-5",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_deepseekv4_clean",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "DeepSeek-V4",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_deepseekv4_clean",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "DeepSeek-V4",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_qwen3635b_clean",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_qwen3635b_clean",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_glm5_clean",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "GLM-5",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_glm5_clean",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "GLM-5",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_deepseekv4_renamed",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "DeepSeek-V4",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_deepseekv4_renamed",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "DeepSeek-V4",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_qwen3635b_renamed",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_qwen3635b_renamed",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_glm5_renamed",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "GLM-5",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_glm5_renamed",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "GLM-5",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_deepseekv4_deadcode",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "DeepSeek-V4",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_deepseekv4_deadcode",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "DeepSeek-V4",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_qwen3635b_deadcode",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_qwen3635b_deadcode",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_glm5_deadcode",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "GLM-5",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_glm5_deadcode",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "GLM-5",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_deepseekv4_typealias",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "DeepSeek-V4",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_deepseekv4_typealias",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "DeepSeek-V4",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_qwen3635b_typealias",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_qwen3635b_typealias",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_glm5_typealias",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "GLM-5",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_glm5_typealias",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "GLM-5",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_deepseekv4_combined",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "DeepSeek-V4",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_deepseekv4_combined",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "DeepSeek-V4",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_qwen3635b_combined",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_qwen3635b_combined",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_gbmv_glm5_combined",
+      "arm": "direct",
+      "operator": "gbmv",
+      "model": "GLM-5",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_gbmv_glm5_combined",
+      "arm": "agentvec",
+      "operator": "gbmv",
+      "model": "GLM-5",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gbmv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_deepseekv4_clean",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "DeepSeek-V4",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_deepseekv4_clean",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "DeepSeek-V4",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_qwen3635b_clean",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "Qwen3.6-35B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_qwen3635b_clean",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "Qwen3.6-35B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv",
+        "accepted_as": "generic_matvec_fallback",
+        "target_operator": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_glm5_clean",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "GLM-5",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_glm5_clean",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "GLM-5",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_deepseekv4_renamed",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "DeepSeek-V4",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_deepseekv4_renamed",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "DeepSeek-V4",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_qwen3635b_renamed",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "Qwen3.6-35B",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_qwen3635b_renamed",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "Qwen3.6-35B",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_glm5_renamed",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "GLM-5",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_glm5_renamed",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "GLM-5",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_deepseekv4_deadcode",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "DeepSeek-V4",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_deepseekv4_deadcode",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "DeepSeek-V4",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_qwen3635b_deadcode",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "Qwen3.6-35B",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_qwen3635b_deadcode",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "Qwen3.6-35B",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv",
+        "accepted_as": "generic_matvec_fallback",
+        "target_operator": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_glm5_deadcode",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "GLM-5",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_glm5_deadcode",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "GLM-5",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_deepseekv4_typealias",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "DeepSeek-V4",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_deepseekv4_typealias",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "DeepSeek-V4",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_qwen3635b_typealias",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "Qwen3.6-35B",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_qwen3635b_typealias",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "Qwen3.6-35B",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv",
+        "accepted_as": "generic_matvec_fallback",
+        "target_operator": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_glm5_typealias",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "GLM-5",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_glm5_typealias",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "GLM-5",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_deepseekv4_combined",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "DeepSeek-V4",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_deepseekv4_combined",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "DeepSeek-V4",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_qwen3635b_combined",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "Qwen3.6-35B",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_qwen3635b_combined",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "Qwen3.6-35B",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv",
+        "accepted_as": "generic_matvec_fallback",
+        "target_operator": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_symv_glm5_combined",
+      "arm": "direct",
+      "operator": "symv",
+      "model": "GLM-5",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_symv_glm5_combined",
+      "arm": "agentvec",
+      "operator": "symv",
+      "model": "GLM-5",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "symv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_deepseekv4_clean",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "DeepSeek-V4",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_deepseekv4_clean",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "DeepSeek-V4",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv",
+        "accepted_as": "generic_matvec_fallback",
+        "target_operator": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_qwen3635b_clean",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_qwen3635b_clean",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv",
+        "accepted_as": "generic_matvec_fallback",
+        "target_operator": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_glm5_clean",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "GLM-5",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_glm5_clean",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "GLM-5",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_deepseekv4_renamed",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "DeepSeek-V4",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_deepseekv4_renamed",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "DeepSeek-V4",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_qwen3635b_renamed",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_qwen3635b_renamed",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_glm5_renamed",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "GLM-5",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_glm5_renamed",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "GLM-5",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_deepseekv4_deadcode",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "DeepSeek-V4",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_deepseekv4_deadcode",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "DeepSeek-V4",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv",
+        "accepted_as": "generic_matvec_fallback",
+        "target_operator": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_qwen3635b_deadcode",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_qwen3635b_deadcode",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv",
+        "accepted_as": "generic_matvec_fallback",
+        "target_operator": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_glm5_deadcode",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "GLM-5",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_glm5_deadcode",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "GLM-5",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_deepseekv4_typealias",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "DeepSeek-V4",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_deepseekv4_typealias",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "DeepSeek-V4",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_qwen3635b_typealias",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_qwen3635b_typealias",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv",
+        "accepted_as": "generic_matvec_fallback",
+        "target_operator": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_glm5_typealias",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "GLM-5",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_glm5_typealias",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "GLM-5",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_deepseekv4_combined",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "DeepSeek-V4",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_deepseekv4_combined",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "DeepSeek-V4",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv",
+        "accepted_as": "generic_matvec_fallback",
+        "target_operator": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_qwen3635b_combined",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_qwen3635b_combined",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "Qwen3.6-35B",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "gemv",
+        "accepted_as": "generic_matvec_fallback",
+        "target_operator": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_trmv_glm5_combined",
+      "arm": "direct",
+      "operator": "trmv",
+      "model": "GLM-5",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_trmv_glm5_combined",
+      "arm": "agentvec",
+      "operator": "trmv",
+      "model": "GLM-5",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "trmv"
+      }
+    },
+    {
+      "label": "l2_direct_ger_deepseekv4_clean",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "DeepSeek-V4",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_deepseekv4_clean",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "DeepSeek-V4",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_qwen3635b_clean",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "Qwen3.6-35B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_qwen3635b_clean",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "Qwen3.6-35B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_glm5_clean",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "GLM-5",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_glm5_clean",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "GLM-5",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_deepseekv4_renamed",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "DeepSeek-V4",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_deepseekv4_renamed",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "DeepSeek-V4",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_qwen3635b_renamed",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "Qwen3.6-35B",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_qwen3635b_renamed",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "Qwen3.6-35B",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_glm5_renamed",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "GLM-5",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_glm5_renamed",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "GLM-5",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_deepseekv4_deadcode",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "DeepSeek-V4",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_deepseekv4_deadcode",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "DeepSeek-V4",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_qwen3635b_deadcode",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "Qwen3.6-35B",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_qwen3635b_deadcode",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "Qwen3.6-35B",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_glm5_deadcode",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "GLM-5",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_glm5_deadcode",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "GLM-5",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_deepseekv4_typealias",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "DeepSeek-V4",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_deepseekv4_typealias",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "DeepSeek-V4",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_qwen3635b_typealias",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "Qwen3.6-35B",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_qwen3635b_typealias",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "Qwen3.6-35B",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_glm5_typealias",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "GLM-5",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_glm5_typealias",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "GLM-5",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_deepseekv4_combined",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "DeepSeek-V4",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_deepseekv4_combined",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "DeepSeek-V4",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_qwen3635b_combined",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "Qwen3.6-35B",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_qwen3635b_combined",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "Qwen3.6-35B",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_ger_glm5_combined",
+      "arm": "direct",
+      "operator": "ger",
+      "model": "GLM-5",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_ger_glm5_combined",
+      "arm": "agentvec",
+      "operator": "ger",
+      "model": "GLM-5",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "ger"
+      }
+    },
+    {
+      "label": "l2_direct_syr_deepseekv4_clean",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "DeepSeek-V4",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_deepseekv4_clean",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "DeepSeek-V4",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    },
+    {
+      "label": "l2_direct_syr_qwen3635b_clean",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "Qwen3.6-35B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_qwen3635b_clean",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "Qwen3.6-35B",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    },
+    {
+      "label": "l2_direct_syr_glm5_clean",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "GLM-5",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_glm5_clean",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "GLM-5",
+      "source_form": "clean",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    },
+    {
+      "label": "l2_direct_syr_deepseekv4_renamed",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "DeepSeek-V4",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_deepseekv4_renamed",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "DeepSeek-V4",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    },
+    {
+      "label": "l2_direct_syr_qwen3635b_renamed",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "Qwen3.6-35B",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_qwen3635b_renamed",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "Qwen3.6-35B",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    },
+    {
+      "label": "l2_direct_syr_glm5_renamed",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "GLM-5",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_glm5_renamed",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "GLM-5",
+      "source_form": "renamed",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    },
+    {
+      "label": "l2_direct_syr_deepseekv4_deadcode",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "DeepSeek-V4",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_deepseekv4_deadcode",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "DeepSeek-V4",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    },
+    {
+      "label": "l2_direct_syr_qwen3635b_deadcode",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "Qwen3.6-35B",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_qwen3635b_deadcode",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "Qwen3.6-35B",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    },
+    {
+      "label": "l2_direct_syr_glm5_deadcode",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "GLM-5",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_glm5_deadcode",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "GLM-5",
+      "source_form": "deadcode",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    },
+    {
+      "label": "l2_direct_syr_deepseekv4_typealias",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "DeepSeek-V4",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_deepseekv4_typealias",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "DeepSeek-V4",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    },
+    {
+      "label": "l2_direct_syr_qwen3635b_typealias",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "Qwen3.6-35B",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_qwen3635b_typealias",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "Qwen3.6-35B",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    },
+    {
+      "label": "l2_direct_syr_glm5_typealias",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "GLM-5",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_glm5_typealias",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "GLM-5",
+      "source_form": "typealias",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    },
+    {
+      "label": "l2_direct_syr_deepseekv4_combined",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "DeepSeek-V4",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_deepseekv4_combined",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "DeepSeek-V4",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    },
+    {
+      "label": "l2_direct_syr_qwen3635b_combined",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "Qwen3.6-35B",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_qwen3635b_combined",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "Qwen3.6-35B",
+      "source_form": "combined",
+      "status": "generation_failure",
+      "error": "bad-l2-intent:ger"
+    },
+    {
+      "label": "l2_direct_syr_glm5_combined",
+      "arm": "direct",
+      "operator": "syr",
+      "model": "GLM-5",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "direct": "rvv"
+      }
+    },
+    {
+      "label": "l2_agentvec_syr_glm5_combined",
+      "arm": "agentvec",
+      "operator": "syr",
+      "model": "GLM-5",
+      "source_form": "combined",
+      "status": "generated",
+      "note": {
+        "level": "L2",
+        "op": "syr"
+      }
+    }
+  ],
+  "runner_report": {
+    "vlens": [
+      "native"
+    ],
+    "seeds": 4,
+    "kernels": {
+      "l2_agentvec_gbmv_deepseekv4_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_deepseekv4_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_deepseekv4_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_deepseekv4_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_deepseekv4_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_glm5_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_glm5_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_glm5_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_glm5_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_glm5_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_qwen3635b_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_qwen3635b_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_qwen3635b_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_qwen3635b_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gbmv_qwen3635b_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_deepseekv4_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_deepseekv4_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_deepseekv4_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_deepseekv4_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_deepseekv4_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_glm5_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_glm5_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_glm5_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_glm5_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_glm5_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_qwen3635b_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_qwen3635b_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_qwen3635b_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_qwen3635b_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_gemv_qwen3635b_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_deepseekv4_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_deepseekv4_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_deepseekv4_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_deepseekv4_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_deepseekv4_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_glm5_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_glm5_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_glm5_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_glm5_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_glm5_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_qwen3635b_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_qwen3635b_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_qwen3635b_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_qwen3635b_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_ger_qwen3635b_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_deepseekv4_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_deepseekv4_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_deepseekv4_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_deepseekv4_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_deepseekv4_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_glm5_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_glm5_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_glm5_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_glm5_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_glm5_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_qwen3635b_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_qwen3635b_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_qwen3635b_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_qwen3635b_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_symv_qwen3635b_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_deepseekv4_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_deepseekv4_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_deepseekv4_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_deepseekv4_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_deepseekv4_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_glm5_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_glm5_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_glm5_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_glm5_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_glm5_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_qwen3635b_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_qwen3635b_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_qwen3635b_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_syr_qwen3635b_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_deepseekv4_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_deepseekv4_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_deepseekv4_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_deepseekv4_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_deepseekv4_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_glm5_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_glm5_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_glm5_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_glm5_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_glm5_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_qwen3635b_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_qwen3635b_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_qwen3635b_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_qwen3635b_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_agentvec_trmv_qwen3635b_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_gbmv_deepseekv4_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx0: 441.602783203125 vs 46.56480026245117 (|d|=3.950e+02)"
+      },
+      "l2_direct_gbmv_deepseekv4_combined": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_deepseekv4_combined/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_deepseekv4_combined/rvv.c:51:21: warning: implicit declaration of function \u2018__riscv_vfmv_s_f_f32m1_f32m1\u2019; did you mean \u2018__riscv_vfmv_f_s_f32m1_f32\u2019? [-Wimplicit-function-declaration]\n   51 |             v_out = __riscv_vfmv_s"
+      },
+      "l2_direct_gbmv_deepseekv4_deadcode": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_deepseekv4_deadcode/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_deepseekv4_deadcode/rvv.c:37:75: error: incompatible type for argument 3 of \u2018__riscv_vfredusum_vs_f32m1_f32m1\u2019\n   37 |             vec_sum = __riscv_vfredusum_vs_f32m1_f32m1(vec_sum, vec_prod, vec_sum, vl);\n      |            "
+      },
+      "l2_direct_gbmv_deepseekv4_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx0: 441.602783203125 vs 473.1557922363281 (|d|=3.155e+01)"
+      },
+      "l2_direct_gbmv_deepseekv4_typealias": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_deepseekv4_typealias/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_deepseekv4_typealias/rvv.c:32:29: error: subscripted value is neither array nor pointer nor vector\n   32 |                 sum += vprod[k];\n      |                             ^\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_d"
+      },
+      "l2_direct_gbmv_glm5_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_gbmv_glm5_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_gbmv_glm5_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx0: 441.602783203125 vs 46.56480026245117 (|d|=3.950e+02)"
+      },
+      "l2_direct_gbmv_glm5_renamed": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_glm5_renamed/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_glm5_renamed/rvv.c:31:19: error: too many arguments to function \u2018__riscv_vfmv_f_s_f32m1_f32\u2019\n   31 |             sum = __riscv_vfmv_f_s_f32m1_f32(\n      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~\nIn file included from /tmp/agentv"
+      },
+      "l2_direct_gbmv_glm5_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx0: 441.602783203125 vs 473.1557922363281 (|d|=3.155e+01)"
+      },
+      "l2_direct_gbmv_qwen3635b_clean": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_qwen3635b_clean/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_qwen3635b_clean/rvv.c:40:31: warning: implicit declaration of function \u2018vmv_v_f_f32m1_m\u2019 [-Wimplicit-function-declaration]\n   40 |             vfloat32m1_t vs = vmv_v_f_f32m1_m(0.0f, 0.0f); // Initialize sum to 0\n      |          "
+      },
+      "l2_direct_gbmv_qwen3635b_combined": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_qwen3635b_combined/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_qwen3635b_combined/rvv.c:61:21: error: \u2018i_start\u2019 undeclared (first use in this function)\n   61 |             int i = i_start + row;\n      |                     ^~~~~~~\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_q"
+      },
+      "l2_direct_gbmv_qwen3635b_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 9,
+        "passed": 8,
+        "spr": 0.8889,
+        "first_fail": "size16 seed1 vlennative: qemu rc=124 \nTIMEOUT after 30s"
+      },
+      "l2_direct_gbmv_qwen3635b_renamed": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_qwen3635b_renamed/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_qwen3635b_renamed/rvv.c:39:30: warning: implicit declaration of function \u2018__riscv_vmul_vv_f32m1\u2019; did you mean \u2018__riscv_vfmul_vv_f32m1\u2019? [-Wimplicit-function-declaration]\n   39 |         vfloat32m1_t vprod = __riscv_vmul_vv_f32m"
+      },
+      "l2_direct_gbmv_qwen3635b_typealias": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_qwen3635b_typealias/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gbmv_qwen3635b_typealias/rvv.c:41:29: error: incompatible types when initializing type \u2018vint32m1_t\u2019 using type \u2018long unsigned int\u2019\n   41 |             vint32m1_t vl = __riscv_vsetvl_e32m1(remaining);\n      |                        "
+      },
+      "l2_direct_gemv_deepseekv4_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_gemv_deepseekv4_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 9,
+        "passed": 8,
+        "spr": 0.8889,
+        "first_fail": "size16 seed1 vlennative: idx0: 7650.2890625 vs 15300.5751953125 (|d|=7.650e+03)"
+      },
+      "l2_direct_gemv_deepseekv4_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx0: 441.602783203125 vs 473.1557922363281 (|d|=3.155e+01)"
+      },
+      "l2_direct_gemv_deepseekv4_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_gemv_deepseekv4_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_gemv_glm5_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_gemv_glm5_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_gemv_glm5_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx0: 441.602783203125 vs 46.56480026245117 (|d|=3.950e+02)"
+      },
+      "l2_direct_gemv_glm5_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx0: 441.602783203125 vs 46.56480026245117 (|d|=3.950e+02)"
+      },
+      "l2_direct_gemv_glm5_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx0: 441.602783203125 vs 46.56480026245117 (|d|=3.950e+02)"
+      },
+      "l2_direct_gemv_qwen3635b_clean": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gemv_qwen3635b_clean/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gemv_qwen3635b_clean/rvv.c:26:18: warning: implicit declaration of function \u2018__riscv_vle_v_f32m1\u2019; did you mean \u2018__riscv_vle32_v_f32m1\u2019? [-Wimplicit-function-declaration]\n   26 |             vb = __riscv_vle_v_f32m1(b + j, vl);\n      |"
+      },
+      "l2_direct_gemv_qwen3635b_combined": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gemv_qwen3635b_combined/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gemv_qwen3635b_combined/rvv.c:19:29: warning: implicit declaration of function \u2018vfmv_v_f32_m_v32m1\u2019 [-Wimplicit-function-declaration]\n   19 |         vfloat32m1_t vsum = vfmv_v_f32_m_v32m1(vfloat32m1_t){0}, vb, va;\n      |          "
+      },
+      "l2_direct_gemv_qwen3635b_deadcode": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gemv_qwen3635b_deadcode/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gemv_qwen3635b_deadcode/rvv.c:19:30: warning: implicit declaration of function \u2018vmv_v_f32_m1\u2019 [-Wimplicit-function-declaration]\n   19 |         vfloat32m1_t vzero = vmv_v_f32_m1(0.0f);\n      |                              ^~~~~~~~~~"
+      },
+      "l2_direct_gemv_qwen3635b_renamed": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gemv_qwen3635b_renamed/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gemv_qwen3635b_renamed/rvv.c:19:28: warning: implicit declaration of function \u2018vmv_v_f32m1\u2019 [-Wimplicit-function-declaration]\n   19 |         vfloat32m1_t sum = vmv_v_f32m1(0.0f);\n      |                            ^~~~~~~~~~~\n/tmp/a"
+      },
+      "l2_direct_gemv_qwen3635b_typealias": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gemv_qwen3635b_typealias/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_gemv_qwen3635b_typealias/rvv.c:17:26: warning: implicit declaration of function \u2018vmv_v_f32_m1\u2019 [-Wimplicit-function-declaration]\n   17 |     vfloat32m1_t vzero = vmv_v_f32_m1(0.0f);\n      |                          ^~~~~~~~~~~~\n/tm"
+      },
+      "l2_direct_ger_deepseekv4_clean": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_ger_deepseekv4_clean/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_ger_deepseekv4_clean/rvv.c:35:53: error: incompatible type for argument 2 of \u2018__riscv_vsse32_v_f32m1\u2019\n   35 |             __riscv_vsse32_v_f32m1(&out[i * n + j], vout, sizeof(float), vl);\n      |                                        "
+      },
+      "l2_direct_ger_deepseekv4_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx2: -1548.314453125 vs 0.0 (|d|=1.548e+03)"
+      },
+      "l2_direct_ger_deepseekv4_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_ger_deepseekv4_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_ger_deepseekv4_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_ger_glm5_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx1: 32.836002349853516 vs 82.31999969482422 (|d|=4.948e+01)"
+      },
+      "l2_direct_ger_glm5_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx1: 32.836002349853516 vs 178.92498779296875 (|d|=1.461e+02)"
+      },
+      "l2_direct_ger_glm5_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx1: 32.836002349853516 vs -1307.2630615234375 (|d|=1.340e+03)"
+      },
+      "l2_direct_ger_glm5_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx1: 32.836002349853516 vs 82.31999969482422 (|d|=4.948e+01)"
+      },
+      "l2_direct_ger_glm5_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx1: 32.836002349853516 vs -612.4714965820312 (|d|=6.453e+02)"
+      },
+      "l2_direct_ger_qwen3635b_clean": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_ger_qwen3635b_clean/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_ger_qwen3635b_clean/rvv.c:19:31: warning: implicit declaration of function \u2018vld1_f32\u2019 [-Wimplicit-function-declaration]\n   19 |             vfloat32m1_t vb = vld1_f32((const float *)(b + j), (size_t)__riscv_vsetvl_e32m1(n - j));\n      |"
+      },
+      "l2_direct_ger_qwen3635b_combined": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_ger_qwen3635b_combined/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_ger_qwen3635b_combined/rvv.c:26:27: warning: implicit declaration of function \u2018vmv_v_f_f32_m1\u2019 [-Wimplicit-function-declaration]\n   26 |         vfloat32m1_t va = vmv_v_f_f32_m1(scaled_a, vl);\n      |                           ^~~~~~"
+      },
+      "l2_direct_ger_qwen3635b_deadcode": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_ger_qwen3635b_deadcode/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_ger_qwen3635b_deadcode/rvv.c:36:29: error: incompatible types when initializing type \u2018vint32m1_t\u2019 using type \u2018long unsigned int\u2019\n   36 |             vint32m1_t vl = __riscv_vsetvl_e32m1(remaining);\n      |                            "
+      },
+      "l2_direct_ger_qwen3635b_renamed": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_ger_qwen3635b_renamed/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_ger_qwen3635b_renamed/rvv.c:19:23: error: incompatible types when initializing type \u2018vfloat32m1_t\u2019 using type \u2018long unsigned int\u2019\n   19 |     vfloat32m1_t vl = __riscv_vsetvl_e32m1(n);\n      |                       ^~~~~~~~~~~~~~~~~~~"
+      },
+      "l2_direct_ger_qwen3635b_typealias": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_ger_qwen3635b_typealias/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_ger_qwen3635b_typealias/rvv.c:19:24: warning: implicit declaration of function \u2018vmv_v_f32_m1\u2019 [-Wimplicit-function-declaration]\n   19 |     vfloat32m1_t two = vmv_v_f32_m1(2.0f);\n      |                        ^~~~~~~~~~~~\n/tmp/agen"
+      },
+      "l2_direct_symv_deepseekv4_clean": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_deepseekv4_clean/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_deepseekv4_clean/rvv.c:26:57: error: too many arguments to function \u2018__riscv_vid_v_u32m1\u2019\n   26 |             vbool32_t mask = __riscv_vmseq_vx_i32m1_b32(__riscv_vid_v_u32m1(j, vl), i, vl); // This is wrong, need per-element comp"
+      },
+      "l2_direct_symv_deepseekv4_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: qemu rc=135 Bus error\n"
+      },
+      "l2_direct_symv_deepseekv4_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 5,
+        "passed": 4,
+        "spr": 0.8,
+        "first_fail": "size7 seed1 vlennative: idx0: 8376.6337890625 vs 10304.3134765625 (|d|=1.928e+03)"
+      },
+      "l2_direct_symv_deepseekv4_renamed": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_deepseekv4_renamed/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_deepseekv4_renamed/rvv.c:36:17: note: use \u2018-flax-vector-conversions\u2019 to permit conversions between vectors with differing element types or numbers of subparts\n   36 |                 vbool32_t mask = __riscv_vmseq_vx_i32m1_b32("
+      },
+      "l2_direct_symv_deepseekv4_typealias": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_deepseekv4_typealias/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_deepseekv4_typealias/rvv.c:32:39: warning: implicit declaration of function \u2018__riscv_vid_v_i32m1\u2019; did you mean \u2018__riscv_vid_v_u32m1\u2019? [-Wimplicit-function-declaration]\n   32 |                 __riscv_vadd_vx_i32m1(__riscv_vi"
+      },
+      "l2_direct_symv_glm5_clean": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_glm5_clean/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_glm5_clean/rvv.c:37:61: error: incompatible type for argument 3 of \u2018__riscv_vfredusum_vs_f32m1_f32m1\u2019\n   37 |         vred = __riscv_vfredusum_vs_f32m1_f32m1(vred, vsum, vred, __riscv_vsetvl_e32m1(n));\n      |                          "
+      },
+      "l2_direct_symv_glm5_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 9,
+        "passed": 8,
+        "spr": 0.8889,
+        "first_fail": "size16 seed1 vlennative: idx0: 10096.2021484375 vs 14114.462890625 (|d|=4.018e+03)"
+      },
+      "l2_direct_symv_glm5_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 9,
+        "passed": 8,
+        "spr": 0.8889,
+        "first_fail": "size16 seed1 vlennative: idx0: 10096.2021484375 vs 14114.46484375 (|d|=4.018e+03)"
+      },
+      "l2_direct_symv_glm5_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 5,
+        "passed": 4,
+        "spr": 0.8,
+        "first_fail": "size7 seed1 vlennative: idx0: 8376.6337890625 vs 332.9742736816406 (|d|=8.044e+03)"
+      },
+      "l2_direct_symv_glm5_typealias": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_glm5_typealias/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_glm5_typealias/rvv.c:20:57: warning: implicit declaration of function \u2018__riscv_vid_v_i32m1\u2019; did you mean \u2018__riscv_vid_v_u32m1\u2019? [-Wimplicit-function-declaration]\n   20 |             vbool32_t mask = __riscv_vmsle_vx_i32m1_b32(__ri"
+      },
+      "l2_direct_symv_qwen3635b_clean": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_qwen3635b_clean/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_qwen3635b_clean/rvv.c:19:29: warning: implicit declaration of function \u2018vmv_v_f_f32m1\u2019 [-Wimplicit-function-declaration]\n   19 |         vfloat32m1_t vout = vmv_v_f_f32m1(0.0f, vl_cur);\n      |                             ^~~~~~~~"
+      },
+      "l2_direct_symv_qwen3635b_combined": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_qwen3635b_combined/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_qwen3635b_combined/rvv.c:55:42: warning: implicit declaration of function \u2018__riscv_vmul_vv_f32m1\u2019; did you mean \u2018__riscv_vfmul_vv_f32m1\u2019? [-Wimplicit-function-declaration]\n   55 |                     vfloat32m1_t vprod = __risc"
+      },
+      "l2_direct_symv_qwen3635b_deadcode": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_qwen3635b_deadcode/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_qwen3635b_deadcode/rvv.c:43:32: warning: implicit declaration of function \u2018vfmv_v_f_f32m1\u2019 [-Wimplicit-function-declaration]\n   43 |         vfloat32m1_t acc_sum = vfmv_v_f_f32m1(0.0f, 1); // Not quite right, need to accumulate"
+      },
+      "l2_direct_symv_qwen3635b_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_symv_qwen3635b_typealias": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_qwen3635b_typealias/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_symv_qwen3635b_typealias/rvv.c:76:27: warning: implicit declaration of function \u2018__riscv_vfredosumsf_vf_f32m1_f32\u2019; did you mean \u2018__riscv_vfredosum_vs_f32m1_f32m1\u2019? [-Wimplicit-function-declaration]\n   76 |                 float s "
+      },
+      "l2_direct_syr_deepseekv4_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_syr_deepseekv4_combined": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_deepseekv4_combined/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_deepseekv4_combined/rvv.c:38:57: error: incompatible type for argument 2 of \u2018__riscv_vfadd_vf_f32m1\u2019\n   38 |             vec_term = __riscv_vfadd_vf_f32m1(vec_term, vec_term, vl); // multiply by 2\n      |                        "
+      },
+      "l2_direct_syr_deepseekv4_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_syr_deepseekv4_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_syr_deepseekv4_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_syr_glm5_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx1: -322.38079833984375 vs 82.31999969482422 (|d|=4.047e+02)"
+      },
+      "l2_direct_syr_glm5_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx1: -322.38079833984375 vs -9724.8525390625 (|d|=9.402e+03)"
+      },
+      "l2_direct_syr_glm5_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_syr_glm5_renamed": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_glm5_renamed/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_glm5_renamed/rvv.c:22:34: warning: implicit declaration of function \u2018__riscv_vle32_v_f32m1_mask\u2019; did you mean \u2018__riscv_vle32_v_f32m1_mu\u2019? [-Wimplicit-function-declaration]\n   22 |             vfloat32m1_t a_vec = __riscv_vle32_v_f32m1"
+      },
+      "l2_direct_syr_glm5_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx1: -322.38079833984375 vs 7059.99853515625 (|d|=7.382e+03)"
+      },
+      "l2_direct_syr_qwen3635b_clean": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_qwen3635b_clean/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_qwen3635b_clean/rvv.c:20:25: warning: implicit declaration of function \u2018vfmv_v_f_f32m1\u2019 [-Wimplicit-function-declaration]\n   20 |     vfloat32m1_t vtwo = vfmv_v_f_f32m1(2.0f);\n      |                         ^~~~~~~~~~~~~~\n/tmp/agen"
+      },
+      "l2_direct_syr_qwen3635b_combined": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_qwen3635b_combined/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_qwen3635b_combined/rvv.c:33:31: warning: implicit declaration of function \u2018vld1_v_f32m1\u2019 [-Wimplicit-function-declaration]\n   33 |             vfloat32m1_t va = vld1_v_f32m1((const float *)&a[j], vl);\n      |                     "
+      },
+      "l2_direct_syr_qwen3635b_deadcode": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_qwen3635b_deadcode/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_qwen3635b_deadcode/rvv.c:45:33: warning: implicit declaration of function \u2018__riscv_vadd_vf_f32m1\u2019; did you mean \u2018__riscv_vfadd_vf_f32m1\u2019? [-Wimplicit-function-declaration]\n   45 |             vfloat32m1_t vout = __riscv_vadd_vf_f"
+      },
+      "l2_direct_syr_qwen3635b_renamed": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_qwen3635b_renamed/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_qwen3635b_renamed/rvv.c:63:31: warning: implicit declaration of function \u2018vlm_v_f32m1\u2019 [-Wimplicit-function-declaration]\n   63 |             vfloat32m1_t vx = vlm_v_f32m1(x + j, vl);\n      |                               ^~~~~~~~~"
+      },
+      "l2_direct_syr_qwen3635b_typealias": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_qwen3635b_typealias/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_syr_qwen3635b_typealias/rvv.c:18:24: warning: implicit declaration of function \u2018vfmv_v_f_f32m1\u2019 [-Wimplicit-function-declaration]\n   18 |     vfloat32m1_t two = vfmv_v_f_f32m1(2.0f, 1);\n      |                        ^~~~~~~~~~~~~~\n"
+      },
+      "l2_direct_trmv_deepseekv4_clean": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_deepseekv4_clean/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_deepseekv4_clean/rvv.c:24:75: error: incompatible type for argument 3 of \u2018__riscv_vfredusum_vs_f32m1_f32m1\u2019\n   24 |             vec_sum = __riscv_vfredusum_vs_f32m1_f32m1(vec_sum, vec_prod, vec_sum, vl);\n      |                  "
+      },
+      "l2_direct_trmv_deepseekv4_combined": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_deepseekv4_combined/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_deepseekv4_combined/rvv.c:37:63: error: incompatible type for argument 3 of \u2018__riscv_vfredusum_vs_f32m1_f32m1\u2019\n   37 |             acc = __riscv_vfredusum_vs_f32m1_f32m1(acc, prod, acc, vl);\n      |                            "
+      },
+      "l2_direct_trmv_deepseekv4_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_trmv_deepseekv4_renamed": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 9,
+        "passed": 8,
+        "spr": 0.8889,
+        "first_fail": "size16 seed1 vlennative: idx9: -12329.625 vs -19852.90234375 (|d|=7.523e+03)"
+      },
+      "l2_direct_trmv_deepseekv4_typealias": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_deepseekv4_typealias/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_deepseekv4_typealias/rvv.c:26:75: error: incompatible type for argument 3 of \u2018__riscv_vfredusum_vs_f32m1_f32m1\u2019\n   26 |             vec_sum = __riscv_vfredusum_vs_f32m1_f32m1(vec_sum, vec_prod, vec_sum, vl);\n      |          "
+      },
+      "l2_direct_trmv_glm5_clean": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx0: 46.56480026245117 vs -86436.453125 (|d|=8.648e+04)"
+      },
+      "l2_direct_trmv_glm5_combined": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 5,
+        "passed": 4,
+        "spr": 0.8,
+        "first_fail": "size7 seed1 vlennative: idx3: -5227.2314453125 vs 959.2871704101562 (|d|=6.187e+03)"
+      },
+      "l2_direct_trmv_glm5_deadcode": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 20,
+        "passed": 20,
+        "spr": 1.0,
+        "first_fail": null
+      },
+      "l2_direct_trmv_glm5_renamed": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_glm5_renamed/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_glm5_renamed/rvv.c:24:50: error: incompatible type for argument 2 of \u2018__riscv_vfmacc_vf_f32m1\u2019\n   24 |             vsum = __riscv_vfmacc_vf_f32m1(vsum, va, vb, vl);\n      |                                                  ^~\n      | "
+      },
+      "l2_direct_trmv_glm5_typealias": {
+        "tier": "float_ulp",
+        "rtol": 0.001,
+        "sizes": [
+          2,
+          7,
+          16,
+          64,
+          128
+        ],
+        "total": 1,
+        "passed": 0,
+        "spr": 0.0,
+        "first_fail": "size2 seed1 vlennative: idx1: -1110.318359375 vs -802.8504028320312 (|d|=3.075e+02)"
+      },
+      "l2_direct_trmv_qwen3635b_clean": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_qwen3635b_clean/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_qwen3635b_clean/rvv.c:17:26: warning: implicit declaration of function \u2018vmv_v_f32_m1\u2019 [-Wimplicit-function-declaration]\n   17 |     vfloat32m1_t vzero = vmv_v_f32_m1(0.0f);\n      |                          ^~~~~~~~~~~~\n/tmp/agentv"
+      },
+      "l2_direct_trmv_qwen3635b_combined": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_qwen3635b_combined/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_qwen3635b_combined/rvv.c:92:22: warning: implicit declaration of function \u2018__riscv_vlseg1ef32_m\u2019 [-Wimplicit-function-declaration]\n   92 |                 va = __riscv_vlseg1ef32_m(vl, a + (i + l_start) * n + k, n);\n      |    "
+      },
+      "l2_direct_trmv_qwen3635b_deadcode": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_qwen3635b_deadcode/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_qwen3635b_deadcode/rvv.c:63:31: warning: implicit declaration of function \u2018vle32_v_f32m1\u2019 [-Wimplicit-function-declaration]\n   63 |             vfloat32m1_t va = vle32_v_f32m1(a + i * n + j, vl);\n      |                        "
+      },
+      "l2_direct_trmv_qwen3635b_renamed": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_qwen3635b_renamed/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_qwen3635b_renamed/rvv.c:83:35: warning: implicit declaration of function \u2018vle32_v_f32m1\u2019 [-Wimplicit-function-declaration]\n   83 |                 vfloat32m1_t va = vle32_v_f32m1(a + offset_a, current_vl);\n      |               "
+      },
+      "l2_direct_trmv_qwen3635b_typealias": {
+        "build_error": "/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_qwen3635b_typealias/rvv.c: In function \u2018agentvec_kernel\u2019:\n/tmp/agentvec_expanded_l2/difftest/kernels/l2_direct_trmv_qwen3635b_typealias/rvv.c:17:26: warning: implicit declaration of function \u2018__riscv_vmv_v_x_f32m1\u2019; did you mean \u2018__riscv_vmv_v_x_u32m1\u2019? [-Wimplicit-function-declaration]\n   17 |     vfloat32m1_t vzero = __riscv_vmv_v_x_f32m1"
+      }
+    }
+  },
+  "summary": {
+    "by_arm": {
+      "direct": {
+        "attempted_generated_kernels": 90,
+        "generated_source_files": 90,
+        "generation_failures": 0,
+        "build_failures": 44,
+        "wrong_or_partial": 28,
+        "fully_passing_kernels": 18,
+        "planned_dynamic_checks": 1800,
+        "executed_dynamic_checks": 440,
+        "passed_dynamic_checks": 412,
+        "planned_check_spr": 0.2289
+      },
+      "agentvec": {
+        "attempted_generated_kernels": 90,
+        "generated_source_files": 89,
+        "generation_failures": 1,
+        "build_failures": 0,
+        "wrong_or_partial": 0,
+        "fully_passing_kernels": 89,
+        "planned_dynamic_checks": 1800,
+        "executed_dynamic_checks": 1780,
+        "passed_dynamic_checks": 1780,
+        "planned_check_spr": 0.9889
+      }
+    },
+    "by_operator": {
+      "gbmv": {
+        "direct": {
+          "generated_source_files": 15,
+          "executed_dynamic_checks": 53,
+          "passed_dynamic_checks": 48,
+          "executed_check_spr": 0.9057
+        },
+        "agentvec": {
+          "generated_source_files": 15,
+          "executed_dynamic_checks": 300,
+          "passed_dynamic_checks": 300,
+          "executed_check_spr": 1.0
+        }
+      },
+      "gemv": {
+        "direct": {
+          "generated_source_files": 15,
+          "executed_dynamic_checks": 113,
+          "passed_dynamic_checks": 108,
+          "executed_check_spr": 0.9558
+        },
+        "agentvec": {
+          "generated_source_files": 15,
+          "executed_dynamic_checks": 300,
+          "passed_dynamic_checks": 300,
+          "executed_check_spr": 1.0
+        }
+      },
+      "ger": {
+        "direct": {
+          "generated_source_files": 15,
+          "executed_dynamic_checks": 66,
+          "passed_dynamic_checks": 60,
+          "executed_check_spr": 0.9091
+        },
+        "agentvec": {
+          "generated_source_files": 15,
+          "executed_dynamic_checks": 300,
+          "passed_dynamic_checks": 300,
+          "executed_check_spr": 1.0
+        }
+      },
+      "symv": {
+        "direct": {
+          "generated_source_files": 15,
+          "executed_dynamic_checks": 49,
+          "passed_dynamic_checks": 44,
+          "executed_check_spr": 0.898
+        },
+        "agentvec": {
+          "generated_source_files": 15,
+          "executed_dynamic_checks": 300,
+          "passed_dynamic_checks": 300,
+          "executed_check_spr": 1.0
+        }
+      },
+      "syr": {
+        "direct": {
+          "generated_source_files": 15,
+          "executed_dynamic_checks": 103,
+          "passed_dynamic_checks": 100,
+          "executed_check_spr": 0.9709
+        },
+        "agentvec": {
+          "generated_source_files": 14,
+          "executed_dynamic_checks": 280,
+          "passed_dynamic_checks": 280,
+          "executed_check_spr": 1.0
+        }
+      },
+      "trmv": {
+        "direct": {
+          "generated_source_files": 15,
+          "executed_dynamic_checks": 56,
+          "passed_dynamic_checks": 52,
+          "executed_check_spr": 0.9286
+        },
+        "agentvec": {
+          "generated_source_files": 15,
+          "executed_dynamic_checks": 300,
+          "passed_dynamic_checks": 300,
+          "executed_check_spr": 1.0
+        }
+      }
+    }
+  }
+}

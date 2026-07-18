@@ -1,104 +1,80 @@
-# AgentVec — Reproducibility Artifact
+# AgentVec
 
-Anonymous artifact for the paper **"AgentVec: Intent-Driven Source-to-Source Migration
-for RISC-V VLA via Agentic-Symbolic Alignment."** It contains the migration pipeline,
-the AIR schema and deterministic lowering, the symbolic Guard, all agent prompts, the
-differential-testing harness, the cached model responses, the measured result data, and
-the figure-regeneration scripts.
+AgentVec is a research artifact for validated migration of numerical kernels to
+RISC-V Vector (RVV). It separates LLM-based intent inference from deterministic
+validation, lowering, and differential testing. The artifact accompanies the
+paper *AgentVec: Validated Intent-Driven Migration for RISC-V Vector via
+Agentic-Symbolic Alignment*.
 
-> This repository is anonymized for double-blind review. It bundles **no credentials**;
-> hosts are supplied via environment variables (see below).
+## Repository layout
 
-## Layout
-
-```
-experiments/
-  agentvec/            # the pipeline
-    air.py, air_from_formula.py    # AIR four-tuple schema + formula -> AIR
-    guard.py                       # symbolic Guard (dependence / alias / type checks)
-    lowering.py, blas_lower.py     # deterministic AIR -> RVV (VLA) lowering
-    obfuscate.py                   # IM / DCI / type obfuscation (anti-memorization)
-    llm_backend.py                 # Intent-Proposer / pure-LLM prompts + backend (reads SF_KEY)
-    pipeline.py                    # end-to-end driver
-    run_*.py, exp_*.py             # the individual experiments
-    run_baseline_mini.py           # baseline head-to-head (GCC autovec / VecTrans / pure-LLM / AgentVec)
-    _llm_cache/                    # cached model responses -> reproduce WITHOUT any API key
-    _gen/                          # generated kernels
-    _*.json                        # measured results (L1 stats, GEMM, cost, baseline mini-study, ...)
-  lab/
-    ssh_helper.py                  # SSH/SFTP helper (env-var hosts, no bundled credentials)
-    difftest/                      # differential-testing harness (compile + QEMU across VLEN)
-      runner.py, harness.h, kernels/
+```text
+src/agentvec/          AIR construction, validation, lowering, and LLM backends
+scripts/               Experiment drivers used for the paper studies
+tests/rvv_difftest/    Differential-test harness and RVV kernel packages
+results/rvv/           Frozen JSON summaries used to prepare paper tables/figures
+docs/                  Reproduction and environment notes
 ```
 
-## Requirements
+The repository contains no API keys, passwords, or host-specific configuration.
+Cached model responses and generated build products are intentionally excluded.
 
-- Python 3.9+ with `paramiko` and `matplotlib`.
-- A build host reachable over SSH with a **RISC-V cross GCC (14.3)** and **qemu-riscv64**
-  (functional + cross-VLEN testing). Optionally a real RVV board for wall-clock numbers.
+## Quick start
 
-## Configure your hosts (no credentials are bundled)
+Python 3.10+ is required. The differential tests additionally require an RVV
+cross compiler and QEMU, or an RVV-capable host for native execution.
 
 ```bash
-export AGENTVEC_SERVER_HOST=your.host        AGENTVEC_SERVER_USER=you
-export AGENTVEC_SERVER_KEY=~/.ssh/id_ed25519               # or AGENTVEC_SERVER_PASSWORD=...
-export AGENTVEC_SERVER_GCC=/path/to/riscv64-...-gcc
+git clone https://github.com/niuniu-itech/AgentVec.git
+cd AgentVec
+python -m venv .venv
+source .venv/bin/activate              # Windows PowerShell: .venv\\Scripts\\Activate.ps1
+pip install -r requirements.txt
+```
+
+Check the Python sources:
+
+```bash
+python -m compileall -q src/agentvec tests/rvv_difftest
+```
+
+Run a small RVV differential test under QEMU:
+
+```bash
+python tests/rvv_difftest/runner.py \
+  --root tests/rvv_difftest \
+  --gcc riscv64-linux-gnu-gcc \
+  --qemu qemu-riscv64 \
+  --seeds 5 --only saxpy --neg-control
+```
+
+The full suite uses the same command without `--only saxpy`. It is substantially
+larger and should be run on a machine with a suitable RVV toolchain.
+
+## AgentVec pipeline
+
+The default pipeline uses the checked canonical intents and requires a build host
+or board configured through environment variables:
+
+```bash
+export AGENTVEC_SERVER_HOST=<host>
+export AGENTVEC_SERVER_USER=<user>
+export AGENTVEC_SERVER_KEY=~/.ssh/id_ed25519
+export AGENTVEC_SERVER_GCC=/path/to/riscv64-linux-gnu-gcc
 export AGENTVEC_SERVER_QEMU=/path/to/qemu-riscv64
-# optional, for on-board performance:
-export AGENTVEC_BOARD_HOST=your.board        AGENTVEC_BOARD_USER=you   AGENTVEC_BOARD_KEY=...
+export AGENTVEC_REMOTE_ROOT=/tmp/agentvec/difftest
+
+PYTHONPATH=src/agentvec python src/agentvec/pipeline.py \
+  --backend manual --ops saxpy,scal,copy,dot,asum,nrm2
 ```
 
-## Reproduce
+For fresh intent proposals through the SiliconFlow-compatible backend, set
+`SF_KEY` in the environment and choose `--backend siliconflow --model GLM-5.2`.
+Keys are read only at runtime and are not written to the repository.
 
-**Without any API key (cache replay).** The Intent Proposer is a pluggable backend whose
-recovered intents are cached on disk; the Guard, lowering, build, and test stages are
-deterministic. With `experiments/agentvec/_llm_cache/` present, the reduction studies
-reproduce identical kernels and pass rates without contacting any model.
-
-**Fresh model calls.** Provide an OpenAI-compatible key for the open models:
-```bash
-export SF_KEY=...        # never written to disk; read from the environment only
-```
-
-**Baseline head-to-head** (compile / SPR across VLEN / vector-instruction count):
-```bash
-cd experiments/agentvec && python -u run_baseline_mini.py
-```
-
-## Paper → code → data
-
-Every quantitative result maps to a script and, where applicable, a cached data file.
-Scripts marked **†** use a real RVV board for wall-clock numbers; without that hardware the
-QEMU harness still reproduces every *correctness* (SPR / cross-VLEN) result, and the listed
-`_*.json` carry the measured performance values.
-
-| Result in the paper | Script(s) | Data file |
-|---|---|---|
-| L1 Migration Speedup + per-kernel dispersion | `run_l1_stats.py` † | `_l1_stats.json` |
-| Real-operator validation (MS / SPR) | `run_l1.py`, `run_l1_board.py` † | `_l1board.json` |
-| Cross-VLEN scalability | `run_l1.py` + `lab/difftest/runner.py` | (harness) |
-| Multi-model pure-LLM vs AgentVec (+ robustness) | `run_study_reduce.py`, `run_pure_llm.py`, `run_agentvec_arm.py` | `_llm_cache/` |
-| Guard ablation | `run_study_reduce.py` (w/o-Guard arm) | `_llm_cache/` |
-| Obfuscation (anti-memorization) | `obfuscate.py`, `run_study_reduce.py`, `run_obf_gemm.py` | `_gemm_obf.json` |
-| Multi-view (assembly / trace) | `exp_assembly_view.py`, `exp_trace_view.py` | (harness) |
-| Composite (softmax / layer-norm) | `exp_composite.py`, `exp_layernorm.py` | (harness) |
-| GEMM frontier comparison | `run_gemm_mm.py`, `run_gemm_stats.py` † | `_gemm_stats.json`, `_gemm_mm.json` |
-| Closed-loop refinement | `run_gemv_refine.py` †, `gemm_autotune.py` †, `run_l1_lmul.py` † | `_gemv_refine.json`, `_autotune.json`, `_l1_lmul.json` |
-| Generation cost (tokens) | `measure_cost.py` | `_cost.json` |
-| Baseline head-to-head (intro teaser + Related Work) | `run_baseline_mini.py` | `_baseline_mini.json` |
-
-The framework itself: AIR schema (`air.py`, `air_from_formula.py`); symbolic Guard (`guard.py`);
-deterministic lowering (`lowering.py`, `blas_lower.py`); prompts + backend (`llm_backend.py`);
-end-to-end driver (`pipeline.py`).
-
-## Notes
-
-- `_llm_cache/` holds model *outputs* (RVV code / recovered intents), not credentials.
-- A reviewer with no RVV board can still reproduce all correctness (SPR / cross-VLEN) numbers
-  under QEMU; the **†** scripts additionally need the board for wall-clock performance.
-- Raw per-run board logs are large and omitted here; the summarized `_*.json` files and the
-  differential-testing harness reproduce every reported number.
+See [docs/reproduction.md](docs/reproduction.md) for the complete execution
+path and the role of each directory.
 
 ## License
 
-MIT — see `LICENSE`.
+MIT. See [LICENSE](LICENSE).

@@ -1,0 +1,1 @@
+{"name": "ex_agentvec_swap_qwen3635b_combined", "dtype": "f32", "reduce": false, "tier": "float_ulp", "rtol": 1e-06, "sizes": [1, 7, 64, 1000, 4096]}
