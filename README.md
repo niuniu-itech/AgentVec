@@ -1,4 +1,10 @@
-# AgentVec
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/logo.svg">
+    <img src="assets/logo.png" alt="AgentVec — AVE monogram with climbing robot" width="640">
+  </picture>
+</p>
 
 AgentVec is a research artifact for validated migration of numerical kernels to
 RISC-V Vector (RVV). It separates LLM-based intent inference from deterministic

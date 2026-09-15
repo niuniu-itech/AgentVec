@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="448" viewBox="0 0 512 448" role="img" aria-labelledby="title desc">
+<title id="title">AgentVec AVE monogram</title>
+<desc id="desc">An AVE monogram with a friendly round-headed robot climbing the V. Three horizontal parallel vector arrows form the E, increasing in length downward, with all tips aligned on one invisible vertical line.</desc>
+<g transform="translate(-20 71) scale(.70)">
+    <path fill="#138F9B" d="M64 358 L184 90 L244 90 L360 358 L289 358 L214 181 L137 358 Z"/>
+    <path fill="#138F9B" d="M162 262 H248 L270 310 H140 Z"/>
+    <path fill="#F18A59" fill-rule="evenodd" d="M243 90 H308 L373 249 L436 90 H501 L399 358 H346 Z
+    M448 112 H454 L394 260 H388 Z M471 112 H477 L417 260 H411 Z"/>
+    <g fill="#138F9B" id="e-strokes">
+      <path id="e-stem" d="M414 358 L516 90 H550 L448 358 Z"/>
+      <polygon id="e-top" points="526.000,97.000 648.000,97.000 648.000,79.000 688.000,110.000 648.000,141.000 648.000,123.000 526.000,123.000"/>
+      <polygon id="e-middle" points="486.000,207.000 648.000,207.000 648.000,189.000 688.000,220.000 648.000,251.000 648.000,233.000 486.000,233.000"/>
+      <polygon id="e-bottom" points="445.000,317.000 648.000,317.000 648.000,299.000 688.000,330.000 648.000,361.000 648.000,343.000 445.000,343.000"/>
+    </g>
+    <g id="climbing-agent" stroke-linecap="round" stroke-linejoin="round">
+      <g fill="none" stroke="#138F9B" stroke-width="15">
+        <path d="M389 90 Q418 67 437 91"/>
+        <path d="M351 100 Q365 129 416 133"/>
+        <path d="M378 126 Q363 147 396 164"/>
+        <path d="M357 124 Q334 145 351 158"/>
+      </g>
+      <g fill="#EEF3F7" stroke="#138F9B" stroke-width="5">
+        <rect x="348" y="77" width="44" height="51" rx="18" transform="rotate(12 370 102)"/>
+        <ellipse cx="437" cy="92" rx="12" ry="10" transform="rotate(25 437 92)"/>
+        <ellipse cx="416" cy="133" rx="12" ry="10" transform="rotate(-12 416 133)"/>
+        <ellipse cx="396" cy="164" rx="13" ry="9" transform="rotate(25 396 164)"/>
+        <ellipse cx="351" cy="158" rx="12" ry="9" transform="rotate(25 351 158)"/>
+      </g>
+      <circle cx="371" cy="101" r="8" fill="#F18A59"/>
+      <g transform="rotate(9 368 42)">
+        <path d="M368 9 V-5" stroke="#138F9B" stroke-width="5"/>
+        <circle cx="368" cy="-9" r="7" fill="#F18A59"/>
+        <rect x="321" y="32" width="11" height="22" rx="5" fill="#F18A59"/>
+        <rect x="404" y="32" width="11" height="22" rx="5" fill="#F18A59"/>
+        <rect x="329" y="10" width="78" height="63" rx="24" fill="#EEF3F7" stroke="#138F9B" stroke-width="5"/>
+        <rect x="339" y="24" width="58" height="35" rx="14" fill="#263447"/>
+        <ellipse cx="354" cy="39" rx="5" ry="7" fill="#EEF3F7"/>
+        <ellipse cx="382" cy="39" rx="5" ry="7" fill="#EEF3F7"/>
+        <path d="M364 49 Q368 54 373 49" fill="none" stroke="#EEF3F7" stroke-width="3"/>
+      </g>
+    </g>
+    </g>
+</svg>
