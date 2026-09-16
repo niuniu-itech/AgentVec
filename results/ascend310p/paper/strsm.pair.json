@@ -1,0 +1,6 @@
+{
+  "op": "strsm",
+  "verdict": "VETO",
+  "proof": "VETO: triangular solve carries a true dependence X_i,: <- X_{<i},: (distance 1); not data-parallel",
+  "note": "no schedule space; Guard vetoed at V-AIR -> scalar fallback"
+}

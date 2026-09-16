@@ -1,0 +1,59 @@
+{
+  "status": "DIFF_FAILED",
+  "example": "softmax",
+  "backend": "manual",
+  "target": "rvv",
+  "graph_sha256": "65b0326707918762c258b84b3891e7d63143162ddf075822ccc3424ff7b37f67",
+  "topological_order": [
+    "y"
+  ],
+  "fused_edges": [],
+  "scalar_operations": [],
+  "schedule": {
+    "fuse_maps": false,
+    "lmul": 1
+  },
+  "source_sha256": {
+    "candidate.c": "03afd390ae85a9ad5809e295eff6802d124fad31235936e6360117d5ebe17b92",
+    "harness.c": "980186ed0b457e266be57725f38a587c3d47caf66ad41554abf6b65e061828af",
+    "reference.c": "d1461542403df12702bf62249fe12c15df9a908b05979d1c5de73e6bae89075b"
+  },
+  "validation": {
+    "status": "DIFF_FAILED",
+    "verified": false,
+    "source_sha256": {
+      "candidate.c": "03afd390ae85a9ad5809e295eff6802d124fad31235936e6360117d5ebe17b92",
+      "reference.c": "d1461542403df12702bf62249fe12c15df9a908b05979d1c5de73e6bae89075b",
+      "harness.c": "980186ed0b457e266be57725f38a587c3d47caf66ad41554abf6b65e061828af"
+    },
+    "compiler_command": [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-ffp-contract=off",
+      "-fno-fast-math",
+      "-fno-tree-vectorize",
+      "-march=rv64gcv",
+      "-mabi=lp64d",
+      "candidate.c",
+      "reference.c",
+      "harness.c",
+      "-lm",
+      "-o",
+      "validate_dag"
+    ],
+    "machine": "riscv64",
+    "build_exit": 0,
+    "run_exit": 1,
+    "runner": [
+      "<native-workspace>/validate_dag"
+    ],
+    "statistics": {
+      "cases": 264,
+      "planned_cases": 264,
+      "assertions": 76308,
+      "failures": 76308,
+      "max_abs": 1024.80852
+    }
+  }
+}

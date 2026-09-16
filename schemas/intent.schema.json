@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentVec core intent proposal",
+  "description": "Expression, numerical and backend checks also run in Python before lowering.",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": ["pattern", "dtype", "formula"],
+      "additionalProperties": false,
+      "properties": {
+        "pattern": {"const": "map"},
+        "dtype": {"enum": ["f32", "i32"]},
+        "formula": {"type": "string", "minLength": 1, "maxLength": 4096}
+      }
+    },
+    {
+      "type": "object",
+      "required": ["pattern", "dtype", "reduce_op", "elem"],
+      "additionalProperties": false,
+      "properties": {
+        "pattern": {"const": "reduce"},
+        "dtype": {"enum": ["f32", "i32"]},
+        "reduce_op": {"enum": ["sum", "max", "min"]},
+        "elem": {"type": "string", "minLength": 1, "maxLength": 4096},
+        "postproc": {"enum": [null, "none", "sqrt"]}
+      }
+    }
+  ]
+}

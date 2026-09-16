@@ -1,15 +1,10 @@
-"""L1 BLAS lowering: emit expert-signature RVV kernels from a recovered AIR.
+"""Dedicated f64 BLAS templates with the corresponding OpenBLAS signatures.
 
-Real OpenBLAS L1 kernels are f64, in-place / reduction, strided (inc_x/inc_y),
-BLASLONG, with per-op signatures. Each emitter produces a function with the SAME
-prototype/name as the operator's `<op>_k_rvv`, so it slots directly into the
-migration wiring and is validated by the unmodified benchmark harness.
-
-The (pattern, elem_op) for each kernel is the VERIFIED AIR recovered by the Intent
-Proposer from `<op>_k.c`; lowering is deterministic given that AIR.
-LMUL=8 (m8), matching the expert kernels.
+These emitters are separate from the generic AIR validator. Study adapters
+supply the operation and must validate its contract and generated kernel.
 """
 from dataclasses import dataclass
+import re
 
 HEADER = ('#include <stdio.h>\n#include <stdlib.h>\n#include <stdint.h>\n'
           '#include <math.h>\n#include <sys/time.h>\n#include <riscv_vector.h>\n'
@@ -114,14 +109,14 @@ double {name}(BLASLONG n, double *x, BLASLONG inc_x, double *y, BLASLONG inc_y) 
         for (size_t vl; n > 0; n -= vl, x += vl, y += vl) {{
             vl = {S['setvl']}(n);
             vx = {S['vle']}(x, vl); vy = {S['vle']}(y, vl);
-            acc = {S['fmacc_vv']}(acc, vx, vy, vl);
+            acc = {S['fmacc_vv']}_tu(acc, vx, vy, vl);
         }}
     }} else {{
         BLASLONG sx = inc_x*(BLASLONG)sizeof(double), sy = inc_y*(BLASLONG)sizeof(double);
         for (size_t vl; n > 0; n -= vl, x += vl*inc_x, y += vl*inc_y) {{
             vl = {S['setvl']}(n);
             vx = {S['vlse']}(x, sx, vl); vy = {S['vlse']}(y, sy, vl);
-            acc = {S['fmacc_vv']}(acc, vx, vy, vl);
+            acc = {S['fmacc_vv']}_tu(acc, vx, vy, vl);
         }}
     }}
     double res;
@@ -142,13 +137,13 @@ double {name}(BLASLONG n, double *x, BLASLONG inc_x) {{
     if (inc_x == 1) {{
         for (size_t vl; n > 0; n -= vl, x += vl) {{
             vl = {S['setvl']}(n); vx = {S['vle']}(x, vl);
-            vx = {S['fabs']}(vx, vl); acc = {S['fadd_vv']}(acc, vx, vl);
+            vx = {S['fabs']}(vx, vl); acc = {S['fadd_vv']}_tu(acc, acc, vx, vl);
         }}
     }} else {{
         BLASLONG sx = inc_x*(BLASLONG)sizeof(double);
         for (size_t vl; n > 0; n -= vl, x += vl*inc_x) {{
             vl = {S['setvl']}(n); vx = {S['vlse']}(x, sx, vl);
-            vx = {S['fabs']}(vx, vl); acc = {S['fadd_vv']}(acc, vx, vl);
+            vx = {S['fabs']}(vx, vl); acc = {S['fadd_vv']}_tu(acc, acc, vx, vl);
         }}
     }}
     double res;
@@ -170,13 +165,13 @@ double {name}(BLASLONG n, double *x, BLASLONG inc_x) {{
     if (inc_x == 1) {{
         for (size_t vl; n > 0; n -= vl, x += vl) {{
             vl = {S['setvl']}(n); vx = {S['vle']}(x, vl);
-            acc = {S['fmacc_vv']}(acc, vx, vx, vl);
+            acc = {S['fmacc_vv']}_tu(acc, vx, vx, vl);
         }}
     }} else {{
         BLASLONG sx = inc_x*(BLASLONG)sizeof(double);
         for (size_t vl; n > 0; n -= vl, x += vl*inc_x) {{
             vl = {S['setvl']}(n); vx = {S['vlse']}(x, sx, vl);
-            acc = {S['fmacc_vv']}(acc, vx, vx, vl);
+            acc = {S['fmacc_vv']}_tu(acc, vx, vx, vl);
         }}
     }}
     double res; {S['vt1']} r = {S['splat1']}(0.0, 1);
@@ -249,12 +244,12 @@ double {name}(BLASLONG n, double *x, BLASLONG inc_x) {{
     {s['vt']} acc = {s['splat']}({init}, vlmax), vx;
     if (inc_x == 1) {{
         for (size_t vl; n > 0; n -= vl, x += vl) {{
-            vl = {s['setvl']}(n); vx = {s['vle']}(x, vl); acc = {vv}(acc, vx, vl);
+            vl = {s['setvl']}(n); vx = {s['vle']}(x, vl); acc = {vv}_tu(acc, acc, vx, vl);
         }}
     }} else {{
         BLASLONG sx = inc_x*(BLASLONG)sizeof(double);
         for (size_t vl; n > 0; n -= vl, x += vl*inc_x) {{
-            vl = {s['setvl']}(n); vx = {s['vlse']}(x, sx, vl); acc = {vv}(acc, vx, vl);
+            vl = {s['setvl']}(n); vx = {s['vlse']}(x, sx, vl); acc = {vv}_tu(acc, acc, vx, vl);
         }}
     }}
     double res; {s['vt1']} r = {s['splat1']}({init}, 1);
@@ -264,8 +259,8 @@ double {name}(BLASLONG n, double *x, BLASLONG inc_x) {{
 """
 
 
-def emit_max(name): return _emit_minmax(name, S['fmax_vv'], S['redmax'], "-1.7976931348623157e308")
-def emit_min(name): return _emit_minmax(name, S['fmin_vv'], S['redmin'], "1.7976931348623157e308")
+def emit_max(name): return _emit_minmax(name, S['fmax_vv'], S['redmax'], "-INFINITY")
+def emit_min(name): return _emit_minmax(name, S['fmin_vv'], S['redmin'], "INFINITY")
 
 
 EMITTERS = {"axpy": emit_axpy, "scal": emit_scal, "copy": emit_copy, "dot": emit_dot,
@@ -274,6 +269,10 @@ EMITTERS = {"axpy": emit_axpy, "scal": emit_scal, "copy": emit_copy, "dot": emit
 
 
 def emit_l1(spec: L1Spec) -> str:
+    if spec.dtype != "f64" or spec.kind not in EMITTERS:
+        raise ValueError("BLAS emitter requires a registered f64 operation")
+    if not re.fullmatch(r"[A-Za-z_]\w*", spec.name):
+        raise ValueError("kernel name must be a C identifier")
     return EMITTERS[spec.kind](spec.name)
 
 

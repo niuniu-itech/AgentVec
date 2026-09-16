@@ -1,0 +1,205 @@
+{
+  "op": "scopy",
+  "status": "VERIFIED",
+  "reason": "registered intent, f32 rules, layout and dependency checks passed",
+  "intent_source": "manual",
+  "schedule": {
+    "block_dim": 8,
+    "tile_len": 1024,
+    "buffer_num": 2,
+    "tile_m": 64,
+    "tile_n": 64,
+    "tile_k": 64
+  },
+  "source_sha256": {
+    "scopy.cpp": "2079178dd84be0669dc6e545ab2a5823aa5147ffec674a994b2838a4e0ea743f",
+    "main.cpp": "92b303e5ff6bc7240e57a51b1b5690e8468b9e90a08d08701b035af103c41642",
+    "CMakeLists.txt": "66b9804bf4bdc1f63f49f48280870618f22fa079378f85f0e5852848d84c991b",
+    "project.json": "fee8c7d17a3a637624f1cd53b01d00575c161c36ff8e099d8fe29bbfbfb3e6ae"
+  },
+  "model": null,
+  "validation": {
+    "status": "VERIFIED",
+    "verified": true,
+    "source_sha256": {
+      "scopy.cpp": "2079178dd84be0669dc6e545ab2a5823aa5147ffec674a994b2838a4e0ea743f",
+      "main.cpp": "92b303e5ff6bc7240e57a51b1b5690e8468b9e90a08d08701b035af103c41642",
+      "CMakeLists.txt": "66b9804bf4bdc1f63f49f48280870618f22fa079378f85f0e5852848d84c991b",
+      "project.json": "fee8c7d17a3a637624f1cd53b01d00575c161c36ff8e099d8fe29bbfbfb3e6ae"
+    },
+    "machine": "aarch64",
+    "timing_boundary": "host_batch_submit_sync",
+    "reduction_finalization": "CPU partial fold outside timed kernel batch",
+    "samples": [
+      {
+        "sizes": [
+          8192
+        ],
+        "round": 0,
+        "exit_code": 0,
+        "log": "case000.log",
+        "passed": true,
+        "metrics": {
+          "op": "scopy",
+          "pattern": "map",
+          "n": "8192",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "10.404",
+          "GBps": "6.30"
+        }
+      },
+      {
+        "sizes": [
+          8192
+        ],
+        "round": 1,
+        "exit_code": 0,
+        "log": "case001.log",
+        "passed": true,
+        "metrics": {
+          "op": "scopy",
+          "pattern": "map",
+          "n": "8192",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "10.345",
+          "GBps": "6.34"
+        }
+      },
+      {
+        "sizes": [
+          8192
+        ],
+        "round": 2,
+        "exit_code": 0,
+        "log": "case002.log",
+        "passed": true,
+        "metrics": {
+          "op": "scopy",
+          "pattern": "map",
+          "n": "8192",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "10.488",
+          "GBps": "6.25"
+        }
+      },
+      {
+        "sizes": [
+          270336
+        ],
+        "round": 0,
+        "exit_code": 0,
+        "log": "case003.log",
+        "passed": true,
+        "metrics": {
+          "op": "scopy",
+          "pattern": "map",
+          "n": "270336",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "20.384",
+          "GBps": "106.10"
+        }
+      },
+      {
+        "sizes": [
+          270336
+        ],
+        "round": 1,
+        "exit_code": 0,
+        "log": "case004.log",
+        "passed": true,
+        "metrics": {
+          "op": "scopy",
+          "pattern": "map",
+          "n": "270336",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "19.987",
+          "GBps": "108.20"
+        }
+      },
+      {
+        "sizes": [
+          270336
+        ],
+        "round": 2,
+        "exit_code": 0,
+        "log": "case005.log",
+        "passed": true,
+        "metrics": {
+          "op": "scopy",
+          "pattern": "map",
+          "n": "270336",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "19.451",
+          "GBps": "111.18"
+        }
+      },
+      {
+        "sizes": [
+          16777216
+        ],
+        "round": 0,
+        "exit_code": 0,
+        "log": "case006.log",
+        "passed": true,
+        "metrics": {
+          "op": "scopy",
+          "pattern": "map",
+          "n": "16777216",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "844.262",
+          "GBps": "158.98"
+        }
+      },
+      {
+        "sizes": [
+          16777216
+        ],
+        "round": 1,
+        "exit_code": 0,
+        "log": "case007.log",
+        "passed": true,
+        "metrics": {
+          "op": "scopy",
+          "pattern": "map",
+          "n": "16777216",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "845.536",
+          "GBps": "158.74"
+        }
+      },
+      {
+        "sizes": [
+          16777216
+        ],
+        "round": 2,
+        "exit_code": 0,
+        "log": "case008.log",
+        "passed": true,
+        "metrics": {
+          "op": "scopy",
+          "pattern": "map",
+          "n": "16777216",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "845.111",
+          "GBps": "158.82"
+        }
+      }
+    ],
+    "planned": 9,
+    "build_exit": 0,
+    "medians_us": {
+      "8192": 10.404,
+      "270336": 19.987,
+      "16777216": 845.111
+    }
+  }
+}

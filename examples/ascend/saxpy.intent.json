@@ -1,0 +1,30 @@
+{
+  "s_algo": {
+    "pattern": "map",
+    "elem_op": {
+      "op": "add",
+      "args": [
+        {
+          "op": "mulc",
+          "args": [
+            {
+              "op": "load",
+              "src": "x"
+            }
+          ]
+        },
+        {
+          "op": "load",
+          "src": "y"
+        }
+      ]
+    },
+    "reduce_op": null,
+    "reduce_pre": null,
+    "reduce_post": null,
+    "trans_a": false,
+    "trans_b": false,
+    "has_alpha": true,
+    "has_beta": false
+  }
+}

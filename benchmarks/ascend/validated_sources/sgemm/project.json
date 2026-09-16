@@ -1,0 +1,32 @@
+{
+  "op": "sgemm",
+  "profile": "paper",
+  "cases": [
+    [
+      64,
+      64,
+      64
+    ],
+    [
+      128,
+      128,
+      192
+    ],
+    [
+      512,
+      512,
+      512
+    ]
+  ],
+  "rounds": 3,
+  "iterations": 30,
+  "schedule": {
+    "block_dim": 8,
+    "tile_len": 1024,
+    "buffer_num": 2,
+    "tile_m": 64,
+    "tile_n": 64,
+    "tile_k": 64
+  },
+  "status": "CHECKED"
+}

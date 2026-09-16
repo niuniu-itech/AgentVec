@@ -1,0 +1,1 @@
+RESULT op=saxpy pattern=map n=8192 maxrel=0.000e+00 pass=1 us=10.586 GBps=9.29

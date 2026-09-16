@@ -1,0 +1,16 @@
+{
+  "inputs": {
+    "x": "n",
+    "gamma": "n"
+  },
+  "outputs": {
+    "y": "n"
+  },
+  "dtype": "f32",
+  "min_n": 1,
+  "max_n": 16777216,
+  "alias": "disjoint",
+  "domain": "finite",
+  "rtol": 0.0002,
+  "atol": 2e-05
+}

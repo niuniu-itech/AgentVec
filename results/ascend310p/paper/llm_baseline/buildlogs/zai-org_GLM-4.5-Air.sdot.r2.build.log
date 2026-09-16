@@ -1,0 +1,85 @@
+build/auto_gen/ascendc_kernels_npu/auto_gen_sdot.cpp:7:
+$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp:9:23: error: call to 'min' is ambiguous
+    int32_t end_idx = min(start_idx + block_size, total);
+                      ^~~
+/usr/local/Ascend/ascend-toolkit/8.0.RC3/aarch64-linux/ccec_compiler/lib/clang/15.0.5/include/__clang_cce_aicore_functions.h:853:27: note: candidate function
+CCE_INTRINSIC[aicore] int min(int in1, int in2) {
+                          ^
+/usr/local/Ascend/ascend-toolkit/8.0.RC3/aarch64-linux/ccec_compiler/lib/clang/15.0.5/include/__clang_cce_aicore_functions.h:874:36: note: candidate function
+CCE_INTRINSIC[aicore] unsigned int min(unsigned int in1, unsigned int in2) {
+                                   ^
+In file included from $ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sdot.cpp:7:
+$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp:16:13: error: no member named 'Alloc' in 'AscendC::LocalTensor<float>'
+    x_local.Alloc(256);
+    ~~~~~~~ ^
+$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp:17:13: error: no member named 'Alloc' in 'AscendC::LocalTensor<float>'
+    y_local.Alloc(256);
+    ~~~~~~~ ^
+$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp:18:19: error: no member named 'Alloc' in 'AscendC::LocalTensor<float>'
+    partial_local.Alloc(8);
+    ~~~~~~~~~~~~~ ^
+$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp:21:23: error: no member named 'VEC' in 'AscendC::TPosition'
+    TQue<QuePosition::VEC, float> x_que(2);
+         ~~~~~~~~~~~~~^
+$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp:22:23: error: no member named 'VEC' in 'AscendC::TPosition'
+    TQue<QuePosition::VEC, float> y_que(2);
+         ~~~~~~~~~~~~~^
+$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp:23:10: error: use of undeclared identifier 'BufPosition'; did you mean 'QuePosition'?
+    TBuf<BufPosition::VEC, float> x_buf(256);
+         ^~~~~~~~~~~
+         QuePosition
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/impl/kernel_event.h:55:7: note: 'QuePosition' declared here
+using QuePosition = TPosition;
+      ^
+In file included from $ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sdot.cpp:7:
+$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp:23:23: error: no member named 'VEC' in 'AscendC::TPosition'
+    TBuf<BufPosition::VEC, float> x_buf(256);
+         ~~~~~~~~~~~~~^
+$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp:24:10: error: use of undeclared identifier 'BufPosition'; did you mean 'QuePosition'?
+    TBuf<BufPosition::VEC, float> y_buf(256);
+         ^~~~~~~~~~~
+         QuePosition
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/impl/kernel_event.h:55:7: note: 'QuePosition' declared here
+using QuePosition = TPosition;
+      ^
+In file included from $ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sdot.cpp:7:
+$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp:24:23: error: no member named 'VEC' in 'AscendC::TPosition'
+    TBuf<BufPosition::VEC, float> y_buf(256);
+         ~~~~~~~~~~~~~^
+$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp:38:27: error: expected expression
+        DataCopy(x_local, GM_ADDR(x + i), chunk_size);
+                          ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/impl/kernel_utils.h:25:17: note: expanded from macro 'GM_ADDR'
+#define GM_ADDR __gm__ uint8_t*
+                ^
+/usr/local/Ascend/ascend-toolkit/8.0.RC3/aarch64-linux/ccec_compiler/lib/clang/15.0.5/include/__clang_cce_defines.h:32:16: note: expanded from macro '__gm__'
+#define __gm__ __attribute__((cce_global))
+               ^
+In file included from $ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sdot.cpp:7:
+$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp:39:27: error: expected expression
+        DataCopy(y_local, GM_ADDR(y + i), chunk_size);
+                          ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/impl/kernel_utils.h:25:17: note: expanded from macro 'GM_ADDR'
+#define GM_ADDR __gm__ uint8_t*
+                ^
+/usr/local/Ascend/ascend-toolkit/8.0.RC3/aarch64-linux/ccec_compiler/lib/clang/15.0.5/include/__clang_cce_defines.h:32:16: note: expanded from macro '__gm__'
+#define __gm__ __attribute__((cce_global))
+               ^
+In file included from $ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sdot.cpp:7:
+$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp:43:35: error: invalid operands to binary expression ('float' and 'SymbolOverrideMul<float>')
+            block_sum = block_sum + x_local[j] * y_local[j];
+                        ~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~
+15 errors generated.
+gmake[5]: *** [CMakeFiles/device_aic_obj.dir/build.make:76: CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sdot.cpp.o] Error 1
+gmake[4]: *** [CMakeFiles/Makefile2:85: CMakeFiles/device_aic_obj.dir/all] Error 2
+gmake[3]: *** [Makefile:91: all] Error 2
+gmake[2]: *** [CMakeFiles/ascendc_kernels_npu_aic_device.dir/build.make:86: ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-stamp/ascendc_kernels_npu_aic_device-build] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:150: CMakeFiles/ascendc_kernels_npu_aic_device.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[100%] Built target host_bisheng_obj
+Install the project...
+-- Install configuration: "Release"
+-- Installing: $ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/build/ascendc_kernels_npu_host_dir/./objects-Release/host_bisheng_obj$ASCEND_WORKSPACE/gen/sdot_verify_LM-4.5-Air_r2/sdot.cpp.o
+[ 83%] Completed 'ascendc_kernels_npu_host'
+[ 83%] Built target ascendc_kernels_npu_host
+gmake: *** [Makefile:136: all] Error 2

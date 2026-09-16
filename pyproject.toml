@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentvec"
+version = "0.3.1"
+description = "Validated intent-driven migration for RISC-V Vector and AscendC"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "even liu"}]
+dependencies = []
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Compilers",
+  "Topic :: Scientific/Engineering",
+]
+
+[project.optional-dependencies]
+remote = ["paramiko>=3.4"]
+dev = ["pytest>=8", "build>=1", "ruff>=0.6", "jsonschema>=4.20"]
+
+[project.scripts]
+agentvec = "agentvec.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/niuniu-itech/AgentVec"
+Issues = "https://github.com/niuniu-itech/AgentVec/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+agentvec = ["data/*.h", "*.c"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/unit", "tests/integration"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]

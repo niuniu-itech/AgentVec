@@ -1,0 +1,1 @@
+RESULT op=sdot pattern=reduce n=270336 maxrel=0.000e+00 pass=1 us=20.982 GBps=103.07

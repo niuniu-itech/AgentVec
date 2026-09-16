@@ -1,0 +1,458 @@
+[
+  {
+    "model": "moonshotai/Kimi-K2.7-Code",
+    "op": "saxpy",
+    "rounds": [
+      {
+        "r": 1,
+        "error": "api:The read operation timed out"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "moonshotai/Kimi-K2.7-Code",
+    "op": "sdot",
+    "rounds": [
+      {
+        "r": 1,
+        "error": "api:The read operation timed out"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "moonshotai/Kimi-K2.7-Code",
+    "op": "sgemv",
+    "rounds": [
+      {
+        "r": 1,
+        "error": "api:The read operation timed out"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "moonshotai/Kimi-K2.7-Code",
+    "op": "sgemm",
+    "rounds": [
+      {
+        "r": 1,
+        "error": "api:The read operation timed out"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "op": "saxpy",
+    "rounds": [
+      {
+        "r": 1,
+        "built": true,
+        "correct": true,
+        "us": 65.445,
+        "perf": 192.27
+      }
+    ],
+    "compiled@1": true,
+    "correct@1": true,
+    "final": "PASS",
+    "rounds_to_correct": 1,
+    "us": 65.445,
+    "perf": 192.27
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "op": "sdot",
+    "final": "ERR",
+    "error": "",
+    "compiled@1": false,
+    "correct@1": false,
+    "rounds_to_correct": null
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "op": "sgemv",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": true,
+        "correct": false,
+        "feedback_kind": "incorrect"
+      },
+      {
+        "r": 4,
+        "built": true,
+        "correct": false,
+        "feedback_kind": "incorrect"
+      },
+      {
+        "r": 5,
+        "built": true,
+        "correct": false,
+        "feedback_kind": "incorrect"
+      },
+      {
+        "r": 6,
+        "built": true,
+        "correct": false,
+        "feedback_kind": "incorrect"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "op": "sgemm",
+    "rounds": [
+      {
+        "r": 1,
+        "built": true,
+        "correct": false,
+        "feedback_kind": "incorrect"
+      },
+      {
+        "r": 2,
+        "error": "api:The read operation timed out"
+      }
+    ],
+    "compiled@1": true,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "op": "saxpy",
+    "rounds": [
+      {
+        "r": 1,
+        "built": true,
+        "correct": true,
+        "us": 65.38,
+        "perf": 192.46
+      }
+    ],
+    "compiled@1": true,
+    "correct@1": true,
+    "final": "PASS",
+    "rounds_to_correct": 1,
+    "us": 65.38,
+    "perf": 192.46
+  },
+  {
+    "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "op": "sdot",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 4,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 5,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 6,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "op": "sgemv",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 4,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 5,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 6,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "op": "sgemm",
+    "rounds": [
+      {
+        "r": 1,
+        "built": true,
+        "correct": false,
+        "feedback_kind": "incorrect"
+      },
+      {
+        "r": 2,
+        "built": true,
+        "correct": false,
+        "feedback_kind": "incorrect"
+      },
+      {
+        "r": 3,
+        "built": true,
+        "correct": false,
+        "feedback_kind": "incorrect"
+      },
+      {
+        "r": 4,
+        "built": true,
+        "correct": false,
+        "feedback_kind": "incorrect"
+      },
+      {
+        "r": 5,
+        "built": true,
+        "correct": false,
+        "feedback_kind": "incorrect"
+      },
+      {
+        "r": 6,
+        "built": true,
+        "correct": false,
+        "feedback_kind": "incorrect"
+      }
+    ],
+    "compiled@1": true,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "zai-org/GLM-4.5-Air",
+    "op": "saxpy",
+    "rounds": [
+      {
+        "r": 1,
+        "built": true,
+        "correct": true,
+        "us": 122.339,
+        "perf": 102.85
+      }
+    ],
+    "compiled@1": true,
+    "correct@1": true,
+    "final": "PASS",
+    "rounds_to_correct": 1,
+    "us": 122.339,
+    "perf": 102.85
+  },
+  {
+    "model": "zai-org/GLM-4.5-Air",
+    "op": "sdot",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 4,
+        "built": true,
+        "correct": false,
+        "feedback_kind": "incorrect"
+      },
+      {
+        "r": 5,
+        "built": true,
+        "correct": false,
+        "feedback_kind": "incorrect"
+      },
+      {
+        "r": 6,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "zai-org/GLM-4.5-Air",
+    "op": "sgemv",
+    "rounds": [
+      {
+        "r": 1,
+        "error": "api:The read operation timed out"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "zai-org/GLM-4.5-Air",
+    "op": "sgemm",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 4,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 5,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 6,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  }
+]

@@ -1,36 +1,23 @@
-"""AgentVec end-to-end pipeline (re-runnable, deterministic given cached LLM intents).
+"""Registered-kernel migration through intent, AIR checks, lowering and difftest."""
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import shlex
+import shutil
+import subprocess
+import sys
+import uuid
 
-  source kernel  --(Intent Proposer: pluggable backend)-->  AIR intent
-                 --(Symbolic Guard: deterministic checks)-->  VERIFIED / VETO
-                 --(deterministic lowering)-->  RVV VLA kernel
-                 --(differential test on real toolchain across VLEN)-->  SPR
+from . import llm_backend as LB
+from . import obfuscate
+from .air import CPhy, Dep
+from .air_from_formula import air_from_intent
+from .guard import guard
+from .lowering import emit_rvv_kernel
 
-Backends (pluggable):
-  - SiliconFlowBackend(model)   : DeepSeek/Qwen/GLM/Kimi via API (llm_backend.chat)
-  - CodexBackend(model)         : GPT-5.x via Codex (responses pre-fetched into the cache)
-  - ManualBackend(table)        : Opus-4.8 / fixed intents supplied by this agent
-All LLM calls go through llm_backend's on-disk cache, so a re-run with unchanged
-(source, model) re-uses the recovered intent and never re-calls the API; the rest of
-the pipeline (Guard, lowering, build, test) is fully deterministic. This is what makes
-the artifact reproducible: same inputs -> identical kernels and identical SPR.
-
-Usage:
-  python pipeline.py --backend manual --ops dot,asum,nrm2
-  SF_KEY=... python pipeline.py --backend siliconflow --model GLM-5 --ops dot,nrm2
-"""
-import os, sys, json, argparse, re
-from remote import run, put, HOSTS
-import llm_backend as LB
-import obfuscate
-from air_from_formula import air_from_intent
-from guard import guard
-from lowering import emit_rvv_kernel, emit_reduce_kernel
-
-GCC = HOSTS["server"]["riscv_gcc"]
-QEMU = HOSTS["server"]["qemu"]
-R = os.environ.get("AGENTVEC_REMOTE_ROOT", "/tmp/agentvec/difftest")
-DIFF = os.path.join(os.path.dirname(__file__), "..", "..", "tests", "rvv_difftest")
-MAC_R = "#include <riscv_vector.h>\n#include <math.h>\n#define DT float\n#define DT_IS_FLOAT 1\n#define REDUCE 1\n"
+MAC_R = "#include <math.h>\n#define DT float\n#define DT_IS_FLOAT 1\n#define REDUCE 1\n"
 
 # operator zoo: name -> (kind, scalar-oracle body, AgentVec lowering spec, rtol)
 ZOO = {
@@ -53,77 +40,152 @@ def oracle(op):
             f"float s=0;for(int i=0;i<n;i++){body}out[0]={'sqrtf(s)' if op=='nrm2' else 's'};}}\n#include \"harness.h\"\n")
 
 
-def lower_from_intent(op, intent):
-    """Deterministic lowering from a (possibly model-recovered) intent."""
-    kind = ZOO[op][0]
+def canonical_intent(op):
+    kind, _, spec, _ = ZOO[op]
     if kind == "map":
-        air = air_from_intent({"pattern": "map", "dtype": "f32", "formula": intent})
-        ok, proof = guard(air)
-        if not ok:
-            raise ValueError(f"guard-veto:{proof[:40]}")
-        return emit_rvv_kernel(air)
-    rop, pre, post = intent
-    return emit_reduce_kernel(rop, pre, post)
+        return dict(pattern="map", dtype="f32", formula=spec[1])
+    return dict(pattern="reduce", dtype="f32", reduce_op=spec[0],
+                elem={"a": "a", "ab": "a*b", "aa": "a*a", "abs_a": "abs(a)"}[spec[1]], postproc=spec[2])
 
 
-def run_op(op, intent, label):
-    kind, _, default_intent, rtol = ZOO[op]
-    rvv = lower_from_intent(op, intent if intent is not None else default_intent if kind == "reduce" else default_intent[1])
-    d = os.path.join(DIFF, "kernels", label); os.makedirs(d, exist_ok=True)
-    open(f"{d}/rvv.c", "w", newline="\n").write(rvv)
-    open(f"{d}/scalar.c", "w", newline="\n").write(oracle(op))
-    json.dump({"name": label, "dtype": "f32", "reduce": kind == "reduce", "tier": "float_ulp",
-               "rtol": rtol, "sizes": ([1, 7, 64, 1000, 4096] if kind == "map" else [7, 64, 1000, 4096])},
-              open(f"{d}/spec.json", "w"))
-    for f in ("rvv.c", "scalar.c", "spec.json"):
-        put("server", f"{d}/{f}", f"{R}/kernels/{label}/{f}")
+def checked_air(op, intent):
+    if not isinstance(intent, dict) or intent.get("pattern") != ZOO[op][0]:
+        raise ValueError("proposal pattern disagrees with the registered source contract")
+    contract = CPhy("f32", dep=Dep.REDUCTION if ZOO[op][0] == "reduce" else Dep.NONE)
+    air = air_from_intent(intent, constraints=contract)
+    ok, reason = guard(air)
+    if not ok:
+        raise ValueError(reason)
+    return air
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--backend", default="manual", choices=["manual", "siliconflow"])
-    ap.add_argument("--model", default="Opus-4.8")
-    ap.add_argument("--ops", default="saxpy,scal,copy,dot,asum,nrm2")
-    ap.add_argument("--obfuscate", action="store_true")
-    args = ap.parse_args()
-    ops = args.ops.split(",")
-    tag = re.sub(r"[^A-Za-z0-9]", "", args.model).lower() + ("_obf" if args.obfuscate else "")
+def lower_from_intent(op, intent):
+    """Missing or malformed proposals are rejected, never replaced by an answer."""
+    if intent is None:
+        raise ValueError("missing intent")
+    if not isinstance(intent, dict):
+        if ZOO[op][0] == "map":
+            intent = dict(pattern="map", dtype="f32", formula=intent)
+        else:
+            rop, pre, post = intent
+            expressions = {"a": "a", "ab": "a*b", "abs_a": "abs(a)", "aa": "a*a"}
+            if pre not in expressions:
+                raise ValueError("unsupported reduction expression")
+            intent = dict(pattern="reduce", dtype="f32", reduce_op=rop, elem=expressions[pre], postproc=post)
+    return emit_rvv_kernel(checked_air(op, intent))
 
-    labels = []
+
+def prepare_case(op, intent, root):
+    air = checked_air(op, intent)
+    code = emit_rvv_kernel(air)
+    directory = root / "kernels" / op
+    directory.mkdir(parents=True)
+    (directory / "rvv.c").write_text(code, encoding="utf-8", newline="\n")
+    (directory / "scalar.c").write_text(oracle(op), encoding="utf-8", newline="\n")
+    spec = dict(name=op, dtype="f32", reduce=ZOO[op][0] == "reduce", tier="relative_absolute",
+                rtol=ZOO[op][3], atol=1e-6, sizes=[0, 1, 3, 7, 8, 9, 15, 16, 17, 31, 33, 64, 1000])
+    (directory / "spec.json").write_text(json.dumps(spec, indent=2), encoding="utf-8")
+    (directory / "air.json").write_text(air.to_json(), encoding="utf-8")
+    return dict(status="CHECKED", intent=intent, proof=air.v_meta.proof,
+                source_sha256=hashlib.sha256(oracle(op).encode()).hexdigest(),
+                candidate_sha256=hashlib.sha256(code.encode()).hexdigest(),
+                spec_sha256=hashlib.sha256((directory / "spec.json").read_bytes()).hexdigest())
+
+
+def accepts_test(record, tested, exit_code):
+    hashes = tested.get("source_sha256", {})
+    return (exit_code in (0, 1) and tested.get("verified") is True
+            and tested.get("planned", 0) > 0
+            and tested.get("passed") == tested.get("total") == tested.get("planned")
+            and not tested.get("build_error") and not tested.get("first_fail")
+            and hashes.get("rvv.c") == record["candidate_sha256"]
+            and hashes.get("scalar.c") == record["source_sha256"]
+            and hashes.get("spec.json") == record["spec_sha256"])
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--backend", default="manual", choices=["manual", "siliconflow"])
+    parser.add_argument("--model", default=os.environ.get("SILICONFLOW_MODEL"))
+    parser.add_argument("--ops", default=",".join(ZOO))
+    parser.add_argument("--output", required=True, help="new directory for generated code and records")
+    parser.add_argument("--execute", choices=["local", "server", "board"], help="omit to generate CHECKED candidates only")
+    parser.add_argument("--gcc", help="compiler executable on the selected host")
+    parser.add_argument("--qemu", help="qemu-riscv64 or native")
+    parser.add_argument("--vlens", default="128,256,512")
+    parser.add_argument("--seeds", type=int, default=5)
+    parser.add_argument("--obfuscate", action="store_true")
+    args = parser.parse_args(argv)
+    ops = [item.strip() for item in args.ops.split(",")]
+    if not ops or set(ops) - set(ZOO) or len(ops) != len(set(ops)):
+        parser.error("ops must contain unique registered kernel names")
+    if args.backend == "siliconflow" and not args.model:
+        parser.error("SiliconFlow requires --model or SILICONFLOW_MODEL")
+    if args.seeds < 1:
+        parser.error("seeds must be positive")
+    root = Path(args.output).resolve()
+    if root.exists() and any(root.iterdir()):
+        parser.error("output directory must be empty; use a new run directory")
+    root.mkdir(parents=True, exist_ok=True)
+    package = Path(__file__).parent
+    shutil.copyfile(package / "data" / "harness.h", root / "harness.h")
+    shutil.copyfile(package / "difftest.py", root / "runner.py")
+    report = dict(run_id=uuid.uuid4().hex, backend=args.backend, model=args.model if args.backend != "manual" else None,
+                  scope="registered unit-stride f32 map/reduce", cases={})
     for op in ops:
-        intent = None  # manual / default: use the verified canonical intent
-        if args.backend == "siliconflow":
-            src = oracle(op)
-            if args.obfuscate:
-                src = obfuscate.obfuscate(src)
-            reply = LB.chat(LB.MODELS[args.model], LB.AIR_PROMPT.format(src=src), max_tokens=1200)
-            j = LB.extract_json(reply) or {}
-            intent = j.get("formula") if ZOO[op][0] == "map" else _reduce_intent(j)
-        label = f"pipe_{op}_{tag}"
         try:
-            run_op(op, intent, label); labels.append(label); print(f"[pipeline] {label}: lowered+staged", flush=True)
-        except Exception as e:
-            print(f"[pipeline] {label}: FAIL {str(e)[:60]}", flush=True)
-    rc, out, err = run("server", f"cd {R} && python3 runner.py --root {R} --gcc {GCC} --qemu {QEMU} "
-                                  f"--seeds 12 --only pipe_ 2>&1", timeout=1800)
-    i = out.find("{"); res = json.loads(out[i:])["kernels"] if i >= 0 else {}
-    print(f"\n=== AgentVec pipeline ({args.backend}/{args.model}{' obf' if args.obfuscate else ''}) ===")
-    ok = 0
-    for op in ops:
-        v = res.get(f"pipe_{op}_{tag}", {})
-        s = "BUILDFAIL" if v.get("build_error") else str(v.get("spr"))
-        ok += 1 if v.get("spr") == 1.0 else 0
-        print(f"  {op:8} SPR={s}")
-    print(f"  total correct: {ok}/{len(ops)}")
-
-
-def _reduce_intent(j):
-    rop = str(j.get("reduce_op", "sum")).lower()
-    elem = str(j.get("elem") or "a").replace(" ", "").lower()
-    pre = {"a": "a", "a*b": "ab", "abs(a)": "abs_a", "a*a": "aa"}.get(elem, "a")
-    post = "sqrt" if "sqrt" in str(j.get("postproc", "")).lower() else None
-    return rop, pre, post
+            if args.backend == "manual":
+                intent = canonical_intent(op)
+            else:
+                source = oracle(op)
+                if args.obfuscate:
+                    source = obfuscate.obfuscate(source)
+                reply = LB.chat(LB.MODELS.get(args.model, args.model), LB.AIR_PROMPT.format(src=source), max_tokens=1200)
+                intent = LB.extract_json(reply)
+            report["cases"][op] = prepare_case(op, intent, root)
+        except (ValueError, KeyError, TypeError, RuntimeError) as exc:
+            report["cases"][op] = dict(status="VETO", reason=str(exc), fallback="registered scalar oracle")
+        print(f"{op}: {report['cases'][op]['status']}", flush=True)
+    selected = [op for op in ops if report["cases"][op]["status"] == "CHECKED"]
+    if args.execute and selected:
+        common = ["--seeds", str(args.seeds), "--vlens", args.vlens, "--exact", ",".join(selected)]
+        if args.execute == "local":
+            command = [sys.executable, str(root / "runner.py"), "--root", str(root),
+                       "--gcc", args.gcc or "gcc", "--qemu", args.qemu or "native", *common]
+            process = subprocess.run(command, capture_output=True, text=True)
+            rc, stdout, stderr = process.returncode, process.stdout, process.stderr
+        else:
+            from .remote import HOSTS, put, run
+            host = args.execute
+            remote = os.environ.get("AGENTVEC_REMOTE_ROOT", "/tmp/agentvec").rstrip("/") + "/" + report["run_id"]
+            for file in sorted(root.rglob("*")):
+                if file.is_file():
+                    put(host, str(file), remote + "/" + file.relative_to(root).as_posix())
+            gcc = args.gcc or (HOSTS[host]["riscv_gcc"] if host == "server" else "gcc")
+            qemu = args.qemu or (HOSTS[host]["qemu"] if host == "server" else "native")
+            command = ["python3", remote + "/runner.py", "--root", remote, "--gcc", gcc, "--qemu", qemu, *common]
+            rc, stdout, stderr = run(host, shlex.join(command), timeout=1800)
+        (root / "difftest.stdout.json").write_text(stdout, encoding="utf-8")
+        (root / "difftest.stderr.txt").write_text(stderr, encoding="utf-8")
+        report["runner_exit_code"] = rc
+        try:
+            result = json.loads(stdout)
+            for op in selected:
+                tested = result["kernels"][op]
+                record = report["cases"][op]
+                record["status"] = "VERIFIED" if accepts_test(record, tested, rc) else "REJECTED"
+                record["test"] = tested
+                if record["status"] != "VERIFIED":
+                    record["fallback"] = "registered scalar oracle"
+        except (ValueError, KeyError, TypeError):
+            for op in selected:
+                report["cases"][op].update(status="EXECUTION_ERROR", reason="missing or invalid runner report")
+    report["verified_count"] = sum(record["status"] == "VERIFIED" for record in report["cases"].values())
+    (root / "migration.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    if args.execute:
+        return 0 if report["verified_count"] == len(ops) else 1
+    return 0 if len(selected) == len(ops) else 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

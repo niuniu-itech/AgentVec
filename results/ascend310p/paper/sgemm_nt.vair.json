@@ -1,0 +1,37 @@
+{
+  "op": "sgemm_nt",
+  "verdict": "VERIFIED",
+  "v_meta_status": "VERIFIED",
+  "proof": "types consistent; gemm_nt: outer map dep-free, inner contraction associative under ulp => tile+block legal",
+  "air": {
+    "name": "sgemm_nt",
+    "s_algo": {
+      "pattern": "gemm_nt",
+      "elem_op": null,
+      "reduce_op": null,
+      "reduce_pre": null,
+      "reduce_post": null,
+      "trans_a": false,
+      "trans_b": true,
+      "has_alpha": true,
+      "has_beta": true
+    },
+    "c_phy": {
+      "dtype": "f32",
+      "dep": "reduction",
+      "dep_distance": 0,
+      "alias": "disjoint",
+      "equiv": "ulp"
+    },
+    "m_map": {
+      "access": "unit_stride",
+      "stride": 1,
+      "layout": "row_major",
+      "bound": "m,n,k"
+    },
+    "v_meta": {
+      "status": "VERIFIED",
+      "proof": "types consistent; gemm_nt: outer map dep-free, inner contraction associative under ulp => tile+block legal"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+RESULT op=sgemm_nt pattern=gemm_nt n=128 m=128 k=192 maxrel=2.235e-07 pass=1 us=840.708 GFLOPs=7.48 GBps=0.00

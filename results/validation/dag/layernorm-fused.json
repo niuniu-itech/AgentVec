@@ -1,0 +1,66 @@
+{
+  "status": "VERIFIED",
+  "example": "layernorm",
+  "backend": "manual",
+  "target": "rvv",
+  "graph_sha256": "4a33635eccb0e15b6f23a242f375c7623e115372b10b049b1c9e10b0172a3f74",
+  "topological_order": [
+    "anchor",
+    "shifted",
+    "total",
+    "mean",
+    "centered",
+    "energy",
+    "scale",
+    "y"
+  ],
+  "fused_edges": [],
+  "scalar_operations": [],
+  "schedule": {
+    "fuse_maps": true,
+    "lmul": 1
+  },
+  "source_sha256": {
+    "candidate.c": "2323f4cc7186c09963da7eaf31eadf598254525e71aef35df8d4b94fa09bca7d",
+    "harness.c": "980186ed0b457e266be57725f38a587c3d47caf66ad41554abf6b65e061828af",
+    "reference.c": "56039fe6b2cf2607934bcf57e3da5ef158cb79e7074aa78690ce6d89ae4727a1"
+  },
+  "validation": {
+    "status": "VERIFIED",
+    "verified": true,
+    "source_sha256": {
+      "candidate.c": "2323f4cc7186c09963da7eaf31eadf598254525e71aef35df8d4b94fa09bca7d",
+      "reference.c": "56039fe6b2cf2607934bcf57e3da5ef158cb79e7074aa78690ce6d89ae4727a1",
+      "harness.c": "980186ed0b457e266be57725f38a587c3d47caf66ad41554abf6b65e061828af"
+    },
+    "compiler_command": [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-ffp-contract=off",
+      "-fno-fast-math",
+      "-fno-tree-vectorize",
+      "-march=rv64gcv",
+      "-mabi=lp64d",
+      "candidate.c",
+      "reference.c",
+      "harness.c",
+      "-lm",
+      "-o",
+      "validate_dag"
+    ],
+    "machine": "riscv64",
+    "build_exit": 0,
+    "run_exit": 0,
+    "runner": [
+      "<native-workspace>/validate_dag"
+    ],
+    "statistics": {
+      "cases": 264,
+      "planned_cases": 264,
+      "assertions": 76308,
+      "failures": 0,
+      "max_abs": 4.73637408e-07
+    }
+  }
+}

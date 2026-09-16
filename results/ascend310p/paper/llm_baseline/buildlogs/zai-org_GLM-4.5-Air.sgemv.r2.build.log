@@ -1,0 +1,83 @@
+^        ~
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:204:29: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from '__gm__ uint8_t *' (aka '__gm__ unsigned char *') to 'const AscendC::GlobalTensor<float>' for 1st argument
+template <typename T> class GlobalTensor : public BaseGlobalTensor<T> {
+                            ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:204:29: note: candidate constructor (the implicit move constructor) not viable: no known conversion from '__gm__ uint8_t *' (aka '__gm__ unsigned char *') to 'AscendC::GlobalTensor<float>' for 1st argument
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:207:23: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+    __aicore__ inline GlobalTensor<T>() {}
+                      ^
+In file included from $ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemv.cpp:7:
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:30:10: error: template argument for non-type template parameter must be an expression
+    TQue<float, 2> que_A;
+         ^~~~~
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tpipe.h:81:25: note: template parameter is declared here
+    template <TPosition pos, int32_t d, auto m> friend class TQue;
+                        ^
+In file included from $ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemv.cpp:7:
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:31:10: error: template argument for non-type template parameter must be an expression
+    TQue<float, 2> que_y;
+         ^~~~~
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tpipe.h:81:25: note: template parameter is declared here
+    template <TPosition pos, int32_t d, auto m> friend class TQue;
+                        ^
+In file included from $ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemv.cpp:7:
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:39:5: error: use of undeclared identifier 'TensorInit'
+    TensorInit(local_x, n);
+    ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:40:5: error: use of undeclared identifier 'TensorInit'
+    TensorInit(local_y, 1);
+    ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:41:5: error: use of undeclared identifier 'TensorInit'
+    TensorInit(local_y_out, 1);
+    ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:42:5: error: use of undeclared identifier 'TensorInit'
+    TensorInit(local_A_buf[0], n);
+    ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:43:5: error: use of undeclared identifier 'TensorInit'
+    TensorInit(local_A_buf[1], n);
+    ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:44:5: error: use of undeclared identifier 'TensorInit'
+    TensorInit(local_y_buf[0], 1);
+    ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:45:5: error: use of undeclared identifier 'TensorInit'
+    TensorInit(local_y_buf[1], 1);
+    ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:53:53: error: no member named 'GetSubTensor' in 'AscendC::GlobalTensor<float>'
+        GlobalTensor<float> global_A_row = global_A.GetSubTensor(row * n, n);
+                                           ~~~~~~~~ ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:54:53: error: no member named 'GetSubTensor' in 'AscendC::GlobalTensor<float>'
+        GlobalTensor<float> global_y_row = global_y.GetSubTensor(row, 1);
+                                           ~~~~~~~~ ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:74:30: error: use of undeclared identifier 'sum_vec'; did you mean 'num_vecs'?
+        Vec<float, VEC_SIZE> sum_vec = 0;
+                             ^~~~~~~
+                             num_vecs
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:73:17: note: 'num_vecs' declared here
+        int32_t num_vecs = n / VEC_SIZE;
+                ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:74:29: error: expected ';' after expression
+        Vec<float, VEC_SIZE> sum_vec = 0;
+                            ^
+                            ;
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp:74:9: error: use of undeclared identifier 'Vec'; did you mean 'dec'?
+        Vec<float, VEC_SIZE> sum_vec = 0;
+        ^~~
+        dec
+/usr/local/Ascend/ascend-toolkit/8.0.RC3/aarch64-linux/ccec_compiler/lib/clang/15.0.5/include/cce_aicore_intrinsics.h:206:3: note: 'dec' declared here
+  dec = 1,
+  ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[5]: *** [CMakeFiles/device_aic_obj.dir/build.make:76: CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemv.cpp.o] Error 1
+gmake[4]: *** [CMakeFiles/Makefile2:85: CMakeFiles/device_aic_obj.dir/all] Error 2
+gmake[3]: *** [Makefile:91: all] Error 2
+gmake[2]: *** [CMakeFiles/ascendc_kernels_npu_aic_device.dir/build.make:86: ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-stamp/ascendc_kernels_npu_aic_device-build] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:150: CMakeFiles/ascendc_kernels_npu_aic_device.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[100%] Built target host_bisheng_obj
+Install the project...
+-- Install configuration: "Release"
+-- Installing: $ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/build/ascendc_kernels_npu_host_dir/./objects-Release/host_bisheng_obj$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r2/sgemv.cpp.o
+[ 83%] Completed 'ascendc_kernels_npu_host'
+[ 83%] Built target ascendc_kernels_npu_host
+gmake: *** [Makefile:136: all] Error 2

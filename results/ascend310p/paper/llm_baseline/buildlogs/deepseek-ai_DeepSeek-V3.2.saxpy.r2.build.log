@@ -1,0 +1,100 @@
+
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: $ASCEND_WORKSPACE/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Check for working CXX compiler: $ASCEND_WORKSPACE/bin/c++ - skipped
+-- Detecting CXX compile features - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working CXX compiler: $ASCEND_WORKSPACE/bin/c++ - skipped
+-- Configuring done (0.7s)
+-- Detecting CXX compile features
+-- Configuring done (0.7s)
+-- Detecting CXX compile features - done
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    BUILD_MODE
+
+
+-- Configuring done (0.7s)
+-- Build files have been written to: $ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/build/ascendc_kernels_npu_aiv_device-prefix/src/ascendc_kernels_npu_aiv_device-build
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    ASCEND_PYTHON_EXECUTABLE
+
+
+-- Build files have been written to: $ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/build/ascendc_kernels_npu_host-prefix/src/ascendc_kernels_npu_host-build
+-- Generating done (0.0s)
+-- Build files have been written to: $ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/build/ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-build
+[ 66%] Performing build step for 'ascendc_kernels_npu_aiv_device'
+[ 69%] Performing build step for 'ascendc_kernels_npu_host'
+[ 72%] Performing build step for 'ascendc_kernels_npu_aic_device'
+[ 75%] No install step for 'ascendc_kernels_npu_aiv_device'
+[100%] Building CXX object CMakeFiles/host_bisheng_obj.dir$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/saxpy.cpp.o
+[ 77%] Completed 'ascendc_kernels_npu_aiv_device'
+[100%] Building CXX object CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_saxpy.cpp.o
+[ 77%] Built target ascendc_kernels_npu_aiv_device
+[100%] Built target host_bisheng_obj
+[ 80%] Performing install step for 'ascendc_kernels_npu_host'
+[100%] Building CXX object CMakeFiles/host_bisheng_obj.dir$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/saxpy.cpp.o
+In file included from $ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_saxpy.cpp:7:
+$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/saxpy.cpp:64:34: error: no member named 'GetPtr' in 'AscendC::LocalTensor<float>'
+            float* xPtr = xLocal.GetPtr(i * 64);
+                          ~~~~~~ ^
+$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/saxpy.cpp:65:34: error: no member named 'GetPtr' in 'AscendC::LocalTensor<float>'
+            float* yPtr = yLocal.GetPtr(i * 64);
+                          ~~~~~~ ^
+$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/saxpy.cpp:66:38: error: no member named 'GetPtr' in 'AscendC::LocalTensor<float>'
+            float* outPtr = outLocal.GetPtr(i * 64);
+                            ~~~~~~~~ ^
+$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/saxpy.cpp:69:17: error: use of undeclared identifier 'float8'; did you mean 'float'?
+                float8 xVec, yVec, outVec;
+                ^~~~~~
+                float
+$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/saxpy.cpp:70:29: error: use of undeclared identifier 'float8'; did you mean 'float'?
+                xVec = Load<float8>(xPtr + j);
+                            ^~~~~~
+                            float
+$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/saxpy.cpp:70:24: error: use of undeclared identifier 'Load'
+                xVec = Load<float8>(xPtr + j);
+                       ^
+$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/saxpy.cpp:71:29: error: use of undeclared identifier 'float8'; did you mean 'float'?
+                yVec = Load<float8>(yPtr + j);
+                            ^~~~~~
+                            float
+$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/saxpy.cpp:71:24: error: use of undeclared identifier 'Load'
+                yVec = Load<float8>(yPtr + j);
+                       ^
+$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/saxpy.cpp:76:23: error: use of undeclared identifier 'float8'; did you mean 'float'?
+                Store<float8>(outPtr + j, outVec);
+                      ^~~~~~
+                      float
+$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/saxpy.cpp:76:17: error: use of undeclared identifier 'Store'
+                Store<float8>(outPtr + j, outVec);
+                ^
+10 errors generated.
+gmake[5]: *** [CMakeFiles/device_aic_obj.dir/build.make:76: CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_saxpy.cpp.o] Error 1
+gmake[4]: *** [CMakeFiles/Makefile2:85: CMakeFiles/device_aic_obj.dir/all] Error 2
+gmake[3]: *** [Makefile:91: all] Error 2
+gmake[2]: *** [CMakeFiles/ascendc_kernels_npu_aic_device.dir/build.make:86: ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-stamp/ascendc_kernels_npu_aic_device-build] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:150: CMakeFiles/ascendc_kernels_npu_aic_device.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[100%] Built target host_bisheng_obj
+Install the project...
+-- Install configuration: "Release"
+-- Installing: $ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/build/ascendc_kernels_npu_host_dir/./objects-Release/host_bisheng_obj$ASCEND_WORKSPACE/gen/saxpy_verify_pSeek-V3.2_r2/saxpy.cpp.o
+[ 83%] Completed 'ascendc_kernels_npu_host'
+[ 83%] Built target ascendc_kernels_npu_host
+gmake: *** [Makefile:136: all] Error 2

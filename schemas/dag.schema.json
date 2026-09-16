@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentVec DAG proposal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "pattern",
+    "nodes"
+  ],
+  "properties": {
+    "pattern": {
+      "enum": [
+        "dag",
+        "compose"
+      ]
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 128,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "pattern",
+          "formula"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+          },
+          "pattern": {
+            "enum": [
+              "map",
+              "reduce",
+              "contract"
+            ]
+          },
+          "formula": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "reduce_op": {
+            "enum": [
+              null,
+              "sum",
+              "min",
+              "max"
+            ]
+          },
+          "equiv": {
+            "enum": [
+              "bitexact",
+              "tolerance"
+            ]
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "pattern": {
+                  "enum": [
+                    "reduce",
+                    "contract"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "reduce_op"
+              ],
+              "properties": {
+                "reduce_op": {
+                  "enum": [
+                    "sum",
+                    "min",
+                    "max"
+                  ]
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "reduce_op": {
+                  "const": null
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

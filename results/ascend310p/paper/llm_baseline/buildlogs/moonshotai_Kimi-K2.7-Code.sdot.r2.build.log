@@ -1,0 +1,107 @@
+rocess'
+[ 22%] Completed 'ascendc_kernels_npu_preprocess'
+[ 22%] Built target ascendc_kernels_npu_preprocess
+[ 25%] Creating directories for 'ascendc_kernels_npu_aiv_device'
+[ 27%] Creating directories for 'ascendc_kernels_npu_aic_device'
+[ 30%] Creating directories for 'ascendc_kernels_npu_host'
+[ 33%] No download step for 'ascendc_kernels_npu_aiv_device'
+[ 36%] No download step for 'ascendc_kernels_npu_aic_device'
+[ 38%] No download step for 'ascendc_kernels_npu_host'
+[ 41%] No update step for 'ascendc_kernels_npu_aiv_device'
+[ 47%] No update step for 'ascendc_kernels_npu_host'
+[ 47%] No update step for 'ascendc_kernels_npu_aic_device'
+[ 50%] No patch step for 'ascendc_kernels_npu_aiv_device'
+[ 55%] No patch step for 'ascendc_kernels_npu_host'
+[ 55%] No patch step for 'ascendc_kernels_npu_aic_device'
+[ 58%] Performing configure step for 'ascendc_kernels_npu_aiv_device'
+[ 61%] Performing configure step for 'ascendc_kernels_npu_aic_device'
+[ 63%] Performing configure step for 'ascendc_kernels_npu_host'
+-- The C compiler identification is GNU 10.3.1
+-- The C compiler identification is GNU 10.3.1
+-- The C compiler identification is GNU 10.3.1
+-- The CXX compiler identification is Clang 15.0.5
+-- The CXX compiler identification is Clang 15.0.5
+-- The CXX compiler identification is Clang 15.0.5
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compiler ABI info - done
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting C compile features - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: $ASCEND_WORKSPACE/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.7s)
+-- Check for working CXX compiler: $ASCEND_WORKSPACE/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Check for working CXX compiler: $ASCEND_WORKSPACE/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting CXX compile features - done
+-- Configuring done (0.7s)
+-- Generating done (0.0s)
+-- Configuring done (0.7s)
+-- Build files have been written to: $ASCEND_WORKSPACE/gen/sdot_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-build
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    BUILD_MODE
+
+
+-- Build files have been written to: $ASCEND_WORKSPACE/gen/sdot_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_aiv_device-prefix/src/ascendc_kernels_npu_aiv_device-build
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    ASCEND_PYTHON_EXECUTABLE
+
+
+-- Build files have been written to: $ASCEND_WORKSPACE/gen/sdot_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_host-prefix/src/ascendc_kernels_npu_host-build
+[ 66%] Performing build step for 'ascendc_kernels_npu_aic_device'
+[ 69%] Performing build step for 'ascendc_kernels_npu_aiv_device'
+[ 72%] Performing build step for 'ascendc_kernels_npu_host'
+[ 75%] No install step for 'ascendc_kernels_npu_aiv_device'
+[ 77%] Completed 'ascendc_kernels_npu_aiv_device'
+[100%] Building CXX object CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/sdot_verify_-K2.7-Code_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sdot.cpp.o
+[100%] Building CXX object CMakeFiles/host_bisheng_obj.dir$ASCEND_WORKSPACE/gen/sdot_verify_-K2.7-Code_r2/sdot.cpp.o
+[ 77%] Built target ascendc_kernels_npu_aiv_device
+[100%] Built target host_bisheng_obj
+[ 80%] Performing install step for 'ascendc_kernels_npu_host'
+[100%] Building CXX object CMakeFiles/host_bisheng_obj.dir$ASCEND_WORKSPACE/gen/sdot_verify_-K2.7-Code_r2/sdot.cpp.o
+In file included from $ASCEND_WORKSPACE/gen/sdot_verify_-K2.7-Code_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sdot.cpp:7:
+$ASCEND_WORKSPACE/gen/sdot_verify_-K2.7-Code_r2/sdot.cpp:130:16: error: call to implicitly-deleted default constructor of 'KernelSdot'
+    KernelSdot op;
+               ^
+$ASCEND_WORKSPACE/gen/sdot_verify_-K2.7-Code_r2/sdot.cpp:115:33: note: default constructor of 'KernelSdot' is implicitly deleted because field 'xQueue_' has no default constructor
+    TQue<QuePosition::VECIN, 2> xQueue_;
+                                ^
+1 error generated.
+gmake[5]: *** [CMakeFiles/device_aic_obj.dir/build.make:76: CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/sdot_verify_-K2.7-Code_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sdot.cpp.o] Error 1
+gmake[4]: *** [CMakeFiles/Makefile2:85: CMakeFiles/device_aic_obj.dir/all] Error 2
+gmake[3]: *** [Makefile:91: all] Error 2
+gmake[2]: *** [CMakeFiles/ascendc_kernels_npu_aic_device.dir/build.make:86: ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-stamp/ascendc_kernels_npu_aic_device-build] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:150: CMakeFiles/ascendc_kernels_npu_aic_device.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[100%] Built target host_bisheng_obj
+Install the project...
+-- Install configuration: "Release"
+-- Installing: $ASCEND_WORKSPACE/gen/sdot_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_host_dir/./objects-Release/host_bisheng_obj$ASCEND_WORKSPACE/gen/sdot_verify_-K2.7-Code_r2/sdot.cpp.o
+[ 83%] Completed 'ascendc_kernels_npu_host'
+[ 83%] Built target ascendc_kernels_npu_host
+gmake: *** [Makefile:136: all] Error 2

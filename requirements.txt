@@ -1,1 +1,2 @@
+# SSH support; install the package with pip install -e ".[dev,remote]".
 paramiko>=3.4

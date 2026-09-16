@@ -1,0 +1,61 @@
+{
+  "pattern": "dag",
+  "nodes": [
+    {
+      "name": "anchor",
+      "pattern": "reduce",
+      "formula": "x",
+      "reduce_op": "min",
+      "equiv": "tolerance"
+    },
+    {
+      "name": "shifted",
+      "pattern": "map",
+      "formula": "x-anchor",
+      "reduce_op": null,
+      "equiv": "tolerance"
+    },
+    {
+      "name": "total",
+      "pattern": "reduce",
+      "formula": "shifted",
+      "reduce_op": "sum",
+      "equiv": "tolerance"
+    },
+    {
+      "name": "mean",
+      "pattern": "map",
+      "formula": "total/n",
+      "reduce_op": null,
+      "equiv": "tolerance"
+    },
+    {
+      "name": "centered",
+      "pattern": "map",
+      "formula": "shifted-mean",
+      "reduce_op": null,
+      "equiv": "tolerance"
+    },
+    {
+      "name": "energy",
+      "pattern": "reduce",
+      "formula": "centered*centered",
+      "reduce_op": "sum",
+      "equiv": "tolerance"
+    },
+    {
+      "name": "scale",
+      "pattern": "map",
+      "formula": "sqrt(energy/n+0.00001)",
+      "reduce_op": null,
+      "equiv": "tolerance"
+    },
+    {
+      "name": "y",
+      "pattern": "map",
+      "formula": "centered/scale*gamma+beta",
+      "reduce_op": null,
+      "equiv": "tolerance"
+    }
+  ]
+}

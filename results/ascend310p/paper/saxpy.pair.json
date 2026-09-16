@@ -1,0 +1,223 @@
+{
+  "op": "saxpy",
+  "discipline": "propose(order) -> contract(Align I,H -> B) -> arbitrate(on-device autotune)",
+  "schedule_space_B": [
+    {
+      "block_dim": 8,
+      "tile_len": 1024,
+      "buffer_num": 1,
+      "tile_m": 64,
+      "tile_n": 64,
+      "tile_k": 64
+    },
+    {
+      "block_dim": 8,
+      "tile_len": 1024,
+      "buffer_num": 2,
+      "tile_m": 64,
+      "tile_n": 64,
+      "tile_k": 64
+    },
+    {
+      "block_dim": 8,
+      "tile_len": 2048,
+      "buffer_num": 1,
+      "tile_m": 64,
+      "tile_n": 64,
+      "tile_k": 64
+    },
+    {
+      "block_dim": 8,
+      "tile_len": 2048,
+      "buffer_num": 2,
+      "tile_m": 64,
+      "tile_n": 64,
+      "tile_k": 64
+    },
+    {
+      "block_dim": 8,
+      "tile_len": 4096,
+      "buffer_num": 1,
+      "tile_m": 64,
+      "tile_n": 64,
+      "tile_k": 64
+    },
+    {
+      "block_dim": 8,
+      "tile_len": 4096,
+      "buffer_num": 2,
+      "tile_m": 64,
+      "tile_n": 64,
+      "tile_k": 64
+    },
+    {
+      "block_dim": 8,
+      "tile_len": 8192,
+      "buffer_num": 1,
+      "tile_m": 64,
+      "tile_n": 64,
+      "tile_k": 64
+    },
+    {
+      "block_dim": 8,
+      "tile_len": 8192,
+      "buffer_num": 2,
+      "tile_m": 64,
+      "tile_n": 64,
+      "tile_k": 64
+    }
+  ],
+  "contract_reasons": [
+    "H.UB=262144B, 3 live f32 tensors x2 (double-buffer) => tile_len <= 9824",
+    "H.vector_core_cnt=8 => block_dim fixed to 8",
+    "R.equiv=ulp + dep=none/reduction => double-buffering (buffer_num in {1,2}) is legal"
+  ],
+  "proposed_order": [
+    "b8_t8192_q2",
+    "b8_t8192_q1",
+    "b8_t4096_q2",
+    "b8_t4096_q1",
+    "b8_t2048_q2",
+    "b8_t2048_q1",
+    "b8_t1024_q2",
+    "b8_t1024_q1"
+  ],
+  "trials": [
+    {
+      "sched": {
+        "block_dim": 8,
+        "tile_len": 8192,
+        "buffer_num": 2,
+        "tile_m": 64,
+        "tile_n": 64,
+        "tile_k": 64
+      },
+      "tag": "b8_t8192_q2",
+      "pass": true,
+      "us": 18.635,
+      "maxrel": 0.0,
+      "gbps": 675.23
+    },
+    {
+      "sched": {
+        "block_dim": 8,
+        "tile_len": 8192,
+        "buffer_num": 1,
+        "tile_m": 64,
+        "tile_n": 64,
+        "tile_k": 64
+      },
+      "tag": "b8_t8192_q1",
+      "pass": true,
+      "us": 25.86,
+      "maxrel": 0.0,
+      "gbps": 486.57
+    },
+    {
+      "sched": {
+        "block_dim": 8,
+        "tile_len": 4096,
+        "buffer_num": 2,
+        "tile_m": 64,
+        "tile_n": 64,
+        "tile_k": 64
+      },
+      "tag": "b8_t4096_q2",
+      "pass": true,
+      "us": 22.741,
+      "maxrel": 0.0,
+      "gbps": 553.32
+    },
+    {
+      "sched": {
+        "block_dim": 8,
+        "tile_len": 4096,
+        "buffer_num": 1,
+        "tile_m": 64,
+        "tile_n": 64,
+        "tile_k": 64
+      },
+      "tag": "b8_t4096_q1",
+      "pass": true,
+      "us": 26.946,
+      "maxrel": 0.0,
+      "gbps": 466.97
+    },
+    {
+      "sched": {
+        "block_dim": 8,
+        "tile_len": 2048,
+        "buffer_num": 2,
+        "tile_m": 64,
+        "tile_n": 64,
+        "tile_k": 64
+      },
+      "tag": "b8_t2048_q2",
+      "pass": true,
+      "us": 36.37,
+      "maxrel": 0.0,
+      "gbps": 345.97
+    },
+    {
+      "sched": {
+        "block_dim": 8,
+        "tile_len": 2048,
+        "buffer_num": 1,
+        "tile_m": 64,
+        "tile_n": 64,
+        "tile_k": 64
+      },
+      "tag": "b8_t2048_q1",
+      "pass": true,
+      "us": 32.053,
+      "maxrel": 0.0,
+      "gbps": 392.56
+    },
+    {
+      "sched": {
+        "block_dim": 8,
+        "tile_len": 1024,
+        "buffer_num": 2,
+        "tile_m": 64,
+        "tile_n": 64,
+        "tile_k": 64
+      },
+      "tag": "b8_t1024_q2",
+      "pass": true,
+      "us": 64.394,
+      "maxrel": 0.0,
+      "gbps": 195.4
+    },
+    {
+      "sched": {
+        "block_dim": 8,
+        "tile_len": 1024,
+        "buffer_num": 1,
+        "tile_m": 64,
+        "tile_n": 64,
+        "tile_k": 64
+      },
+      "tag": "b8_t1024_q1",
+      "pass": true,
+      "us": 54.699,
+      "maxrel": 0.0,
+      "gbps": 230.04
+    }
+  ],
+  "best": {
+    "sched": {
+      "block_dim": 8,
+      "tile_len": 8192,
+      "buffer_num": 2,
+      "tile_m": 64,
+      "tile_n": 64,
+      "tile_k": 64
+    },
+    "tag": "b8_t8192_q2",
+    "pass": true,
+    "us": 18.635,
+    "maxrel": 0.0,
+    "gbps": 675.23
+  },
+  "proposition1": "optimum in B; best-so-far monotone in trials; ordering only changes WHEN, not WHETHER, the optimum is found"
+}

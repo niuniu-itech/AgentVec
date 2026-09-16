@@ -1,0 +1,1 @@
+RESULT op=ssyrk pattern=syrk n=64 m=64 k=64 maxrel=1.354e-07 pass=1 us=186.956 GFLOPs=2.80 GBps=0.00

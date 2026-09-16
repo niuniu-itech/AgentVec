@@ -1,0 +1,33 @@
+{
+  "pattern": "dag",
+  "nodes": [
+    {
+      "name": "low",
+      "pattern": "reduce",
+      "formula": "x",
+      "reduce_op": "min",
+      "equiv": "tolerance"
+    },
+    {
+      "name": "high",
+      "pattern": "reduce",
+      "formula": "x",
+      "reduce_op": "max",
+      "equiv": "tolerance"
+    },
+    {
+      "name": "width",
+      "pattern": "map",
+      "formula": "max(high-low,0.000001)",
+      "reduce_op": null,
+      "equiv": "tolerance"
+    },
+    {
+      "name": "y",
+      "pattern": "map",
+      "formula": "(x-low)/width",
+      "reduce_op": null,
+      "equiv": "tolerance"
+    }
+  ]
+}

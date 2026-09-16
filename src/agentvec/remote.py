@@ -12,13 +12,21 @@ variables (key-based auth recommended).
     export AGENTVEC_BOARD_HOST=...    AGENTVEC_BOARD_USER=...    AGENTVEC_BOARD_KEY=...
 
 Usage:
-    from ssh_helper import run, put, get, HOSTS
+    from agentvec.remote import run, put, get, HOSTS
     rc, out, err = run("server", "uname -a")
 """
 import os
+import posixpath
+import concurrent.futures
 import paramiko
 
 HOSTS = {
+    "ascend": {
+        "host": os.environ.get("AGENTVEC_ASCEND_HOST", ""),
+        "user": os.environ.get("AGENTVEC_ASCEND_USER", ""),
+        "password": os.environ.get("AGENTVEC_ASCEND_PASSWORD"),
+        "key": os.environ.get("AGENTVEC_ASCEND_KEY"),
+    },
     "server": {
         "host": os.environ.get("AGENTVEC_SERVER_HOST", ""),
         "user": os.environ.get("AGENTVEC_SERVER_USER", ""),
@@ -43,6 +51,7 @@ def _client(name):
             f"No host configured for '{name}'. Set AGENTVEC_{name.upper()}_HOST / _USER / "
             f"_KEY (or _PASSWORD); see the module docstring and README.")
     c = paramiko.SSHClient()
+    c.load_system_host_keys()
     c.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     kw = dict(username=cfg["user"], timeout=20, banner_timeout=20, auth_timeout=20)
     if cfg.get("key"):
@@ -51,6 +60,7 @@ def _client(name):
         kw.update(password=cfg["password"], look_for_keys=False, allow_agent=False)
     else:
         kw.update(look_for_keys=True, allow_agent=True)   # fall back to ssh-agent / default keys
+    kw["port"] = int(os.environ.get(f"AGENTVEC_{name.upper()}_PORT", "22"))
     c.connect(cfg["host"], **kw)
     return c
 
@@ -60,8 +70,12 @@ def run(name, cmd, timeout=120):
     c = _client(name)
     try:
         _, so, se = c.exec_command(cmd, timeout=timeout)
-        out = so.read().decode("utf-8", "replace")
-        err = se.read().decode("utf-8", "replace")
+        # Drain both streams concurrently so a full stderr window cannot stall stdout.
+        with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
+            stdout = pool.submit(so.read)
+            stderr = pool.submit(se.read)
+            out = stdout.result().decode("utf-8", "replace")
+            err = stderr.result().decode("utf-8", "replace")
         rc = so.channel.recv_exit_status()
         return rc, out, err
     finally:
@@ -72,9 +86,17 @@ def put(name, local, remote):
     c = _client(name)
     try:
         sftp = c.open_sftp()
-        rdir = os.path.dirname(remote)
-        if rdir:
-            run(name, f"mkdir -p {rdir}")
+        rdir = posixpath.dirname(remote)
+        missing = []
+        while rdir and rdir != "/":
+            try:
+                sftp.stat(rdir)
+                break
+            except FileNotFoundError:
+                missing.append(rdir)
+                rdir = posixpath.dirname(rdir)
+        for directory in reversed(missing):
+            sftp.mkdir(directory)
         sftp.put(local, remote)
         sftp.close()
     finally:

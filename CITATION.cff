@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this software and the accompanying AgentVec manuscript when using the artifact."
+type: software
+title: "AgentVec: Validated Intent-Driven Migration for RISC-V Vector and AscendC"
+version: 0.3.1
+authors:
+  - family-names: Liu
+    given-names: Yiwen
+repository-code: "https://github.com/niuniu-itech/AgentVec"
+license: MIT

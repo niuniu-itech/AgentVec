@@ -1,0 +1,364 @@
+{
+  "peak_vec_fp32_gflops": 1024.0,
+  "l2_MiB": 16.0,
+  "ops": {
+    "scopy": {
+      "pattern": "map",
+      "sweep": [
+        {
+          "n": 262144,
+          "ws_MiB": 2.0,
+          "L2_resident": true,
+          "us": 11.52,
+          "GBps": 182.04,
+          "bw_eff_%": 106.7,
+          "arith_intensity_flop_per_byte": 0.0,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 1048576,
+          "ws_MiB": 8.0,
+          "L2_resident": true,
+          "us": 17.589,
+          "GBps": 476.94,
+          "bw_eff_%": 279.5,
+          "arith_intensity_flop_per_byte": 0.0,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 4194304,
+          "ws_MiB": 32.0,
+          "L2_resident": false,
+          "us": 205.024,
+          "GBps": 163.66,
+          "bw_eff_%": 95.9,
+          "arith_intensity_flop_per_byte": 0.0,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 16777216,
+          "ws_MiB": 128.0,
+          "L2_resident": false,
+          "us": 789.043,
+          "GBps": 170.1,
+          "bw_eff_%": 99.7,
+          "arith_intensity_flop_per_byte": 0.0,
+          "regime": "memory-bound"
+        }
+      ]
+    },
+    "sscal": {
+      "pattern": "map",
+      "sweep": [
+        {
+          "n": 262144,
+          "ws_MiB": 2.0,
+          "L2_resident": true,
+          "us": 11.66,
+          "GBps": 179.86,
+          "bw_eff_%": 105.4,
+          "arith_intensity_flop_per_byte": 0.125,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 1048576,
+          "ws_MiB": 8.0,
+          "L2_resident": true,
+          "us": 15.115,
+          "GBps": 554.97,
+          "bw_eff_%": 325.2,
+          "arith_intensity_flop_per_byte": 0.125,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 4194304,
+          "ws_MiB": 32.0,
+          "L2_resident": false,
+          "us": 206.025,
+          "GBps": 162.87,
+          "bw_eff_%": 95.4,
+          "arith_intensity_flop_per_byte": 0.125,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 16777216,
+          "ws_MiB": 128.0,
+          "L2_resident": false,
+          "us": 786.232,
+          "GBps": 170.71,
+          "bw_eff_%": 100.0,
+          "arith_intensity_flop_per_byte": 0.125,
+          "regime": "memory-bound"
+        }
+      ]
+    },
+    "saxpy": {
+      "pattern": "map",
+      "sweep": [
+        {
+          "n": 262144,
+          "ws_MiB": 3.0,
+          "L2_resident": true,
+          "us": 12.178,
+          "GBps": 258.31,
+          "bw_eff_%": 151.4,
+          "arith_intensity_flop_per_byte": 0.167,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 1048576,
+          "ws_MiB": 12.0,
+          "L2_resident": true,
+          "us": 19.528,
+          "GBps": 644.36,
+          "bw_eff_%": 377.5,
+          "arith_intensity_flop_per_byte": 0.167,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 4194304,
+          "ws_MiB": 48.0,
+          "L2_resident": false,
+          "us": 303.025,
+          "GBps": 166.1,
+          "bw_eff_%": 97.3,
+          "arith_intensity_flop_per_byte": 0.167,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 16777216,
+          "ws_MiB": 192.0,
+          "L2_resident": false,
+          "us": 1177.409,
+          "GBps": 170.99,
+          "bw_eff_%": 100.2,
+          "arith_intensity_flop_per_byte": 0.167,
+          "regime": "memory-bound"
+        }
+      ]
+    },
+    "sdot": {
+      "pattern": "reduce",
+      "sweep": [
+        {
+          "n": 262144,
+          "ws_MiB": 2.0,
+          "L2_resident": true,
+          "us": 13.431,
+          "GBps": 156.14,
+          "bw_eff_%": 91.5,
+          "arith_intensity_flop_per_byte": 0.25,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 1048576,
+          "ws_MiB": 8.0,
+          "L2_resident": true,
+          "us": 21.76,
+          "GBps": 385.51,
+          "bw_eff_%": 225.9,
+          "arith_intensity_flop_per_byte": 0.25,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 4194304,
+          "ws_MiB": 32.0,
+          "L2_resident": false,
+          "us": 197.428,
+          "GBps": 169.96,
+          "bw_eff_%": 99.6,
+          "arith_intensity_flop_per_byte": 0.25,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 16777216,
+          "ws_MiB": 128.0,
+          "L2_resident": false,
+          "us": 753.84,
+          "GBps": 178.05,
+          "bw_eff_%": 104.3,
+          "arith_intensity_flop_per_byte": 0.25,
+          "regime": "memory-bound"
+        }
+      ]
+    },
+    "sasum": {
+      "pattern": "reduce",
+      "sweep": [
+        {
+          "n": 262144,
+          "ws_MiB": 1.0,
+          "L2_resident": true,
+          "us": 12.134,
+          "GBps": 86.42,
+          "bw_eff_%": 50.6,
+          "arith_intensity_flop_per_byte": 0.25,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 1048576,
+          "ws_MiB": 4.0,
+          "L2_resident": true,
+          "us": 18.46,
+          "GBps": 227.21,
+          "bw_eff_%": 133.1,
+          "arith_intensity_flop_per_byte": 0.25,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 4194304,
+          "ws_MiB": 16.0,
+          "L2_resident": false,
+          "us": 37.607,
+          "GBps": 446.12,
+          "bw_eff_%": 261.4,
+          "arith_intensity_flop_per_byte": 0.25,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 16777216,
+          "ws_MiB": 64.0,
+          "L2_resident": false,
+          "us": 381.471,
+          "GBps": 175.92,
+          "bw_eff_%": 103.1,
+          "arith_intensity_flop_per_byte": 0.25,
+          "regime": "memory-bound"
+        }
+      ]
+    },
+    "snrm2": {
+      "pattern": "reduce",
+      "sweep": [
+        {
+          "n": 262144,
+          "ws_MiB": 1.0,
+          "L2_resident": true,
+          "us": 12.246,
+          "GBps": 85.63,
+          "bw_eff_%": 50.2,
+          "arith_intensity_flop_per_byte": 0.5,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 1048576,
+          "ws_MiB": 4.0,
+          "L2_resident": true,
+          "us": 18.419,
+          "GBps": 227.71,
+          "bw_eff_%": 133.4,
+          "arith_intensity_flop_per_byte": 0.5,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 4194304,
+          "ws_MiB": 16.0,
+          "L2_resident": false,
+          "us": 37.206,
+          "GBps": 450.93,
+          "bw_eff_%": 264.2,
+          "arith_intensity_flop_per_byte": 0.5,
+          "regime": "memory-bound"
+        },
+        {
+          "n": 16777216,
+          "ws_MiB": 64.0,
+          "L2_resident": false,
+          "us": 381.834,
+          "GBps": 175.75,
+          "bw_eff_%": 103.0,
+          "arith_intensity_flop_per_byte": 0.5,
+          "regime": "memory-bound"
+        }
+      ]
+    },
+    "sgemv": {
+      "pattern": "gemv",
+      "sweep": [
+        {
+          "m": 1024,
+          "n": 1024,
+          "ws_MiB": 4.01,
+          "L2_resident": true,
+          "us": 115.409,
+          "GFLOPs": 18.17,
+          "GBps": 36.41,
+          "bw_eff_%": 21.3,
+          "arith_intensity_flop_per_byte": 0.499,
+          "regime": "memory-bound"
+        },
+        {
+          "m": 2048,
+          "n": 2048,
+          "ws_MiB": 16.02,
+          "L2_resident": false,
+          "us": 353.88,
+          "GFLOPs": 23.7,
+          "GBps": 47.46,
+          "bw_eff_%": 27.8,
+          "arith_intensity_flop_per_byte": 0.5,
+          "regime": "memory-bound"
+        },
+        {
+          "m": 4096,
+          "n": 4096,
+          "ws_MiB": 64.03,
+          "L2_resident": false,
+          "us": 1238.947,
+          "GFLOPs": 27.08,
+          "GBps": 54.19,
+          "bw_eff_%": 31.8,
+          "arith_intensity_flop_per_byte": 0.5,
+          "regime": "memory-bound"
+        }
+      ]
+    },
+    "sgemm": {
+      "pattern": "gemm",
+      "sweep": [
+        {
+          "m": 256,
+          "n": 256,
+          "k": 256,
+          "us": 1538.198,
+          "GFLOPs": 21.81,
+          "compute_eff_vs_vecpeak_%": 2.1,
+          "arith_intensity_flop_per_byte": 42.7,
+          "regime": "compute-bound"
+        },
+        {
+          "m": 512,
+          "n": 512,
+          "k": 512,
+          "us": 6042.333,
+          "GFLOPs": 44.43,
+          "compute_eff_vs_vecpeak_%": 4.3,
+          "arith_intensity_flop_per_byte": 85.3,
+          "regime": "compute-bound"
+        },
+        {
+          "m": 1024,
+          "n": 1024,
+          "k": 1024,
+          "us": 24014.565,
+          "GFLOPs": 89.42,
+          "compute_eff_vs_vecpeak_%": 8.7,
+          "arith_intensity_flop_per_byte": 170.7,
+          "regime": "compute-bound"
+        }
+      ]
+    }
+  },
+  "peak_dram_GBps_measured": 170.67,
+  "pair_saxpy_dram": {
+    "default_t1024": {
+      "us": 1267.322,
+      "GBps": 158.86
+    },
+    "best_t8192": {
+      "us": 1178.465,
+      "GBps": 170.84
+    },
+    "speedup": 1.08
+  }
+}

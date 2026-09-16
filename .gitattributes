@@ -1,0 +1,17 @@
+* text=auto
+*.py text eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.sh text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+*.png binary
+*.pdf binary
+
+# Preserve the bytes of archived sources and measurement evidence.
+benchmarks/ascend/paper_sources/** -text
+benchmarks/ascend/validated_sources/** -text
+results/ascend310p/paper/** -text
+results/validation/** -text

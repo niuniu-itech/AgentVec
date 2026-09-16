@@ -1,0 +1,1654 @@
+[
+  {
+    "source": "02-core-ascend310p-evidence/agentvec_ascend/air.py",
+    "source_sha256": "b0539af67fc499106a5293ae9e822f0b05d5b82353f8d0d18808ddbca5a6cf66",
+    "output": "src/agentvec/ascend/air.py",
+    "output_sha256": "c3fb6f28c860957cf534b58db12e3060d558cff0923b5fcd94bea8ad8ddb8cda",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/agentvec_ascend/intent.py",
+    "source_sha256": "59d4c1894c803f587eb3538f455ebfda0c8e53bb2df33743c892026ea806e188",
+    "output": "src/agentvec/ascend/registry.py",
+    "output_sha256": "d10e7db631659e1091fd912ad3939b8016d04983a222858bb2ea1a8329f5bd2a",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/agentvec_ascend/ascend_lower.py",
+    "source_sha256": "98622578730d53fbf39543518bf50d765c9aaf0495f1d8d252d928c08b4f7eb0",
+    "output": "src/agentvec/ascend/lowering.py",
+    "output_sha256": "e83f46cfe1565e70d68a06a999d30ec47a791a2c7e2efb53b3d8e002f8e0f884",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/agentvec_ascend/hw.py",
+    "source_sha256": "d02c397c31f2ca17cddf5037f2301a903820d5e4b4e2bf00f89ea88630e82ea6",
+    "output": "src/agentvec/ascend/hardware.py",
+    "output_sha256": "d02c397c31f2ca17cddf5037f2301a903820d5e4b4e2bf00f89ea88630e82ea6",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sasum/CMakeLists.txt",
+    "source_sha256": "d2329d3f03ae6fc33406ffbdd67f21a3923057b14fe6edc08eba701bca958f4c",
+    "output": "benchmarks/ascend/paper_sources/sasum/CMakeLists.txt",
+    "output_sha256": "d2329d3f03ae6fc33406ffbdd67f21a3923057b14fe6edc08eba701bca958f4c",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sasum/main.cpp",
+    "source_sha256": "fe2cc783dc4c407a35a4d58d73956e81a2b654776c38866af597230013e992c1",
+    "output": "benchmarks/ascend/paper_sources/sasum/main.cpp",
+    "output_sha256": "fe2cc783dc4c407a35a4d58d73956e81a2b654776c38866af597230013e992c1",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sasum/sasum.cpp",
+    "source_sha256": "8770cd8c39f3e6eb65cad486ea58514eb760bdc16b41a0b8b878ccbfd70e8607",
+    "output": "benchmarks/ascend/paper_sources/sasum/sasum.cpp",
+    "output_sha256": "8770cd8c39f3e6eb65cad486ea58514eb760bdc16b41a0b8b878ccbfd70e8607",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/saxpy/CMakeLists.txt",
+    "source_sha256": "9f39423d87d42f392381a72e09af5ccfba45c217de69336a1dd7e5e81d6b0a80",
+    "output": "benchmarks/ascend/paper_sources/saxpy/CMakeLists.txt",
+    "output_sha256": "9f39423d87d42f392381a72e09af5ccfba45c217de69336a1dd7e5e81d6b0a80",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/saxpy/main.cpp",
+    "source_sha256": "4648720aa189c814776748e7dc2182f671d44b5662a8dd0e102c4e88b9a34e5e",
+    "output": "benchmarks/ascend/paper_sources/saxpy/main.cpp",
+    "output_sha256": "4648720aa189c814776748e7dc2182f671d44b5662a8dd0e102c4e88b9a34e5e",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/saxpy/saxpy.cpp",
+    "source_sha256": "33aa5a705f94088f47c2086d799e68bdd9aa696a28dac57f1eb894c5579a73cd",
+    "output": "benchmarks/ascend/paper_sources/saxpy/saxpy.cpp",
+    "output_sha256": "33aa5a705f94088f47c2086d799e68bdd9aa696a28dac57f1eb894c5579a73cd",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/saxpy_def/CMakeLists.txt",
+    "source_sha256": "9f39423d87d42f392381a72e09af5ccfba45c217de69336a1dd7e5e81d6b0a80",
+    "output": "benchmarks/ascend/paper_sources/saxpy_def/CMakeLists.txt",
+    "output_sha256": "9f39423d87d42f392381a72e09af5ccfba45c217de69336a1dd7e5e81d6b0a80",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/saxpy_def/main.cpp",
+    "source_sha256": "4648720aa189c814776748e7dc2182f671d44b5662a8dd0e102c4e88b9a34e5e",
+    "output": "benchmarks/ascend/paper_sources/saxpy_def/main.cpp",
+    "output_sha256": "4648720aa189c814776748e7dc2182f671d44b5662a8dd0e102c4e88b9a34e5e",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/saxpy_def/saxpy.cpp",
+    "source_sha256": "33aa5a705f94088f47c2086d799e68bdd9aa696a28dac57f1eb894c5579a73cd",
+    "output": "benchmarks/ascend/paper_sources/saxpy_def/saxpy.cpp",
+    "output_sha256": "33aa5a705f94088f47c2086d799e68bdd9aa696a28dac57f1eb894c5579a73cd",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/saxpy_naive/CMakeLists.txt",
+    "source_sha256": "9f39423d87d42f392381a72e09af5ccfba45c217de69336a1dd7e5e81d6b0a80",
+    "output": "benchmarks/ascend/paper_sources/saxpy_naive/CMakeLists.txt",
+    "output_sha256": "9f39423d87d42f392381a72e09af5ccfba45c217de69336a1dd7e5e81d6b0a80",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/saxpy_naive/main.cpp",
+    "source_sha256": "4d6c42f5c77da975f7588bc760b7025aad283785ad28de1940ccd47ef8e6f8b9",
+    "output": "benchmarks/ascend/paper_sources/saxpy_naive/main.cpp",
+    "output_sha256": "4d6c42f5c77da975f7588bc760b7025aad283785ad28de1940ccd47ef8e6f8b9",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/saxpy_naive/saxpy.cpp",
+    "source_sha256": "8bffd5c1e9f8400a8654721d1fd1b8e56fca342b58fec8eca72d47a35cf1ccfc",
+    "output": "benchmarks/ascend/paper_sources/saxpy_naive/saxpy.cpp",
+    "output_sha256": "8bffd5c1e9f8400a8654721d1fd1b8e56fca342b58fec8eca72d47a35cf1ccfc",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/saxpy_pair/CMakeLists.txt",
+    "source_sha256": "9f39423d87d42f392381a72e09af5ccfba45c217de69336a1dd7e5e81d6b0a80",
+    "output": "benchmarks/ascend/paper_sources/saxpy_pair/CMakeLists.txt",
+    "output_sha256": "9f39423d87d42f392381a72e09af5ccfba45c217de69336a1dd7e5e81d6b0a80",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/saxpy_pair/main.cpp",
+    "source_sha256": "5cf456ce18653773723dda67d2e2a98e2eeac269450c1cc0fe54094e83740be0",
+    "output": "benchmarks/ascend/paper_sources/saxpy_pair/main.cpp",
+    "output_sha256": "5cf456ce18653773723dda67d2e2a98e2eeac269450c1cc0fe54094e83740be0",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/saxpy_pair/saxpy.cpp",
+    "source_sha256": "ac8e1966aa7ff5a6059b4d351b2bb2820e32a5f85ee481077182e6e45ad65ee5",
+    "output": "benchmarks/ascend/paper_sources/saxpy_pair/saxpy.cpp",
+    "output_sha256": "ac8e1966aa7ff5a6059b4d351b2bb2820e32a5f85ee481077182e6e45ad65ee5",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/scopy/CMakeLists.txt",
+    "source_sha256": "143716a01c6e85fd0bcde9676ec7caece245348fa4ed513b810c550f0262e471",
+    "output": "benchmarks/ascend/paper_sources/scopy/CMakeLists.txt",
+    "output_sha256": "143716a01c6e85fd0bcde9676ec7caece245348fa4ed513b810c550f0262e471",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/scopy/main.cpp",
+    "source_sha256": "e8c04816bdc5ee034de0c0b2220b6fe717dcd3ae00e7b97e36e664b6a12842ea",
+    "output": "benchmarks/ascend/paper_sources/scopy/main.cpp",
+    "output_sha256": "e8c04816bdc5ee034de0c0b2220b6fe717dcd3ae00e7b97e36e664b6a12842ea",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/scopy/scopy.cpp",
+    "source_sha256": "572e6f31bf5ea71b70fc73f8b399ca7161b35fb5e1e938e8ff9c91b415cdc021",
+    "output": "benchmarks/ascend/paper_sources/scopy/scopy.cpp",
+    "output_sha256": "572e6f31bf5ea71b70fc73f8b399ca7161b35fb5e1e938e8ff9c91b415cdc021",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sdot/CMakeLists.txt",
+    "source_sha256": "523e0f85596e6e88215670c452452b873c15aa8e932122b61b7fbe43e80fc1f2",
+    "output": "benchmarks/ascend/paper_sources/sdot/CMakeLists.txt",
+    "output_sha256": "523e0f85596e6e88215670c452452b873c15aa8e932122b61b7fbe43e80fc1f2",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sdot/main.cpp",
+    "source_sha256": "1fef7a122ec48e55d8fa40b3069b9da22b165d969abe159a8296309470481848",
+    "output": "benchmarks/ascend/paper_sources/sdot/main.cpp",
+    "output_sha256": "1fef7a122ec48e55d8fa40b3069b9da22b165d969abe159a8296309470481848",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sdot/sdot.cpp",
+    "source_sha256": "c7f04dc1721a56535c3dbc9719179a5dc941b12fad05aaaface42f5dbefbdbf8",
+    "output": "benchmarks/ascend/paper_sources/sdot/sdot.cpp",
+    "output_sha256": "c7f04dc1721a56535c3dbc9719179a5dc941b12fad05aaaface42f5dbefbdbf8",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sgemm/CMakeLists.txt",
+    "source_sha256": "6385b7ff67abc9f7cc63a3149bcb316228e80c96f9d821c1ec0387731f52fb04",
+    "output": "benchmarks/ascend/paper_sources/sgemm/CMakeLists.txt",
+    "output_sha256": "6385b7ff67abc9f7cc63a3149bcb316228e80c96f9d821c1ec0387731f52fb04",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sgemm/main.cpp",
+    "source_sha256": "a1bf99bb11a1bf4e5b71b17605c5f3e5347c46bf862d667db6c1db8c3851060a",
+    "output": "benchmarks/ascend/paper_sources/sgemm/main.cpp",
+    "output_sha256": "a1bf99bb11a1bf4e5b71b17605c5f3e5347c46bf862d667db6c1db8c3851060a",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sgemm/sgemm.cpp",
+    "source_sha256": "60e75b7e0a85cf97e0b34951355663044fbef266933cc9442f1a764ab83ce8c7",
+    "output": "benchmarks/ascend/paper_sources/sgemm/sgemm.cpp",
+    "output_sha256": "60e75b7e0a85cf97e0b34951355663044fbef266933cc9442f1a764ab83ce8c7",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sgemm_nt/CMakeLists.txt",
+    "source_sha256": "731f654be3a0383714fdc89617306ab62875265f944627ce3e7f3fde13c5b041",
+    "output": "benchmarks/ascend/paper_sources/sgemm_nt/CMakeLists.txt",
+    "output_sha256": "731f654be3a0383714fdc89617306ab62875265f944627ce3e7f3fde13c5b041",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sgemm_nt/main.cpp",
+    "source_sha256": "04fbd346e396a654ad7d2391b203e7c99da42f776d8744f292a2b3533c084ed9",
+    "output": "benchmarks/ascend/paper_sources/sgemm_nt/main.cpp",
+    "output_sha256": "04fbd346e396a654ad7d2391b203e7c99da42f776d8744f292a2b3533c084ed9",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sgemm_nt/sgemm_nt.cpp",
+    "source_sha256": "ced32b334a96ea9e393403a68ac8929bc675bd90a053d19ce995d6d66318375e",
+    "output": "benchmarks/ascend/paper_sources/sgemm_nt/sgemm_nt.cpp",
+    "output_sha256": "ced32b334a96ea9e393403a68ac8929bc675bd90a053d19ce995d6d66318375e",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sgemm_pair/CMakeLists.txt",
+    "source_sha256": "6385b7ff67abc9f7cc63a3149bcb316228e80c96f9d821c1ec0387731f52fb04",
+    "output": "benchmarks/ascend/paper_sources/sgemm_pair/CMakeLists.txt",
+    "output_sha256": "6385b7ff67abc9f7cc63a3149bcb316228e80c96f9d821c1ec0387731f52fb04",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sgemm_pair/main.cpp",
+    "source_sha256": "a1bf99bb11a1bf4e5b71b17605c5f3e5347c46bf862d667db6c1db8c3851060a",
+    "output": "benchmarks/ascend/paper_sources/sgemm_pair/main.cpp",
+    "output_sha256": "a1bf99bb11a1bf4e5b71b17605c5f3e5347c46bf862d667db6c1db8c3851060a",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sgemm_pair/sgemm.cpp",
+    "source_sha256": "60e75b7e0a85cf97e0b34951355663044fbef266933cc9442f1a764ab83ce8c7",
+    "output": "benchmarks/ascend/paper_sources/sgemm_pair/sgemm.cpp",
+    "output_sha256": "60e75b7e0a85cf97e0b34951355663044fbef266933cc9442f1a764ab83ce8c7",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sgemv/CMakeLists.txt",
+    "source_sha256": "399e0643781637e417b9111aab260607c95a209447254119ba0ad1acaf9c5ca1",
+    "output": "benchmarks/ascend/paper_sources/sgemv/CMakeLists.txt",
+    "output_sha256": "399e0643781637e417b9111aab260607c95a209447254119ba0ad1acaf9c5ca1",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sgemv/main.cpp",
+    "source_sha256": "779e058d34151c8014bcce2c8058d61884d39ff974eb124160777a0f7a88ebce",
+    "output": "benchmarks/ascend/paper_sources/sgemv/main.cpp",
+    "output_sha256": "779e058d34151c8014bcce2c8058d61884d39ff974eb124160777a0f7a88ebce",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sgemv/sgemv.cpp",
+    "source_sha256": "41027dfca354bdcb21285c0e98bad8bd7cdf4c2978dc651325f918ce5658f57c",
+    "output": "benchmarks/ascend/paper_sources/sgemv/sgemv.cpp",
+    "output_sha256": "41027dfca354bdcb21285c0e98bad8bd7cdf4c2978dc651325f918ce5658f57c",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/snrm2/CMakeLists.txt",
+    "source_sha256": "0314c491e72a24e9c995dceea73bd60655f69ad381997d8897e784ff866a79ca",
+    "output": "benchmarks/ascend/paper_sources/snrm2/CMakeLists.txt",
+    "output_sha256": "0314c491e72a24e9c995dceea73bd60655f69ad381997d8897e784ff866a79ca",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/snrm2/main.cpp",
+    "source_sha256": "a4d5b154eb22e1c251514b31686165da860e7325928dc5ad54e144cdf413726e",
+    "output": "benchmarks/ascend/paper_sources/snrm2/main.cpp",
+    "output_sha256": "a4d5b154eb22e1c251514b31686165da860e7325928dc5ad54e144cdf413726e",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/snrm2/snrm2.cpp",
+    "source_sha256": "642128026380007e7cc20a4aa803d51bcf093f0924576497165ab8b2e27a7518",
+    "output": "benchmarks/ascend/paper_sources/snrm2/snrm2.cpp",
+    "output_sha256": "642128026380007e7cc20a4aa803d51bcf093f0924576497165ab8b2e27a7518",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sscal/CMakeLists.txt",
+    "source_sha256": "9e7fc07df3fb6f3ea1f961ba05689f82d5ec08c062cfc16a7fd4b255b6b9796f",
+    "output": "benchmarks/ascend/paper_sources/sscal/CMakeLists.txt",
+    "output_sha256": "9e7fc07df3fb6f3ea1f961ba05689f82d5ec08c062cfc16a7fd4b255b6b9796f",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sscal/main.cpp",
+    "source_sha256": "17c27ed89bcf3c15d211e51e0609a1f7d3b40021509ba457095b0331a3c3ac34",
+    "output": "benchmarks/ascend/paper_sources/sscal/main.cpp",
+    "output_sha256": "17c27ed89bcf3c15d211e51e0609a1f7d3b40021509ba457095b0331a3c3ac34",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/sscal/sscal.cpp",
+    "source_sha256": "f4152278dd992f3f7294751e56cb0e0a28bd9a6fe2c89ead62b7f9ef304b5761",
+    "output": "benchmarks/ascend/paper_sources/sscal/sscal.cpp",
+    "output_sha256": "f4152278dd992f3f7294751e56cb0e0a28bd9a6fe2c89ead62b7f9ef304b5761",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/ssyrk/CMakeLists.txt",
+    "source_sha256": "085ee24c31e1a2ecd21f40bde3b9a7407dfd25507491a44c1b3d6a2898d1e275",
+    "output": "benchmarks/ascend/paper_sources/ssyrk/CMakeLists.txt",
+    "output_sha256": "085ee24c31e1a2ecd21f40bde3b9a7407dfd25507491a44c1b3d6a2898d1e275",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/ssyrk/main.cpp",
+    "source_sha256": "280daf46f856431c64506f705d2b301a0a7579283677109993f0d887132a3d74",
+    "output": "benchmarks/ascend/paper_sources/ssyrk/main.cpp",
+    "output_sha256": "280daf46f856431c64506f705d2b301a0a7579283677109993f0d887132a3d74",
+    "adapted": false
+  },
+  {
+    "source": "03-generated-ascendc-sources/ssyrk/ssyrk.cpp",
+    "source_sha256": "eb9c8a0afefc9163968d6e0143d3688429b3b9aa6a5307f318ec683f79a5af53",
+    "output": "benchmarks/ascend/paper_sources/ssyrk/ssyrk.cpp",
+    "output_sha256": "eb9c8a0afefc9163968d6e0143d3688429b3b9aa6a5307f318ec683f79a5af53",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/BASELINE.md",
+    "source_sha256": "684075e98e5ec8833b9ac999aa449c583771875b20f7556aedf076124c7f7b0e",
+    "output": "results/ascend310p/paper/BASELINE.md",
+    "output_sha256": "684075e98e5ec8833b9ac999aa449c583771875b20f7556aedf076124c7f7b0e",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/bench_run.log",
+    "source_sha256": "1cc0023da8ad74e19404d88c28327caa6635420b0b550aac2d525ac6732160cc",
+    "output": "results/ascend310p/paper/bench_run.log",
+    "output_sha256": "1cc0023da8ad74e19404d88c28327caa6635420b0b550aac2d525ac6732160cc",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline_fair.json",
+    "source_sha256": "de4372139528c3be316954f5c54816915e8868730f5ff723206c4246f69940c3",
+    "output": "results/ascend310p/paper/llm_baseline_fair.json",
+    "output_sha256": "de4372139528c3be316954f5c54816915e8868730f5ff723206c4246f69940c3",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline_fair_merged.json",
+    "source_sha256": "17362e8dc471b91913a502153912f493192926b6665539c2121266e28a792a72",
+    "output": "results/ascend310p/paper/llm_baseline_fair_merged.json",
+    "output_sha256": "17362e8dc471b91913a502153912f493192926b6665539c2121266e28a792a72",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline_ondevice.json",
+    "source_sha256": "9d40f20d0ceb011fd4b0335aa732add04e1c165947d8f03166f014b3fd658d31",
+    "output": "results/ascend310p/paper/llm_baseline_ondevice.json",
+    "output_sha256": "9d40f20d0ceb011fd4b0335aa732add04e1c165947d8f03166f014b3fd658d31",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_verify_manifest.json",
+    "source_sha256": "395493d8d8fc8727df3364d60cf5517a6110a605c0cb10df6542c3dee4696e46",
+    "output": "results/ascend310p/paper/llm_verify_manifest.json",
+    "output_sha256": "395493d8d8fc8727df3364d60cf5517a6110a605c0cb10df6542c3dee4696e46",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/metrics.json",
+    "source_sha256": "a3bfdd30dbd948d0a99f5f574f278d9b70463c8eeed5f335f8c981fbaf6a1028",
+    "output": "results/ascend310p/paper/metrics.json",
+    "output_sha256": "a3bfdd30dbd948d0a99f5f574f278d9b70463c8eeed5f335f8c981fbaf6a1028",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/METRICS.md",
+    "source_sha256": "ee39350a922a1c552515ea7f17bfa1641872181da20d18a1fa738a986fee3ab7",
+    "output": "results/ascend310p/paper/METRICS.md",
+    "output_sha256": "ee39350a922a1c552515ea7f17bfa1641872181da20d18a1fa738a986fee3ab7",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/PAIR_SUMMARY.md",
+    "source_sha256": "0a061d45648fda85499456271b30ff0ba7c2226d906485f5d2029443ba7e504e",
+    "output": "results/ascend310p/paper/PAIR_SUMMARY.md",
+    "output_sha256": "0a061d45648fda85499456271b30ff0ba7c2226d906485f5d2029443ba7e504e",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/PERF.md",
+    "source_sha256": "1c72955695e38d4ec4a4ae54c0a7f42d15843a076ba8a78910208a1088be7a10",
+    "output": "results/ascend310p/paper/PERF.md",
+    "output_sha256": "1c72955695e38d4ec4a4ae54c0a7f42d15843a076ba8a78910208a1088be7a10",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sasum.air.json",
+    "source_sha256": "969e568297a15bc2cd0e54ab2471478e71ef7b0c6c875725cf3bf439b941a2f8",
+    "output": "results/ascend310p/paper/sasum.air.json",
+    "output_sha256": "969e568297a15bc2cd0e54ab2471478e71ef7b0c6c875725cf3bf439b941a2f8",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sasum.pair.json",
+    "source_sha256": "552c74aca77c08815c38a46fd36aa440907570b31d2e62b626c8f847af08ae86",
+    "output": "results/ascend310p/paper/sasum.pair.json",
+    "output_sha256": "552c74aca77c08815c38a46fd36aa440907570b31d2e62b626c8f847af08ae86",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sasum.recovered.air.json",
+    "source_sha256": "969e568297a15bc2cd0e54ab2471478e71ef7b0c6c875725cf3bf439b941a2f8",
+    "output": "results/ascend310p/paper/sasum.recovered.air.json",
+    "output_sha256": "969e568297a15bc2cd0e54ab2471478e71ef7b0c6c875725cf3bf439b941a2f8",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sasum.vair.json",
+    "source_sha256": "23819e0b027517f7ba2c4bda54ca5c20db6582431075671b852fea475beca099",
+    "output": "results/ascend310p/paper/sasum.vair.json",
+    "output_sha256": "23819e0b027517f7ba2c4bda54ca5c20db6582431075671b852fea475beca099",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/saxpy.air.json",
+    "source_sha256": "dab19b121b7c2cfc81fffa4ccf2275a36bfa105eac19171c51c6bb7d5046434a",
+    "output": "results/ascend310p/paper/saxpy.air.json",
+    "output_sha256": "dab19b121b7c2cfc81fffa4ccf2275a36bfa105eac19171c51c6bb7d5046434a",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/saxpy.pair.json",
+    "source_sha256": "53fa831e4e1967826fb57b70c9a8e160288a0a82fe53c92960db3ebefe3318db",
+    "output": "results/ascend310p/paper/saxpy.pair.json",
+    "output_sha256": "53fa831e4e1967826fb57b70c9a8e160288a0a82fe53c92960db3ebefe3318db",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/saxpy.recovered.air.json",
+    "source_sha256": "dab19b121b7c2cfc81fffa4ccf2275a36bfa105eac19171c51c6bb7d5046434a",
+    "output": "results/ascend310p/paper/saxpy.recovered.air.json",
+    "output_sha256": "dab19b121b7c2cfc81fffa4ccf2275a36bfa105eac19171c51c6bb7d5046434a",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/saxpy.vair.json",
+    "source_sha256": "8ab410a1ae2bb3f6aae7d2f3937c6ec05408a9768448bcc2ad1d5f861ffcedb3",
+    "output": "results/ascend310p/paper/saxpy.vair.json",
+    "output_sha256": "8ab410a1ae2bb3f6aae7d2f3937c6ec05408a9768448bcc2ad1d5f861ffcedb3",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/scopy.air.json",
+    "source_sha256": "a2d2a78d983486020079fa92437210d7f2418d2b7167843af4541bef3f1947de",
+    "output": "results/ascend310p/paper/scopy.air.json",
+    "output_sha256": "a2d2a78d983486020079fa92437210d7f2418d2b7167843af4541bef3f1947de",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/scopy.pair.json",
+    "source_sha256": "460b8311a3157fc1e3a0810c2b47376aca8e834da789c93089b0c98cebd51d25",
+    "output": "results/ascend310p/paper/scopy.pair.json",
+    "output_sha256": "460b8311a3157fc1e3a0810c2b47376aca8e834da789c93089b0c98cebd51d25",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/scopy.recovered.air.json",
+    "source_sha256": "a2d2a78d983486020079fa92437210d7f2418d2b7167843af4541bef3f1947de",
+    "output": "results/ascend310p/paper/scopy.recovered.air.json",
+    "output_sha256": "a2d2a78d983486020079fa92437210d7f2418d2b7167843af4541bef3f1947de",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/scopy.vair.json",
+    "source_sha256": "9712b92f26f855adf8b59f2153d8ccc0b23d109eb28cd147ee3c0cce534ea6d1",
+    "output": "results/ascend310p/paper/scopy.vair.json",
+    "output_sha256": "9712b92f26f855adf8b59f2153d8ccc0b23d109eb28cd147ee3c0cce534ea6d1",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sdot.air.json",
+    "source_sha256": "117ed7151a1a5851a0f465ea2e849cee524a3b61268cd6395eb2235197584ce5",
+    "output": "results/ascend310p/paper/sdot.air.json",
+    "output_sha256": "117ed7151a1a5851a0f465ea2e849cee524a3b61268cd6395eb2235197584ce5",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sdot.pair.json",
+    "source_sha256": "b1fdf3e7a9c18b4daf1fe3831df998eca04692809c9cc5749376b3e56e7f32f5",
+    "output": "results/ascend310p/paper/sdot.pair.json",
+    "output_sha256": "b1fdf3e7a9c18b4daf1fe3831df998eca04692809c9cc5749376b3e56e7f32f5",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sdot.recovered.air.json",
+    "source_sha256": "117ed7151a1a5851a0f465ea2e849cee524a3b61268cd6395eb2235197584ce5",
+    "output": "results/ascend310p/paper/sdot.recovered.air.json",
+    "output_sha256": "117ed7151a1a5851a0f465ea2e849cee524a3b61268cd6395eb2235197584ce5",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sdot.vair.json",
+    "source_sha256": "58ea39729398dbc1a18398329bb34be07d5219a8faf394019d5ef71c1ae80faf",
+    "output": "results/ascend310p/paper/sdot.vair.json",
+    "output_sha256": "58ea39729398dbc1a18398329bb34be07d5219a8faf394019d5ef71c1ae80faf",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sgemm.air.json",
+    "source_sha256": "bcd931991a8782fb4cdfaaeb6c5a25da8ca2f3b2043619993b1569ddbe2b1f8c",
+    "output": "results/ascend310p/paper/sgemm.air.json",
+    "output_sha256": "bcd931991a8782fb4cdfaaeb6c5a25da8ca2f3b2043619993b1569ddbe2b1f8c",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sgemm.pair.json",
+    "source_sha256": "76a761fb786d3fe0f395ae4f9f393ae7ebeddfd0b20566e94c8f8b94a852b117",
+    "output": "results/ascend310p/paper/sgemm.pair.json",
+    "output_sha256": "76a761fb786d3fe0f395ae4f9f393ae7ebeddfd0b20566e94c8f8b94a852b117",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sgemm.recovered.air.json",
+    "source_sha256": "bcd931991a8782fb4cdfaaeb6c5a25da8ca2f3b2043619993b1569ddbe2b1f8c",
+    "output": "results/ascend310p/paper/sgemm.recovered.air.json",
+    "output_sha256": "bcd931991a8782fb4cdfaaeb6c5a25da8ca2f3b2043619993b1569ddbe2b1f8c",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sgemm.vair.json",
+    "source_sha256": "ee67b4fdf076af5caa1bf3c97e6f92ee313a44ce7c620cd7b9aa5cb39ed8b2cf",
+    "output": "results/ascend310p/paper/sgemm.vair.json",
+    "output_sha256": "ee67b4fdf076af5caa1bf3c97e6f92ee313a44ce7c620cd7b9aa5cb39ed8b2cf",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sgemm_nt.air.json",
+    "source_sha256": "3402820c890d83e1471e18c62a674750d9cc891980c1a191f388c7ccf4c2c8c1",
+    "output": "results/ascend310p/paper/sgemm_nt.air.json",
+    "output_sha256": "3402820c890d83e1471e18c62a674750d9cc891980c1a191f388c7ccf4c2c8c1",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sgemm_nt.pair.json",
+    "source_sha256": "fb741e9d0dcacda77589ff0d430f5eb9db489e3bc92b9275a8b30974f17c257c",
+    "output": "results/ascend310p/paper/sgemm_nt.pair.json",
+    "output_sha256": "fb741e9d0dcacda77589ff0d430f5eb9db489e3bc92b9275a8b30974f17c257c",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sgemm_nt.vair.json",
+    "source_sha256": "2e0951e3527eef9658959663b71a02edc3165cf3f09a1a5e5230c746f1b05357",
+    "output": "results/ascend310p/paper/sgemm_nt.vair.json",
+    "output_sha256": "2e0951e3527eef9658959663b71a02edc3165cf3f09a1a5e5230c746f1b05357",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sgemv.air.json",
+    "source_sha256": "a90bf9092d0d4a458862d8bb98135c93ae8584b87c6ea9db8ea82b18d53d4458",
+    "output": "results/ascend310p/paper/sgemv.air.json",
+    "output_sha256": "a90bf9092d0d4a458862d8bb98135c93ae8584b87c6ea9db8ea82b18d53d4458",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sgemv.pair.json",
+    "source_sha256": "6f087bb1a2778db209e1c372587f6ebf6276f43dd9001214652c31226f96bee8",
+    "output": "results/ascend310p/paper/sgemv.pair.json",
+    "output_sha256": "6f087bb1a2778db209e1c372587f6ebf6276f43dd9001214652c31226f96bee8",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sgemv.recovered.air.json",
+    "source_sha256": "a90bf9092d0d4a458862d8bb98135c93ae8584b87c6ea9db8ea82b18d53d4458",
+    "output": "results/ascend310p/paper/sgemv.recovered.air.json",
+    "output_sha256": "a90bf9092d0d4a458862d8bb98135c93ae8584b87c6ea9db8ea82b18d53d4458",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sgemv.vair.json",
+    "source_sha256": "cdee8eaea8c139120e18a197ca7b5e989dfc361b720ae56341cc1875c83d69cb",
+    "output": "results/ascend310p/paper/sgemv.vair.json",
+    "output_sha256": "cdee8eaea8c139120e18a197ca7b5e989dfc361b720ae56341cc1875c83d69cb",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/snrm2.air.json",
+    "source_sha256": "983435af28106f9b04d2849c248fd2c9bf4e68a5ea8541b168bda768e92d254d",
+    "output": "results/ascend310p/paper/snrm2.air.json",
+    "output_sha256": "983435af28106f9b04d2849c248fd2c9bf4e68a5ea8541b168bda768e92d254d",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/snrm2.pair.json",
+    "source_sha256": "f03a9d917fc448022cb6e4cf32db220436c6a1b441c32308c8b4c028d3e57c6a",
+    "output": "results/ascend310p/paper/snrm2.pair.json",
+    "output_sha256": "f03a9d917fc448022cb6e4cf32db220436c6a1b441c32308c8b4c028d3e57c6a",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/snrm2.recovered.air.json",
+    "source_sha256": "983435af28106f9b04d2849c248fd2c9bf4e68a5ea8541b168bda768e92d254d",
+    "output": "results/ascend310p/paper/snrm2.recovered.air.json",
+    "output_sha256": "983435af28106f9b04d2849c248fd2c9bf4e68a5ea8541b168bda768e92d254d",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/snrm2.vair.json",
+    "source_sha256": "c100447d4b17d3af158731564e016f0f917467c031758302c049338a738139fd",
+    "output": "results/ascend310p/paper/snrm2.vair.json",
+    "output_sha256": "c100447d4b17d3af158731564e016f0f917467c031758302c049338a738139fd",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sscal.air.json",
+    "source_sha256": "7f0b3343cac2dd28142967752abcd1fc077434272b6b6966c3b5c6e46e83bad7",
+    "output": "results/ascend310p/paper/sscal.air.json",
+    "output_sha256": "7f0b3343cac2dd28142967752abcd1fc077434272b6b6966c3b5c6e46e83bad7",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sscal.pair.json",
+    "source_sha256": "a8523648cd9ccd2c42f2d719ad1bab21647a1bfb8f48ab3b250c3fb3b266b264",
+    "output": "results/ascend310p/paper/sscal.pair.json",
+    "output_sha256": "a8523648cd9ccd2c42f2d719ad1bab21647a1bfb8f48ab3b250c3fb3b266b264",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sscal.recovered.air.json",
+    "source_sha256": "7f0b3343cac2dd28142967752abcd1fc077434272b6b6966c3b5c6e46e83bad7",
+    "output": "results/ascend310p/paper/sscal.recovered.air.json",
+    "output_sha256": "7f0b3343cac2dd28142967752abcd1fc077434272b6b6966c3b5c6e46e83bad7",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/sscal.vair.json",
+    "source_sha256": "a482ca341df023906834e1cb128bde88748700fdb141538b66a8ef249b821af7",
+    "output": "results/ascend310p/paper/sscal.vair.json",
+    "output_sha256": "a482ca341df023906834e1cb128bde88748700fdb141538b66a8ef249b821af7",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/ssyrk.air.json",
+    "source_sha256": "89871d81e846c1bc842299b67c72f82723a9ea72f65bc457f396534d442e6d03",
+    "output": "results/ascend310p/paper/ssyrk.air.json",
+    "output_sha256": "89871d81e846c1bc842299b67c72f82723a9ea72f65bc457f396534d442e6d03",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/ssyrk.pair.json",
+    "source_sha256": "67e88cc55cd4e05f78e5046f070dd7d39b4712daa8906fcf2a843cae0cf57af8",
+    "output": "results/ascend310p/paper/ssyrk.pair.json",
+    "output_sha256": "67e88cc55cd4e05f78e5046f070dd7d39b4712daa8906fcf2a843cae0cf57af8",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/ssyrk.vair.json",
+    "source_sha256": "699fb3e5f82efc9f3e875de0c54284876d1b59a91ab7f5f1a60d358fa796d353",
+    "output": "results/ascend310p/paper/ssyrk.vair.json",
+    "output_sha256": "699fb3e5f82efc9f3e875de0c54284876d1b59a91ab7f5f1a60d358fa796d353",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/strsm.air.json",
+    "source_sha256": "fd30e879f9cd30f99b89ce632c46f8959f08827bf44d479a6d53a549280506e9",
+    "output": "results/ascend310p/paper/strsm.air.json",
+    "output_sha256": "fd30e879f9cd30f99b89ce632c46f8959f08827bf44d479a6d53a549280506e9",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/strsm.pair.json",
+    "source_sha256": "b6e15afb245db2b068072ac315e42db413f7ae76ec4805ac8a4a41574f392d3c",
+    "output": "results/ascend310p/paper/strsm.pair.json",
+    "output_sha256": "b6e15afb245db2b068072ac315e42db413f7ae76ec4805ac8a4a41574f392d3c",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/strsm.vair.json",
+    "source_sha256": "dc736977f15af3268ef96146fe3603e42f92f3cc24b2b776f2b78e34d68a2e9c",
+    "output": "results/ascend310p/paper/strsm.vair.json",
+    "output_sha256": "dc736977f15af3268ef96146fe3603e42f92f3cc24b2b776f2b78e34d68a2e9c",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/strsv.air.json",
+    "source_sha256": "334d79440f371c65664501fb5991c72b4a06c38860fbc736ab84419537d8304d",
+    "output": "results/ascend310p/paper/strsv.air.json",
+    "output_sha256": "334d79440f371c65664501fb5991c72b4a06c38860fbc736ab84419537d8304d",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/strsv.pair.json",
+    "source_sha256": "9c5b1f937dc9a33f9b5e21293f0f818ae2ce4a0fd30d9aa549b68dae24d90078",
+    "output": "results/ascend310p/paper/strsv.pair.json",
+    "output_sha256": "9c5b1f937dc9a33f9b5e21293f0f818ae2ce4a0fd30d9aa549b68dae24d90078",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/strsv.recovered.air.json",
+    "source_sha256": "334d79440f371c65664501fb5991c72b4a06c38860fbc736ab84419537d8304d",
+    "output": "results/ascend310p/paper/strsv.recovered.air.json",
+    "output_sha256": "334d79440f371c65664501fb5991c72b4a06c38860fbc736ab84419537d8304d",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/strsv.vair.json",
+    "source_sha256": "a40b06ae3ab4b6c7bfae80fd851d67dbe33e0cbcc02883cb80d0e6d6fbf1545f",
+    "output": "results/ascend310p/paper/strsv.vair.json",
+    "output_sha256": "a40b06ae3ab4b6c7bfae80fd851d67dbe33e0cbcc02883cb80d0e6d6fbf1545f",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/inputs/sasum.cu",
+    "source_sha256": "11de8f22c21fde0c0f688b426ac43dc1a4fb80bb73c310c865c86ea1f12a5988",
+    "output": "benchmarks/ascend/source_contracts/sasum.cu",
+    "output_sha256": "11de8f22c21fde0c0f688b426ac43dc1a4fb80bb73c310c865c86ea1f12a5988",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/inputs/saxpy.cu",
+    "source_sha256": "9e4f17887267309aa168da259a09bbfd8fa01f49c962fb148a968180d70a72e6",
+    "output": "benchmarks/ascend/source_contracts/saxpy.cu",
+    "output_sha256": "9e4f17887267309aa168da259a09bbfd8fa01f49c962fb148a968180d70a72e6",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/inputs/scopy.cu",
+    "source_sha256": "fa37af7e81a741f067ce56f0f93297db8c3326f1271a682269281fd487fdc1a4",
+    "output": "benchmarks/ascend/source_contracts/scopy.cu",
+    "output_sha256": "fa37af7e81a741f067ce56f0f93297db8c3326f1271a682269281fd487fdc1a4",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/inputs/sdot.cu",
+    "source_sha256": "4ededd2e3a8f868b56494d69a76b30dd2f71a9d3416cedf84e6254b501edae1d",
+    "output": "benchmarks/ascend/source_contracts/sdot.cu",
+    "output_sha256": "4ededd2e3a8f868b56494d69a76b30dd2f71a9d3416cedf84e6254b501edae1d",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/inputs/sgemm.cu",
+    "source_sha256": "b7e095f36d61a44a76cb4113528fd1bde576b1f2229815943bb2e9f136630062",
+    "output": "benchmarks/ascend/source_contracts/sgemm.cu",
+    "output_sha256": "b7e095f36d61a44a76cb4113528fd1bde576b1f2229815943bb2e9f136630062",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/inputs/sgemm_nt.cu",
+    "source_sha256": "3ee694a319decbaf0f80f60eb4ddcf4f0bc70e003e52dd051818224329bc3740",
+    "output": "benchmarks/ascend/source_contracts/sgemm_nt.cu",
+    "output_sha256": "3ee694a319decbaf0f80f60eb4ddcf4f0bc70e003e52dd051818224329bc3740",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/inputs/sgemv.cu",
+    "source_sha256": "f167386ce00c1c618552269cf25490cbbac7a30f57904518c914a2b74fe13b0c",
+    "output": "benchmarks/ascend/source_contracts/sgemv.cu",
+    "output_sha256": "f167386ce00c1c618552269cf25490cbbac7a30f57904518c914a2b74fe13b0c",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/inputs/snrm2.cu",
+    "source_sha256": "9bfdc64b60007cf32a5f8526f748187e460e5b9ff365bf78e3eb33760c1431b4",
+    "output": "benchmarks/ascend/source_contracts/snrm2.cu",
+    "output_sha256": "9bfdc64b60007cf32a5f8526f748187e460e5b9ff365bf78e3eb33760c1431b4",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/inputs/sscal.cu",
+    "source_sha256": "ab8aa2f039e5352c1b31c32e2d9da84daede9741835a27467b87488f25a14b85",
+    "output": "benchmarks/ascend/source_contracts/sscal.cu",
+    "output_sha256": "ab8aa2f039e5352c1b31c32e2d9da84daede9741835a27467b87488f25a14b85",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/inputs/ssyrk.cu",
+    "source_sha256": "138263d96d16def4d7ca3b78fabd543800078316d34dfd8b9fb90401dd99f9d3",
+    "output": "benchmarks/ascend/source_contracts/ssyrk.cu",
+    "output_sha256": "138263d96d16def4d7ca3b78fabd543800078316d34dfd8b9fb90401dd99f9d3",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/inputs/strsm.cu",
+    "source_sha256": "c29e602c3354b9c5c38f1d67c8a613014442f1976826c4a703f9287a4fd95129",
+    "output": "benchmarks/ascend/source_contracts/strsm.cu",
+    "output_sha256": "c29e602c3354b9c5c38f1d67c8a613014442f1976826c4a703f9287a4fd95129",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/inputs/strsv.cu",
+    "source_sha256": "c911018e410091ab1df93c47d57e1b4d4c5bc64b3ae651e44aab0b8fa49b2ae5",
+    "output": "benchmarks/ascend/source_contracts/strsv.cu",
+    "output_sha256": "c911018e410091ab1df93c47d57e1b4d4c5bc64b3ae651e44aab0b8fa49b2ae5",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.saxpy.r1.build.log",
+    "source_sha256": "5dbbf04a453578e9428789897204ac74ad3710ccb34d7fe6091d9e61d6434bb2",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.saxpy.r1.build.log",
+    "output_sha256": "4247108a9e38eecefa9c8252662a7ab36dad6d8342889b17e8e5697c7b71df5f",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.saxpy.r2.build.log",
+    "source_sha256": "83f29ea70d8274a957c6750c444356495331818bed3a3075892bb3637683f05f",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.saxpy.r2.build.log",
+    "output_sha256": "528e334b3c7d39bd885c6bec1dbb9ab679619c9e040ee51652db9082a063bdd7",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.saxpy.r3.build.log",
+    "source_sha256": "f6870ee099d9eaa7b0b47bb64d000702354c6ccb5e891f91470b10280b433b03",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.saxpy.r3.build.log",
+    "output_sha256": "1f3275f901033724591ec2648e7b9d0dfc4454fdafd3370963b71036aca4e3a4",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sdot.r1.build.log",
+    "source_sha256": "cb2888267bef768bdab6a79e1ec6e41141c5309d7032de04c5310a2424a11db1",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sdot.r1.build.log",
+    "output_sha256": "e4fce76ff181db97f81e2ffa0f53011a0fa28b5943aa9af25beb9db2eb012220",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sdot.r2.build.log",
+    "source_sha256": "82189d19045caeb78c841419dd692f8f959d5cc463517f909d648e9e5424daea",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sdot.r2.build.log",
+    "output_sha256": "8abf167e5573eac25fead3edb2e6618faae7b726654beedb5eb24bacde675986",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sdot.r3.build.log",
+    "source_sha256": "8e6811e43ec9e7227b7d5976f7a9c3fc88aa54d87d1bdb1e6c99326b200a77d2",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sdot.r3.build.log",
+    "output_sha256": "438ec233bb00a3b656883e71b04ef2d7595f5980fd7d80982419868be16daf74",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sgemm.r1.build.log",
+    "source_sha256": "c61a02729f68f13528e199596dcab5dd7818ba0fcdd1fd1b67a4435262de6626",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sgemm.r1.build.log",
+    "output_sha256": "be8b672a7576d1f1be743988e1b5b4ff99246e3f64a82e4643df6a7fde48116c",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sgemm.r2.build.log",
+    "source_sha256": "1a094d710af0da4257f160bbf1f429586285b487d70300e35793d239c03dc8b1",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sgemm.r2.build.log",
+    "output_sha256": "09f09925cc647c5882779ef990ebb6026ff4cb9f78178e038fbf13ba8be9f703",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sgemm.r3.build.log",
+    "source_sha256": "9ed6e7e2c8071b7e1ef44656efb398bbef44ffe95a92ebf6ce7ec64a95877e36",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sgemm.r3.build.log",
+    "output_sha256": "5a217213e2208e2028e23b7b2bb7568e1c301a35b3d4187ee360bc96c4879644",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sgemv.r1.build.log",
+    "source_sha256": "f2c7621508530edee9f8b54ef20cc932299e267195224026cad7433f80a2fc3e",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sgemv.r1.build.log",
+    "output_sha256": "b426d66622d27ebfbec77117c4ab0dc9b2f955c50d1e517248d2b51174803017",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sgemv.r2.build.log",
+    "source_sha256": "317cf6e3987f294fe20cecf7c7904e44d882cb8f65d8c0d4413488563e58cfe8",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sgemv.r2.build.log",
+    "output_sha256": "63ee7583de3bebf35a236f9594f8b72aaba817db3faf4aa057f341418d7b263c",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sgemv.r3.build.log",
+    "source_sha256": "180fd4b453b4fa56e8e70d83d97e0291bee7ca0c6443e45def7d9224ed3139de",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/deepseek-ai_DeepSeek-V3.2.sgemv.r3.build.log",
+    "output_sha256": "a9de04705a450547ddc764a807f784d8462d023b9204af27596f46488f3d3421",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/moonshotai_Kimi-K2.7-Code.saxpy.r1.build.log",
+    "source_sha256": "2735e55582359f137896900dfc693da3952468c8f2c879dc08f422ea9659ac00",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/moonshotai_Kimi-K2.7-Code.saxpy.r1.build.log",
+    "output_sha256": "1d58d41312a08f32e6ca756ca8c9c9d6f99057176ea1b18c2d89e41940780bc8",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/moonshotai_Kimi-K2.7-Code.saxpy.r2.build.log",
+    "source_sha256": "1bf37d4b49dfe5116842ee379c8c8228b7f320b2b62c571e8294031a75aceb31",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/moonshotai_Kimi-K2.7-Code.saxpy.r2.build.log",
+    "output_sha256": "f0f2dc60ddb3aa9e2ec8e0e0ed2ee40d1b924ca4caeae7dda1edf683f9eaf33c",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/moonshotai_Kimi-K2.7-Code.sdot.r1.build.log",
+    "source_sha256": "b99031b83eb08640760a10160ffe5ac0274e1ac91e72649e093cfd9d32b41fed",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/moonshotai_Kimi-K2.7-Code.sdot.r1.build.log",
+    "output_sha256": "f083836644c27a0eb2e865d6c69f905016cf7b6e769b2f23cec4128dbb5d0e0c",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/moonshotai_Kimi-K2.7-Code.sdot.r2.build.log",
+    "source_sha256": "847a7731773dce716e3b864750bfee34226c6910629b2f402a6a10e864c85d80",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/moonshotai_Kimi-K2.7-Code.sdot.r2.build.log",
+    "output_sha256": "bf57442ded68201d16f6955557306dbf13301290d50c1402097d0d1d48aab19a",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/moonshotai_Kimi-K2.7-Code.sdot.r3.build.log",
+    "source_sha256": "a777c68ea7dee81f3caab58d41cc78a0a7e80cb7aec0fdd512539a30c2965811",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/moonshotai_Kimi-K2.7-Code.sdot.r3.build.log",
+    "output_sha256": "86ddfc61b522790d3f04629ea7866d5b74ccffd870ff24595f8c0242a5181e28",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/moonshotai_Kimi-K2.7-Code.sgemm.r1.build.log",
+    "source_sha256": "d087bd76282023b06bdc7e576d3cc4ec7a9c126e8b1225622e041af1faae20e4",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/moonshotai_Kimi-K2.7-Code.sgemm.r1.build.log",
+    "output_sha256": "c2ced5812d1aa451b15b5e13f49a45cba53df2a3d53d9e693859f3a4708fb53a",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.saxpy.r1.build.log",
+    "source_sha256": "25a9e07cf1fe7808c055789097624b6703b87eb0c7b693b78b4ee545deb7d9f0",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.saxpy.r1.build.log",
+    "output_sha256": "78a34420d29e1b7598b3bbd1a7cdd18fc88ad41af9ae338fc443dfd70e3fbf36",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.saxpy.r2.build.log",
+    "source_sha256": "66cdd0149aa7baee0b33b6ca3fd6b53e883c395207f87e440b3e7971044c78a2",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.saxpy.r2.build.log",
+    "output_sha256": "5a53cc0d88193faae852cfc8fb92b8817650cad414ae45b6c280b0a67ebf326c",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.saxpy.r3.build.log",
+    "source_sha256": "8172d9750ccc969d624fabcf79e58a3471544eb2ec7cb429f26a39d9d033329c",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.saxpy.r3.build.log",
+    "output_sha256": "3b5805d79ac3dc9f30f42319432dc39940a0eb76c4c0556acc25e030d4d49cc1",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sdot.r1.build.log",
+    "source_sha256": "bcae04ad06dc691ff8cde3a25d6647f3da283aba29d717cf7759749df5c5d256",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sdot.r1.build.log",
+    "output_sha256": "7981bd739731d54acdee865c18936335c311b859856f5e40ab6f711026acbe17",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sdot.r2.build.log",
+    "source_sha256": "1402c468bb1556ed54ffb010dec8c21b20d8cbf9ec8bd05e5d40605cc724df25",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sdot.r2.build.log",
+    "output_sha256": "c4b04a0e1d1fa63b63225da6dec339a7aa8f85b3891956eb17b4c417db7bdd28",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sdot.r3.build.log",
+    "source_sha256": "67929642f6546b6305ffd04e2ae6faef88d72d97c9255b3f21336226f8709e4d",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sdot.r3.build.log",
+    "output_sha256": "e4d1faa80978f929ce8ba7c343a4e5dac5115f6b13aff595e294e7b96c7e2cf4",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemm.r1.build.log",
+    "source_sha256": "5b6a53f0fb349acff2ed989eb44538ed32e88c355f6391fd85db13414c573fe8",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemm.r1.build.log",
+    "output_sha256": "5758a4a69dbcb61cffe75cd6020885d0a725a987644b9254294967e403f27307",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemm.r2.build.log",
+    "source_sha256": "b34f9374047b503248d4cdda67832917b743e3e5530be4c55851a271a8e6f391",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemm.r2.build.log",
+    "output_sha256": "f5d253bca113f1c0bfe2ef2c27d9b5199cf214383313b4a48be02f8f3ebe49db",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemm.r3.build.log",
+    "source_sha256": "a5e28432e760346e253e78e0715da7cba9e5786f16641d9b4b44256012fe17a8",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemm.r3.build.log",
+    "output_sha256": "cb8e1691f71cddcf4dfbce59a4db75366e9ad01082c7cce6618eea22891f1dfb",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemv.r1.build.log",
+    "source_sha256": "01d9b831c7ab187feb1c2bc78d9f7ac2b72bad4c9aacbbc27735ddf456ef6a6a",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemv.r1.build.log",
+    "output_sha256": "70b98067f659a82a8f76560149f950e239f4e0ba85c277c5040efcbf33adde90",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemv.r2.build.log",
+    "source_sha256": "76d479ad9e85a554ca825707f5fb4f8823fd7e92951c3b7ea7a2bd7dd60d11ee",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemv.r2.build.log",
+    "output_sha256": "a883bae59fa1fdb985bae0277683baa3826d43cf12dd8d0abf4d535d6ed6965d",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemv.r3.build.log",
+    "source_sha256": "f9367b01286e7fef6acbd87e94bd18c1f299da45515f49d50463817eb11e1e46",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemv.r3.build.log",
+    "output_sha256": "59eb78c7a7960c43a474a7b689566283a138ec7b00506c24c88fec03585225a8",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.saxpy.r1.build.log",
+    "source_sha256": "05eab02cba5eebd6b39390da6f2b01e058e8a41c2e5a8fbfa31d9ada34e06789",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.saxpy.r1.build.log",
+    "output_sha256": "bc06e54abdd60559e7f23dbdbd8d1c51d7fb76ba61ab67d9e6029464f9a02c7d",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.saxpy.r2.build.log",
+    "source_sha256": "6f8e9a7bb97b619ffad28209af239fa4b3166e60712c1f233e88ed20a26072b4",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.saxpy.r2.build.log",
+    "output_sha256": "08c73073fed5c9428a35044671151089d78655b997ce37c088b4d4e46d1eb789",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.saxpy.r3.build.log",
+    "source_sha256": "07bbf2d70252be1fb159bb65c1abbf47ee58979696b7866784291a5db1f8b606",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.saxpy.r3.build.log",
+    "output_sha256": "9f47166cd04da0b22a6a63c3acfd97bc76c1bf68958b5bcc647f78d8852d490f",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.sdot.r1.build.log",
+    "source_sha256": "d320dec18ed6d767e526fb6b068e3188a45e09a034c323075531688e4f250c8a",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.sdot.r1.build.log",
+    "output_sha256": "5477d1dc67a201ea4f5ebdb991db20b955f1f95ffc25569354efea2058c02b0d",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.sdot.r2.build.log",
+    "source_sha256": "549c5327a711d9aec353f12e5f0bfcf9d3214842061fc9b758615eb818dd68e1",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.sdot.r2.build.log",
+    "output_sha256": "495de94494578b604e16f4a021f3bf383cff358ff60542cf4b825e4f4470109d",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.sdot.r3.build.log",
+    "source_sha256": "5d24449fe9eed4d1b90c4c4883566fc64aa9908bffc0190c7aaf9010a427a792",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.sdot.r3.build.log",
+    "output_sha256": "10a6268ca286ac270bcbd877ef22949b2cebe44f7cf46f2a9ad7ce44ccb7b336",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.sgemv.r1.build.log",
+    "source_sha256": "f7bf4766ee4a35092061fb3662661843ad1b9dc26ebaf606930c2ec382f41cce",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.sgemv.r1.build.log",
+    "output_sha256": "414e094466762f37419834788acb43ee5a96a01fdbad4e86a88d9500b87a828c",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.sgemv.r2.build.log",
+    "source_sha256": "71836539b7b1be3c60b2e0eb2d6ba8fcfa4ef2d7fb363f2a7c9029f36433dd87",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.sgemv.r2.build.log",
+    "output_sha256": "cfe5f0f36937b618ab50e30b99bbc0a2386f3bcd91775d4f9f121c5f903f08d8",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.sgemv.r3.build.log",
+    "source_sha256": "7c0d76a12bfb9f6206f6cd436df6ee8533dca79f5786167838a720f232f7f87a",
+    "output": "results/ascend310p/paper/llm_baseline/buildlogs/zai-org_GLM-4.5-Air.sgemv.r3.build.log",
+    "output_sha256": "a4ce10b33a0ac170f378943d7390cdc355888088c067332da799beaf77d91a08",
+    "adapted": true
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_saxpy.r1.cpp",
+    "source_sha256": "096128ca1469c896c3e7ea84d0feb5cb9731450513877e977da0bd07c12bd325",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_saxpy.r1.cpp",
+    "output_sha256": "096128ca1469c896c3e7ea84d0feb5cb9731450513877e977da0bd07c12bd325",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sdot.r1.cpp",
+    "source_sha256": "28a5d7a5d26b1f5dea5aa882cf2d75c40757f2035beb11ea9272e2a6f0ee53ee",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sdot.r1.cpp",
+    "output_sha256": "28a5d7a5d26b1f5dea5aa882cf2d75c40757f2035beb11ea9272e2a6f0ee53ee",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sdot.r2.cpp",
+    "source_sha256": "fd59defca1e1e70a73c6557af942cce10d7a264306a1adb65878b639990816a3",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sdot.r2.cpp",
+    "output_sha256": "fd59defca1e1e70a73c6557af942cce10d7a264306a1adb65878b639990816a3",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemm.r1.cpp",
+    "source_sha256": "cf2e03942cbb97662df3d9b778aca3ea7b77817edf989faeb4f740e83157cded",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemm.r1.cpp",
+    "output_sha256": "cf2e03942cbb97662df3d9b778aca3ea7b77817edf989faeb4f740e83157cded",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemv.r1.cpp",
+    "source_sha256": "66c55c9e79c1c4e133a9b846e6343266629a6a3a88d2ba68bd9b569b19e7e7af",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemv.r1.cpp",
+    "output_sha256": "66c55c9e79c1c4e133a9b846e6343266629a6a3a88d2ba68bd9b569b19e7e7af",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemv.r2.cpp",
+    "source_sha256": "c002629351b64a49d76d66f4957780abcfd95816b53af80da2372ecd2eac06a0",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemv.r2.cpp",
+    "output_sha256": "c002629351b64a49d76d66f4957780abcfd95816b53af80da2372ecd2eac06a0",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemv.r3.cpp",
+    "source_sha256": "e076b2d185674a47e179452b22d87d6fc225654a3e5eba6394a1125f8ae6b914",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemv.r3.cpp",
+    "output_sha256": "e076b2d185674a47e179452b22d87d6fc225654a3e5eba6394a1125f8ae6b914",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemv.r4.cpp",
+    "source_sha256": "a15536ec5a8025298a5e601e497b4c78c521fd8e47d9113e817369396cdea7e1",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemv.r4.cpp",
+    "output_sha256": "a15536ec5a8025298a5e601e497b4c78c521fd8e47d9113e817369396cdea7e1",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemv.r5.cpp",
+    "source_sha256": "a15536ec5a8025298a5e601e497b4c78c521fd8e47d9113e817369396cdea7e1",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemv.r5.cpp",
+    "output_sha256": "a15536ec5a8025298a5e601e497b4c78c521fd8e47d9113e817369396cdea7e1",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemv.r6.cpp",
+    "source_sha256": "a15536ec5a8025298a5e601e497b4c78c521fd8e47d9113e817369396cdea7e1",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.fair_sgemv.r6.cpp",
+    "output_sha256": "a15536ec5a8025298a5e601e497b4c78c521fd8e47d9113e817369396cdea7e1",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.saxpy.r1.cpp",
+    "source_sha256": "c81685ed877b6db0c6ddfca9c6e2fb905daa9fd129c975ab557004a285e63f0e",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.saxpy.r1.cpp",
+    "output_sha256": "c81685ed877b6db0c6ddfca9c6e2fb905daa9fd129c975ab557004a285e63f0e",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.saxpy.r2.cpp",
+    "source_sha256": "3740270c3a63494ede26a03bbc55fee46aa4e05d95f48d8ece83f57054d9d9b8",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.saxpy.r2.cpp",
+    "output_sha256": "3740270c3a63494ede26a03bbc55fee46aa4e05d95f48d8ece83f57054d9d9b8",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.saxpy.r3.cpp",
+    "source_sha256": "6709ccc9fd4683b9abb0caea3e890d3517739cf8a8f4c2e03395bb27e01a42e3",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.saxpy.r3.cpp",
+    "output_sha256": "6709ccc9fd4683b9abb0caea3e890d3517739cf8a8f4c2e03395bb27e01a42e3",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.sdot.r1.cpp",
+    "source_sha256": "6d91261e2d701f1459164dd2dc2e0aab96b9f1a61810927c345994cea3cb191f",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.sdot.r1.cpp",
+    "output_sha256": "6d91261e2d701f1459164dd2dc2e0aab96b9f1a61810927c345994cea3cb191f",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.sdot.r2.cpp",
+    "source_sha256": "2852d41bf88660fac4e790586abd366fd79ec8a1e56dd552085c7402096102b9",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.sdot.r2.cpp",
+    "output_sha256": "2852d41bf88660fac4e790586abd366fd79ec8a1e56dd552085c7402096102b9",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.sdot.r3.cpp",
+    "source_sha256": "71dd2df15836bb95cf200c008862b4d2ad05e5fa8aece368152bbe7169591494",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.sdot.r3.cpp",
+    "output_sha256": "71dd2df15836bb95cf200c008862b4d2ad05e5fa8aece368152bbe7169591494",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.sgemm.r1.cpp",
+    "source_sha256": "97217c4b7dd37ad3b24ec8125dba1eb9cee6b443d310ced95f8a798b4e5795c1",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.sgemm.r1.cpp",
+    "output_sha256": "97217c4b7dd37ad3b24ec8125dba1eb9cee6b443d310ced95f8a798b4e5795c1",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.sgemm.r2.cpp",
+    "source_sha256": "05601023e9c6e8c3d9d09dc3bd1cf29cb7fcb4dd45c9d1e5c68aa2328bb45296",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.sgemm.r2.cpp",
+    "output_sha256": "05601023e9c6e8c3d9d09dc3bd1cf29cb7fcb4dd45c9d1e5c68aa2328bb45296",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.sgemm.r3.cpp",
+    "source_sha256": "d645da5f55259dedb9410cd10cb0b9e0972f9675b8e98e78ba0a3fbe7cbdc077",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.sgemm.r3.cpp",
+    "output_sha256": "d645da5f55259dedb9410cd10cb0b9e0972f9675b8e98e78ba0a3fbe7cbdc077",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.sgemv.r1.cpp",
+    "source_sha256": "65b9449837cc535e7057f3589ffe21a27629225e4df94f5e17b37d1c5465a5e9",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.sgemv.r1.cpp",
+    "output_sha256": "65b9449837cc535e7057f3589ffe21a27629225e4df94f5e17b37d1c5465a5e9",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.sgemv.r2.cpp",
+    "source_sha256": "bb2c0ec5e2414f8d95eff6acb00286e28b11b0f547495f46cc099fe7906e643c",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.sgemv.r2.cpp",
+    "output_sha256": "bb2c0ec5e2414f8d95eff6acb00286e28b11b0f547495f46cc099fe7906e643c",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/deepseek-ai_DeepSeek-V3.2.sgemv.r3.cpp",
+    "source_sha256": "8d892486495d8f8540ae112398cdba47e1dd6bf5127e0f94bf90edf572513ed4",
+    "output": "results/ascend310p/paper/llm_baseline/deepseek-ai_DeepSeek-V3.2.sgemv.r3.cpp",
+    "output_sha256": "8d892486495d8f8540ae112398cdba47e1dd6bf5127e0f94bf90edf572513ed4",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/moonshotai_Kimi-K2.7-Code.fair_saxpy.r1.cpp",
+    "source_sha256": "d4b5016672d5311977bfb55b7620b5cf09cbc2a25b49ab7b801fd0bc6c9fdb2e",
+    "output": "results/ascend310p/paper/llm_baseline/moonshotai_Kimi-K2.7-Code.fair_saxpy.r1.cpp",
+    "output_sha256": "d4b5016672d5311977bfb55b7620b5cf09cbc2a25b49ab7b801fd0bc6c9fdb2e",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/moonshotai_Kimi-K2.7-Code.fair_sdot.r1.cpp",
+    "source_sha256": "69e13fc3e131aa3558f152737779d5f484df08cb3541295571dbab537cd0176b",
+    "output": "results/ascend310p/paper/llm_baseline/moonshotai_Kimi-K2.7-Code.fair_sdot.r1.cpp",
+    "output_sha256": "69e13fc3e131aa3558f152737779d5f484df08cb3541295571dbab537cd0176b",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/moonshotai_Kimi-K2.7-Code.fair_sdot.r2.cpp",
+    "source_sha256": "9bd46c2dbfe8fff6bd83611d5baee14d36c8e4bf12723dad7819592d58c71d5d",
+    "output": "results/ascend310p/paper/llm_baseline/moonshotai_Kimi-K2.7-Code.fair_sdot.r2.cpp",
+    "output_sha256": "9bd46c2dbfe8fff6bd83611d5baee14d36c8e4bf12723dad7819592d58c71d5d",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/moonshotai_Kimi-K2.7-Code.saxpy.r1.cpp",
+    "source_sha256": "fd5474484faf5471515d51d097d5b48c0eb49392e9873ed5f1bf99d8ff82a1f8",
+    "output": "results/ascend310p/paper/llm_baseline/moonshotai_Kimi-K2.7-Code.saxpy.r1.cpp",
+    "output_sha256": "fd5474484faf5471515d51d097d5b48c0eb49392e9873ed5f1bf99d8ff82a1f8",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/moonshotai_Kimi-K2.7-Code.saxpy.r2.cpp",
+    "source_sha256": "1affccbfa899db7ded5fb8a8a5f87312fc8e3632e6f7ee9e422f6728b57a1ad7",
+    "output": "results/ascend310p/paper/llm_baseline/moonshotai_Kimi-K2.7-Code.saxpy.r2.cpp",
+    "output_sha256": "1affccbfa899db7ded5fb8a8a5f87312fc8e3632e6f7ee9e422f6728b57a1ad7",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/moonshotai_Kimi-K2.7-Code.sdot.r1.cpp",
+    "source_sha256": "221e76112b70dcbb2348c5077d7589d0a203e434994686a5eb530a8edb477cf6",
+    "output": "results/ascend310p/paper/llm_baseline/moonshotai_Kimi-K2.7-Code.sdot.r1.cpp",
+    "output_sha256": "221e76112b70dcbb2348c5077d7589d0a203e434994686a5eb530a8edb477cf6",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/moonshotai_Kimi-K2.7-Code.sdot.r2.cpp",
+    "source_sha256": "8fec09e4f51c0c08c79c53610bce8aa1581bb216e3e2b4598446fe13fe6389d1",
+    "output": "results/ascend310p/paper/llm_baseline/moonshotai_Kimi-K2.7-Code.sdot.r2.cpp",
+    "output_sha256": "8fec09e4f51c0c08c79c53610bce8aa1581bb216e3e2b4598446fe13fe6389d1",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/moonshotai_Kimi-K2.7-Code.sdot.r3.cpp",
+    "source_sha256": "e57676a1923a7230ad5a0a9cee1f8ddd614a0e086dcecb38f6b62a20b4d2280f",
+    "output": "results/ascend310p/paper/llm_baseline/moonshotai_Kimi-K2.7-Code.sdot.r3.cpp",
+    "output_sha256": "e57676a1923a7230ad5a0a9cee1f8ddd614a0e086dcecb38f6b62a20b4d2280f",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/moonshotai_Kimi-K2.7-Code.sgemm.r1.cpp",
+    "source_sha256": "f195efc6b19ee699dc7155ae6385432e8fea0dedd88a9ab32a33f114f0d5192a",
+    "output": "results/ascend310p/paper/llm_baseline/moonshotai_Kimi-K2.7-Code.sgemm.r1.cpp",
+    "output_sha256": "f195efc6b19ee699dc7155ae6385432e8fea0dedd88a9ab32a33f114f0d5192a",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_saxpy.r1.cpp",
+    "source_sha256": "447c7ace4f0b8d4e37eb20c7ee29472903ee840c20ea371a5c96cffc4b1166ee",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_saxpy.r1.cpp",
+    "output_sha256": "447c7ace4f0b8d4e37eb20c7ee29472903ee840c20ea371a5c96cffc4b1166ee",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sdot.r1.cpp",
+    "source_sha256": "76b52feb036596d1b0d8544c0d8a28852df73953a0c71ce844cf617207dbcbcb",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sdot.r1.cpp",
+    "output_sha256": "76b52feb036596d1b0d8544c0d8a28852df73953a0c71ce844cf617207dbcbcb",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sdot.r2.cpp",
+    "source_sha256": "8eefcbf1789152767bc1b4d2cee42f03b197110e47e8c3e4bf74b41e65847cdb",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sdot.r2.cpp",
+    "output_sha256": "8eefcbf1789152767bc1b4d2cee42f03b197110e47e8c3e4bf74b41e65847cdb",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sdot.r3.cpp",
+    "source_sha256": "7b6f7b5c789b0b03da6d042d74207b0af2165b263c3abf67d5ad92bf3ab15c1e",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sdot.r3.cpp",
+    "output_sha256": "7b6f7b5c789b0b03da6d042d74207b0af2165b263c3abf67d5ad92bf3ab15c1e",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sdot.r4.cpp",
+    "source_sha256": "2045a85dbf9d8f701162f44dd7ba380bc935c84b966e9356ba183fbc21c7cda7",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sdot.r4.cpp",
+    "output_sha256": "2045a85dbf9d8f701162f44dd7ba380bc935c84b966e9356ba183fbc21c7cda7",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sdot.r5.cpp",
+    "source_sha256": "7b6f7b5c789b0b03da6d042d74207b0af2165b263c3abf67d5ad92bf3ab15c1e",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sdot.r5.cpp",
+    "output_sha256": "7b6f7b5c789b0b03da6d042d74207b0af2165b263c3abf67d5ad92bf3ab15c1e",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sdot.r6.cpp",
+    "source_sha256": "f3d956d55e66177492a9e07d3f9ebee2f91446b666ce0a4bc2095e839f053e74",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sdot.r6.cpp",
+    "output_sha256": "f3d956d55e66177492a9e07d3f9ebee2f91446b666ce0a4bc2095e839f053e74",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemm.r1.cpp",
+    "source_sha256": "faab552b23d93a36e7797b5ed6e3335b50f81216259ed36a0c1e76e5559ecf78",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemm.r1.cpp",
+    "output_sha256": "faab552b23d93a36e7797b5ed6e3335b50f81216259ed36a0c1e76e5559ecf78",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemm.r2.cpp",
+    "source_sha256": "bfc9f81f420fdd8a67e73f2c83791ba6538e9e02ef5e2744606e2b6bd04c5d5f",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemm.r2.cpp",
+    "output_sha256": "bfc9f81f420fdd8a67e73f2c83791ba6538e9e02ef5e2744606e2b6bd04c5d5f",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemm.r3.cpp",
+    "source_sha256": "bfc9f81f420fdd8a67e73f2c83791ba6538e9e02ef5e2744606e2b6bd04c5d5f",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemm.r3.cpp",
+    "output_sha256": "bfc9f81f420fdd8a67e73f2c83791ba6538e9e02ef5e2744606e2b6bd04c5d5f",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemm.r4.cpp",
+    "source_sha256": "bfc9f81f420fdd8a67e73f2c83791ba6538e9e02ef5e2744606e2b6bd04c5d5f",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemm.r4.cpp",
+    "output_sha256": "bfc9f81f420fdd8a67e73f2c83791ba6538e9e02ef5e2744606e2b6bd04c5d5f",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemm.r5.cpp",
+    "source_sha256": "bfc9f81f420fdd8a67e73f2c83791ba6538e9e02ef5e2744606e2b6bd04c5d5f",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemm.r5.cpp",
+    "output_sha256": "bfc9f81f420fdd8a67e73f2c83791ba6538e9e02ef5e2744606e2b6bd04c5d5f",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemm.r6.cpp",
+    "source_sha256": "bfc9f81f420fdd8a67e73f2c83791ba6538e9e02ef5e2744606e2b6bd04c5d5f",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemm.r6.cpp",
+    "output_sha256": "bfc9f81f420fdd8a67e73f2c83791ba6538e9e02ef5e2744606e2b6bd04c5d5f",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemv.r1.cpp",
+    "source_sha256": "826c2222e1a9dde5623ce1b65a16daf89607b3a9a1072140cf26000240e46efe",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemv.r1.cpp",
+    "output_sha256": "826c2222e1a9dde5623ce1b65a16daf89607b3a9a1072140cf26000240e46efe",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemv.r2.cpp",
+    "source_sha256": "6b8166ab8f8ea501c9c1219e2c4e7480d57c588b62b6cdb3bfe0f463b1230e32",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemv.r2.cpp",
+    "output_sha256": "6b8166ab8f8ea501c9c1219e2c4e7480d57c588b62b6cdb3bfe0f463b1230e32",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemv.r3.cpp",
+    "source_sha256": "f3e326a9b7045dc622358cc5478ac8bd7cb3f776aa3f5ce8e226fb1da747185a",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemv.r3.cpp",
+    "output_sha256": "f3e326a9b7045dc622358cc5478ac8bd7cb3f776aa3f5ce8e226fb1da747185a",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemv.r4.cpp",
+    "source_sha256": "352294081eec0d2d51390415f7cec73d408b5706261a49437b7e6f5afa138123",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemv.r4.cpp",
+    "output_sha256": "352294081eec0d2d51390415f7cec73d408b5706261a49437b7e6f5afa138123",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemv.r5.cpp",
+    "source_sha256": "a825737e201924c6f754f52979fc858ec93d4c049aaa832f82c944b448e344bc",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemv.r5.cpp",
+    "output_sha256": "a825737e201924c6f754f52979fc858ec93d4c049aaa832f82c944b448e344bc",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemv.r6.cpp",
+    "source_sha256": "916dc669155f0352be652966ac2866a331cdea73b21ab37014466740a2f3a5ac",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.fair_sgemv.r6.cpp",
+    "output_sha256": "916dc669155f0352be652966ac2866a331cdea73b21ab37014466740a2f3a5ac",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.saxpy.r1.cpp",
+    "source_sha256": "58844b4b34b1b7b135c715def3596b5a53c578d34796a394704a40cd5ac51c7e",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.saxpy.r1.cpp",
+    "output_sha256": "58844b4b34b1b7b135c715def3596b5a53c578d34796a394704a40cd5ac51c7e",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.saxpy.r2.cpp",
+    "source_sha256": "81409eb043a84389e351d91797ed399995c300653fd2c251596b930aa7f7ae7b",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.saxpy.r2.cpp",
+    "output_sha256": "81409eb043a84389e351d91797ed399995c300653fd2c251596b930aa7f7ae7b",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.saxpy.r3.cpp",
+    "source_sha256": "b2d285590e9acaf94b6a1a48ca788f95f0e3377cedde75d0e1b287a7b3f0334e",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.saxpy.r3.cpp",
+    "output_sha256": "b2d285590e9acaf94b6a1a48ca788f95f0e3377cedde75d0e1b287a7b3f0334e",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sdot.r1.cpp",
+    "source_sha256": "04a06431d652df0e966e66765c51d2e7caaf62cf99927be8186e7dcb317ef7d4",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sdot.r1.cpp",
+    "output_sha256": "04a06431d652df0e966e66765c51d2e7caaf62cf99927be8186e7dcb317ef7d4",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sdot.r2.cpp",
+    "source_sha256": "e278a152ebc301f0eb85a2bc8f4a23258cdbbe1104d68380e34eddf07e2f49b3",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sdot.r2.cpp",
+    "output_sha256": "e278a152ebc301f0eb85a2bc8f4a23258cdbbe1104d68380e34eddf07e2f49b3",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sdot.r3.cpp",
+    "source_sha256": "22a2f28ba58f4258fec0286d8f3d6ebdaf65404d9daf71988d2b646684745923",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sdot.r3.cpp",
+    "output_sha256": "22a2f28ba58f4258fec0286d8f3d6ebdaf65404d9daf71988d2b646684745923",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemm.r1.cpp",
+    "source_sha256": "daff47e2d2bd3b781d7484badf72f580feed535c9bc56397fadb4db78242f5e6",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemm.r1.cpp",
+    "output_sha256": "daff47e2d2bd3b781d7484badf72f580feed535c9bc56397fadb4db78242f5e6",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemm.r2.cpp",
+    "source_sha256": "9dc2b357451e391c092cf39e9a1dc05b8d2aaf81d3ced1ae90ab1a7d7f71fa6c",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemm.r2.cpp",
+    "output_sha256": "9dc2b357451e391c092cf39e9a1dc05b8d2aaf81d3ced1ae90ab1a7d7f71fa6c",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemm.r3.cpp",
+    "source_sha256": "9dc2b357451e391c092cf39e9a1dc05b8d2aaf81d3ced1ae90ab1a7d7f71fa6c",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemm.r3.cpp",
+    "output_sha256": "9dc2b357451e391c092cf39e9a1dc05b8d2aaf81d3ced1ae90ab1a7d7f71fa6c",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemv.r1.cpp",
+    "source_sha256": "b28f719ac81f1ddcc44bdf7b6e683c95a18bdb5b5706526f089e1a1aa82fa844",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemv.r1.cpp",
+    "output_sha256": "b28f719ac81f1ddcc44bdf7b6e683c95a18bdb5b5706526f089e1a1aa82fa844",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemv.r2.cpp",
+    "source_sha256": "3e2d2773afadd9a900017fae4f6273be9e2194d6bb99a158c53c0b512934861f",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemv.r2.cpp",
+    "output_sha256": "3e2d2773afadd9a900017fae4f6273be9e2194d6bb99a158c53c0b512934861f",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemv.r3.cpp",
+    "source_sha256": "99451720b0cb43e4cc3c659102ead251b4980bde8472ae32d6daebe2dd1526f1",
+    "output": "results/ascend310p/paper/llm_baseline/Qwen_Qwen3-Coder-30B-A3B-Instruct.sgemv.r3.cpp",
+    "output_sha256": "99451720b0cb43e4cc3c659102ead251b4980bde8472ae32d6daebe2dd1526f1",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.fair_saxpy.r1.cpp",
+    "source_sha256": "f994daee33e9de401ba31f23992b871b918df7c6138e800097fc97e12953bab7",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.fair_saxpy.r1.cpp",
+    "output_sha256": "f994daee33e9de401ba31f23992b871b918df7c6138e800097fc97e12953bab7",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.fair_sdot.r1.cpp",
+    "source_sha256": "cbb55b5a2584c8002fa42b8a468d33c5c279291b02343f9e358265903d7c3f10",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.fair_sdot.r1.cpp",
+    "output_sha256": "cbb55b5a2584c8002fa42b8a468d33c5c279291b02343f9e358265903d7c3f10",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.fair_sdot.r2.cpp",
+    "source_sha256": "0ef2f2d817c3561eafa1e5b12a8dea52bffa064e806c16c4f390c31b0db836b8",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.fair_sdot.r2.cpp",
+    "output_sha256": "0ef2f2d817c3561eafa1e5b12a8dea52bffa064e806c16c4f390c31b0db836b8",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.fair_sdot.r3.cpp",
+    "source_sha256": "b1a4bfa7d1f2bc609f2eef764dde0a063db60bbb9216fec70111f72942798375",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.fair_sdot.r3.cpp",
+    "output_sha256": "b1a4bfa7d1f2bc609f2eef764dde0a063db60bbb9216fec70111f72942798375",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.fair_sdot.r4.cpp",
+    "source_sha256": "83a5c7f92abfd4410efd4978f10c170c2fc8501134940c127ab12894b25418c2",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.fair_sdot.r4.cpp",
+    "output_sha256": "83a5c7f92abfd4410efd4978f10c170c2fc8501134940c127ab12894b25418c2",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.fair_sdot.r5.cpp",
+    "source_sha256": "9c6937ce623d85adf7d5647cb95b62b15878d889e4d048c34223568140bb5400",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.fair_sdot.r5.cpp",
+    "output_sha256": "9c6937ce623d85adf7d5647cb95b62b15878d889e4d048c34223568140bb5400",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.fair_sdot.r6.cpp",
+    "source_sha256": "2fd9e6a725f14df6400e0f8a920519e234ef8a2cf710ffa7d374daf313a9b0b2",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.fair_sdot.r6.cpp",
+    "output_sha256": "2fd9e6a725f14df6400e0f8a920519e234ef8a2cf710ffa7d374daf313a9b0b2",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.fair_sgemm.r1.cpp",
+    "source_sha256": "a6887c77fbd4d0d92a2176fb4b8f0c9e40a0e5a4f26cd22b1f93c1bdf2de712b",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.fair_sgemm.r1.cpp",
+    "output_sha256": "a6887c77fbd4d0d92a2176fb4b8f0c9e40a0e5a4f26cd22b1f93c1bdf2de712b",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.fair_sgemm.r2.cpp",
+    "source_sha256": "151874b7fa3afcdd0cde1ea0b20e15da4240acc15dc1fc8d77c77bdb7989ff7f",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.fair_sgemm.r2.cpp",
+    "output_sha256": "151874b7fa3afcdd0cde1ea0b20e15da4240acc15dc1fc8d77c77bdb7989ff7f",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.fair_sgemm.r3.cpp",
+    "source_sha256": "1cf50092aec0276bc9b6520708abf1d6942bc5b4cce0a332faef98c042191652",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.fair_sgemm.r3.cpp",
+    "output_sha256": "1cf50092aec0276bc9b6520708abf1d6942bc5b4cce0a332faef98c042191652",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.fair_sgemm.r4.cpp",
+    "source_sha256": "b6556e5a9d78eb61b492b69319813be6d528c572ca20497900e7b86e350da474",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.fair_sgemm.r4.cpp",
+    "output_sha256": "b6556e5a9d78eb61b492b69319813be6d528c572ca20497900e7b86e350da474",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.fair_sgemm.r5.cpp",
+    "source_sha256": "08ad4c2e534d1ff6e1fce374d433bd5e3f524c1bbbc234306c22f36a47738509",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.fair_sgemm.r5.cpp",
+    "output_sha256": "08ad4c2e534d1ff6e1fce374d433bd5e3f524c1bbbc234306c22f36a47738509",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.fair_sgemm.r6.cpp",
+    "source_sha256": "b6556e5a9d78eb61b492b69319813be6d528c572ca20497900e7b86e350da474",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.fair_sgemm.r6.cpp",
+    "output_sha256": "b6556e5a9d78eb61b492b69319813be6d528c572ca20497900e7b86e350da474",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.saxpy.r1.cpp",
+    "source_sha256": "2a3f92eb98b41f74bc16f76ce7fd3fe86a52aeddd657e687d3639cbf7cd818d2",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.saxpy.r1.cpp",
+    "output_sha256": "2a3f92eb98b41f74bc16f76ce7fd3fe86a52aeddd657e687d3639cbf7cd818d2",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.saxpy.r2.cpp",
+    "source_sha256": "bb3d5396dfab4da5931d099d769d1f001808604182ece62c55dc06f19d845e6d",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.saxpy.r2.cpp",
+    "output_sha256": "bb3d5396dfab4da5931d099d769d1f001808604182ece62c55dc06f19d845e6d",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.saxpy.r3.cpp",
+    "source_sha256": "51ed18b9007cfe733481aa23a1976c7cc0462d28717783961837deee033591f4",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.saxpy.r3.cpp",
+    "output_sha256": "51ed18b9007cfe733481aa23a1976c7cc0462d28717783961837deee033591f4",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.sdot.r1.cpp",
+    "source_sha256": "fb44ab576e35d31133f06766a03b4a1abe7df70fcd9739aea64846f4542839ba",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.sdot.r1.cpp",
+    "output_sha256": "fb44ab576e35d31133f06766a03b4a1abe7df70fcd9739aea64846f4542839ba",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.sdot.r2.cpp",
+    "source_sha256": "675d5a8320158d4529af965a1693941d042885b20f8e3aadbc43397f0d8a841a",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.sdot.r2.cpp",
+    "output_sha256": "675d5a8320158d4529af965a1693941d042885b20f8e3aadbc43397f0d8a841a",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.sdot.r3.cpp",
+    "source_sha256": "eaaf2d28e955e69d3fdf05bace53f3575487fff71b0518f84614f53ce2080334",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.sdot.r3.cpp",
+    "output_sha256": "eaaf2d28e955e69d3fdf05bace53f3575487fff71b0518f84614f53ce2080334",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.sgemv.r1.cpp",
+    "source_sha256": "4313aa12ede8afb7b6117c64422f4436fbc875c657062b41184a48566d91f4b4",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.sgemv.r1.cpp",
+    "output_sha256": "4313aa12ede8afb7b6117c64422f4436fbc875c657062b41184a48566d91f4b4",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.sgemv.r2.cpp",
+    "source_sha256": "d03757975be451af2194bf9544b81f11b7d94ca7f7ee64998daeb45516419dd0",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.sgemv.r2.cpp",
+    "output_sha256": "d03757975be451af2194bf9544b81f11b7d94ca7f7ee64998daeb45516419dd0",
+    "adapted": false
+  },
+  {
+    "source": "02-core-ascend310p-evidence/artifacts/llm_baseline/zai-org_GLM-4.5-Air.sgemv.r3.cpp",
+    "source_sha256": "6b5edc367e295f0f1134f367753459be9fb1bad6dd1e856b39bd7b9f5effdec8",
+    "output": "results/ascend310p/paper/llm_baseline/zai-org_GLM-4.5-Air.sgemv.r3.cpp",
+    "output_sha256": "6b5edc367e295f0f1134f367753459be9fb1bad6dd1e856b39bd7b9f5effdec8",
+    "adapted": false
+  }
+]

@@ -1,0 +1,205 @@
+{
+  "op": "sdot",
+  "status": "VERIFIED",
+  "reason": "registered intent, f32 rules, layout and dependency checks passed",
+  "intent_source": "manual",
+  "schedule": {
+    "block_dim": 8,
+    "tile_len": 1024,
+    "buffer_num": 2,
+    "tile_m": 64,
+    "tile_n": 64,
+    "tile_k": 64
+  },
+  "source_sha256": {
+    "sdot.cpp": "5072662150aae0d6d27ca75065cd3abc394ef1b5788d9995fa703b4d21c7038c",
+    "main.cpp": "84ca6689177b58a9d8ef79bf8afd146e478f5bdd3fb1e5bfdc132c5a20727356",
+    "CMakeLists.txt": "552a1d9152d21ea8dfa79f11958b7485bab0bf9c0fe6c039a9cfe907a4f12535",
+    "project.json": "634223779225ab73d4406856edd0bbc2d92fb3a7ba135be81a4fb1be25926928"
+  },
+  "model": null,
+  "validation": {
+    "status": "VERIFIED",
+    "verified": true,
+    "source_sha256": {
+      "sdot.cpp": "5072662150aae0d6d27ca75065cd3abc394ef1b5788d9995fa703b4d21c7038c",
+      "main.cpp": "84ca6689177b58a9d8ef79bf8afd146e478f5bdd3fb1e5bfdc132c5a20727356",
+      "CMakeLists.txt": "552a1d9152d21ea8dfa79f11958b7485bab0bf9c0fe6c039a9cfe907a4f12535",
+      "project.json": "634223779225ab73d4406856edd0bbc2d92fb3a7ba135be81a4fb1be25926928"
+    },
+    "machine": "aarch64",
+    "timing_boundary": "host_batch_submit_sync",
+    "reduction_finalization": "CPU partial fold outside timed kernel batch",
+    "samples": [
+      {
+        "sizes": [
+          8192
+        ],
+        "round": 0,
+        "exit_code": 0,
+        "log": "case000.log",
+        "passed": true,
+        "metrics": {
+          "op": "sdot",
+          "pattern": "reduce",
+          "n": "8192",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "10.654",
+          "GBps": "6.15"
+        }
+      },
+      {
+        "sizes": [
+          8192
+        ],
+        "round": 1,
+        "exit_code": 0,
+        "log": "case001.log",
+        "passed": true,
+        "metrics": {
+          "op": "sdot",
+          "pattern": "reduce",
+          "n": "8192",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "10.747",
+          "GBps": "6.10"
+        }
+      },
+      {
+        "sizes": [
+          8192
+        ],
+        "round": 2,
+        "exit_code": 0,
+        "log": "case002.log",
+        "passed": true,
+        "metrics": {
+          "op": "sdot",
+          "pattern": "reduce",
+          "n": "8192",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "11.017",
+          "GBps": "5.95"
+        }
+      },
+      {
+        "sizes": [
+          270336
+        ],
+        "round": 0,
+        "exit_code": 0,
+        "log": "case003.log",
+        "passed": true,
+        "metrics": {
+          "op": "sdot",
+          "pattern": "reduce",
+          "n": "270336",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "20.982",
+          "GBps": "103.07"
+        }
+      },
+      {
+        "sizes": [
+          270336
+        ],
+        "round": 1,
+        "exit_code": 0,
+        "log": "case004.log",
+        "passed": true,
+        "metrics": {
+          "op": "sdot",
+          "pattern": "reduce",
+          "n": "270336",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "20.675",
+          "GBps": "104.60"
+        }
+      },
+      {
+        "sizes": [
+          270336
+        ],
+        "round": 2,
+        "exit_code": 0,
+        "log": "case005.log",
+        "passed": true,
+        "metrics": {
+          "op": "sdot",
+          "pattern": "reduce",
+          "n": "270336",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "20.821",
+          "GBps": "103.87"
+        }
+      },
+      {
+        "sizes": [
+          16777216
+        ],
+        "round": 0,
+        "exit_code": 0,
+        "log": "case006.log",
+        "passed": true,
+        "metrics": {
+          "op": "sdot",
+          "pattern": "reduce",
+          "n": "16777216",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "939.344",
+          "GBps": "142.88"
+        }
+      },
+      {
+        "sizes": [
+          16777216
+        ],
+        "round": 1,
+        "exit_code": 0,
+        "log": "case007.log",
+        "passed": true,
+        "metrics": {
+          "op": "sdot",
+          "pattern": "reduce",
+          "n": "16777216",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "925.595",
+          "GBps": "145.01"
+        }
+      },
+      {
+        "sizes": [
+          16777216
+        ],
+        "round": 2,
+        "exit_code": 0,
+        "log": "case008.log",
+        "passed": true,
+        "metrics": {
+          "op": "sdot",
+          "pattern": "reduce",
+          "n": "16777216",
+          "maxrel": "0.000e+00",
+          "pass": "1",
+          "us": "941.773",
+          "GBps": "142.52"
+        }
+      }
+    ],
+    "planned": 9,
+    "build_exit": 0,
+    "medians_us": {
+      "8192": 10.747,
+      "270336": 20.821,
+      "16777216": 939.344
+    }
+  }
+}

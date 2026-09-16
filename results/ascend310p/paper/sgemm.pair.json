@@ -1,0 +1,55 @@
+{
+  "op": "sgemm",
+  "discipline": "propose(order) -> contract(Align I,H -> B) -> arbitrate(on-device autotune)",
+  "schedule_space_B": [
+    {
+      "block_dim": 8,
+      "tile_len": 1024,
+      "buffer_num": 2,
+      "tile_m": 64,
+      "tile_n": 64,
+      "tile_k": 64
+    }
+  ],
+  "contract_reasons": [
+    "rows/core = m/block_dim; block_dim <= H cores (8); rank-1 accumulation over k (vector-only, no reduction)"
+  ],
+  "proposed_order": [
+    "b8_t1024_q2"
+  ],
+  "trials": [
+    {
+      "sched": {
+        "block_dim": 8,
+        "tile_len": 1024,
+        "buffer_num": 2,
+        "tile_m": 64,
+        "tile_n": 64,
+        "tile_k": 64
+      },
+      "tag": "b8_t1024_q2",
+      "pass": true,
+      "us": 6026.68,
+      "maxrel": 9.13e-07,
+      "gbps": 0.0,
+      "gflops": 44.54
+    }
+  ],
+  "best": {
+    "sched": {
+      "block_dim": 8,
+      "tile_len": 1024,
+      "buffer_num": 2,
+      "tile_m": 64,
+      "tile_n": 64,
+      "tile_k": 64
+    },
+    "tag": "b8_t1024_q2",
+    "pass": true,
+    "us": 6026.68,
+    "maxrel": 9.13e-07,
+    "gbps": 0.0,
+    "gflops": 44.54
+  },
+  "proposition1": "optimum in B; best-so-far monotone in trials; ordering only changes WHEN, not WHETHER, the optimum is found"
+}

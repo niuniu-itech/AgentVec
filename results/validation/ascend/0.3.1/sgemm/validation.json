@@ -1,0 +1,250 @@
+{
+  "op": "sgemm",
+  "status": "VERIFIED",
+  "reason": "registered intent, f32 rules, layout and dependency checks passed",
+  "intent_source": "manual",
+  "schedule": {
+    "block_dim": 8,
+    "tile_len": 1024,
+    "buffer_num": 2,
+    "tile_m": 64,
+    "tile_n": 64,
+    "tile_k": 64
+  },
+  "source_sha256": {
+    "sgemm.cpp": "6dfd208f86aa0a509bb538176bbac016fa1a5c49139aafc8117518dfb4f1885d",
+    "main.cpp": "3d4fa9ce79375e2a67e25c8719361d29d2e529c347d0ce33199ff3392f79ebcc",
+    "CMakeLists.txt": "09dd1140f79c8040358ab73f1c26677f01d55362639f1e392bb87418b4d8ce04",
+    "project.json": "e00f4e12f09954bb23bcb9006cf2e0895bd3fd0987e8606aea90179a5ab7b09d"
+  },
+  "model": null,
+  "validation": {
+    "status": "VERIFIED",
+    "verified": true,
+    "source_sha256": {
+      "sgemm.cpp": "6dfd208f86aa0a509bb538176bbac016fa1a5c49139aafc8117518dfb4f1885d",
+      "main.cpp": "3d4fa9ce79375e2a67e25c8719361d29d2e529c347d0ce33199ff3392f79ebcc",
+      "CMakeLists.txt": "09dd1140f79c8040358ab73f1c26677f01d55362639f1e392bb87418b4d8ce04",
+      "project.json": "e00f4e12f09954bb23bcb9006cf2e0895bd3fd0987e8606aea90179a5ab7b09d"
+    },
+    "machine": "aarch64",
+    "timing_boundary": "host_batch_submit_sync",
+    "reduction_finalization": "CPU partial fold outside timed kernel batch",
+    "samples": [
+      {
+        "sizes": [
+          64,
+          64,
+          64
+        ],
+        "round": 0,
+        "exit_code": 0,
+        "log": "case000.log",
+        "passed": true,
+        "metrics": {
+          "op": "sgemm",
+          "pattern": "gemm",
+          "n": "64",
+          "m": "64",
+          "k": "64",
+          "maxrel": "1.593e-07",
+          "pass": "1",
+          "us": "104.553",
+          "GFLOPs": "5.01",
+          "GBps": "0.00"
+        }
+      },
+      {
+        "sizes": [
+          64,
+          64,
+          64
+        ],
+        "round": 1,
+        "exit_code": 0,
+        "log": "case001.log",
+        "passed": true,
+        "metrics": {
+          "op": "sgemm",
+          "pattern": "gemm",
+          "n": "64",
+          "m": "64",
+          "k": "64",
+          "maxrel": "1.593e-07",
+          "pass": "1",
+          "us": "104.344",
+          "GFLOPs": "5.02",
+          "GBps": "0.00"
+        }
+      },
+      {
+        "sizes": [
+          64,
+          64,
+          64
+        ],
+        "round": 2,
+        "exit_code": 0,
+        "log": "case002.log",
+        "passed": true,
+        "metrics": {
+          "op": "sgemm",
+          "pattern": "gemm",
+          "n": "64",
+          "m": "64",
+          "k": "64",
+          "maxrel": "1.593e-07",
+          "pass": "1",
+          "us": "105.043",
+          "GFLOPs": "4.99",
+          "GBps": "0.00"
+        }
+      },
+      {
+        "sizes": [
+          128,
+          128,
+          192
+        ],
+        "round": 0,
+        "exit_code": 0,
+        "log": "case003.log",
+        "passed": true,
+        "metrics": {
+          "op": "sgemm",
+          "pattern": "gemm",
+          "n": "128",
+          "m": "128",
+          "k": "192",
+          "maxrel": "3.477e-07",
+          "pass": "1",
+          "us": "576.005",
+          "GFLOPs": "10.92",
+          "GBps": "0.00"
+        }
+      },
+      {
+        "sizes": [
+          128,
+          128,
+          192
+        ],
+        "round": 1,
+        "exit_code": 0,
+        "log": "case004.log",
+        "passed": true,
+        "metrics": {
+          "op": "sgemm",
+          "pattern": "gemm",
+          "n": "128",
+          "m": "128",
+          "k": "192",
+          "maxrel": "3.477e-07",
+          "pass": "1",
+          "us": "576.183",
+          "GFLOPs": "10.92",
+          "GBps": "0.00"
+        }
+      },
+      {
+        "sizes": [
+          128,
+          128,
+          192
+        ],
+        "round": 2,
+        "exit_code": 0,
+        "log": "case005.log",
+        "passed": true,
+        "metrics": {
+          "op": "sgemm",
+          "pattern": "gemm",
+          "n": "128",
+          "m": "128",
+          "k": "192",
+          "maxrel": "3.477e-07",
+          "pass": "1",
+          "us": "576.952",
+          "GFLOPs": "10.90",
+          "GBps": "0.00"
+        }
+      },
+      {
+        "sizes": [
+          512,
+          512,
+          512
+        ],
+        "round": 0,
+        "exit_code": 0,
+        "log": "case006.log",
+        "passed": true,
+        "metrics": {
+          "op": "sgemm",
+          "pattern": "gemm",
+          "n": "512",
+          "m": "512",
+          "k": "512",
+          "maxrel": "9.130e-07",
+          "pass": "1",
+          "us": "6023.204",
+          "GFLOPs": "44.57",
+          "GBps": "0.00"
+        }
+      },
+      {
+        "sizes": [
+          512,
+          512,
+          512
+        ],
+        "round": 1,
+        "exit_code": 0,
+        "log": "case007.log",
+        "passed": true,
+        "metrics": {
+          "op": "sgemm",
+          "pattern": "gemm",
+          "n": "512",
+          "m": "512",
+          "k": "512",
+          "maxrel": "9.130e-07",
+          "pass": "1",
+          "us": "6020.615",
+          "GFLOPs": "44.59",
+          "GBps": "0.00"
+        }
+      },
+      {
+        "sizes": [
+          512,
+          512,
+          512
+        ],
+        "round": 2,
+        "exit_code": 0,
+        "log": "case008.log",
+        "passed": true,
+        "metrics": {
+          "op": "sgemm",
+          "pattern": "gemm",
+          "n": "512",
+          "m": "512",
+          "k": "512",
+          "maxrel": "9.130e-07",
+          "pass": "1",
+          "us": "6021.986",
+          "GFLOPs": "44.58",
+          "GBps": "0.00"
+        }
+      }
+    ],
+    "planned": 9,
+    "build_exit": 0,
+    "medians_us": {
+      "64x64x64": 104.553,
+      "128x128x192": 576.183,
+      "512x512x512": 6021.986
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "pattern": "dag",
+  "nodes": [
+    {
+      "name": "squares",
+      "pattern": "map",
+      "formula": "x*x",
+      "reduce_op": null,
+      "equiv": "tolerance"
+    },
+    {
+      "name": "energy",
+      "pattern": "reduce",
+      "formula": "squares",
+      "reduce_op": "sum",
+      "equiv": "tolerance"
+    },
+    {
+      "name": "scale",
+      "pattern": "map",
+      "formula": "sqrt(energy/n+0.00001)",
+      "reduce_op": null,
+      "equiv": "tolerance"
+    },
+    {
+      "name": "y",
+      "pattern": "map",
+      "formula": "x/scale*gamma",
+      "reduce_op": null,
+      "equiv": "tolerance"
+    }
+  ]
+}

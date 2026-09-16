@@ -1,0 +1,64 @@
+loat>::AllocLocalTensor<UNIFIED_BUFFER_SIZE>();
+                                                                                                  ^
+$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/sgemm.cpp:22:13: error: no matching function for call to object of type 'LocalTensor<float>'
+            c_tile(i, j) = 0.0f;
+            ^~~~~~
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:142:60: note: candidate function not viable: requires single argument 'offset', but 2 arguments were provided
+    __aicore__ inline __inout_pipe__(S) __ubuf__ PrimType& operator()(const uint32_t offset) const;
+                                                           ^
+In file included from $ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemm.cpp:7:
+$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/sgemm.cpp:28:9: error: illegal initializer (only variables can be initialized)
+    int block_num = GetBlockNum();
+        ^
+/usr/local/Ascend/ascend-toolkit/8.0.RC3/aarch64-linux/ccec_compiler/lib/clang/15.0.5/include/__clang_cce_aicore_builtin_vars.h:64:19: note: expanded from macro 'block_num'
+#define block_num get_block_num()
+                  ^
+In file included from $ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemm.cpp:7:
+$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/sgemm.cpp:38:21: error: no matching function for call to object of type 'LocalTensor<float>'
+                    a_tile(i, j) = *(float*)(A + (global_i * k + global_j) * sizeof(float));
+                    ^~~~~~
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:142:60: note: candidate function not viable: requires single argument 'offset', but 2 arguments were provided
+    __aicore__ inline __inout_pipe__(S) __ubuf__ PrimType& operator()(const uint32_t offset) const;
+                                                           ^
+In file included from $ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemm.cpp:7:
+$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/sgemm.cpp:38:45: error: casting '__gm__ uint8_t *' (aka '__gm__ unsigned char *') to type 'float *' is not allowed in aicore function
+                    a_tile(i, j) = *(float*)(A + (global_i * k + global_j) * sizeof(float));
+                                            ^
+$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/sgemm.cpp:40:21: error: no matching function for call to object of type 'LocalTensor<float>'
+                    a_tile(i, j) = 0.0f;
+                    ^~~~~~
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:142:60: note: candidate function not viable: requires single argument 'offset', but 2 arguments were provided
+    __aicore__ inline __inout_pipe__(S) __ubuf__ PrimType& operator()(const uint32_t offset) const;
+                                                           ^
+In file included from $ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemm.cpp:7:
+$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/sgemm.cpp:51:21: error: no matching function for call to object of type 'LocalTensor<float>'
+                    b_tile(i, j) = *(float*)(B + (global_i * n + global_j) * sizeof(float));
+                    ^~~~~~
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:142:60: note: candidate function not viable: requires single argument 'offset', but 2 arguments were provided
+    __aicore__ inline __inout_pipe__(S) __ubuf__ PrimType& operator()(const uint32_t offset) const;
+                                                           ^
+In file included from $ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemm.cpp:7:
+$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/sgemm.cpp:51:45: error: casting '__gm__ uint8_t *' (aka '__gm__ unsigned char *') to type 'float *' is not allowed in aicore function
+                    b_tile(i, j) = *(float*)(B + (global_i * n + global_j) * sizeof(float));
+                                            ^
+$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/sgemm.cpp:53:21: error: no matching function for call to object of type 'LocalTensor<float>'
+                    b_tile(i, j) = 0.0f;
+                    ^~~~~~
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:142:60: note: candidate function not viable: requires single argument 'offset', but 2 arguments were provided
+    __aicore__ inline __inout_pipe__(S) __ubuf__ PrimType& operator()(const uint32_t offset) const;
+                                                           ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[5]: *** [CMakeFiles/device_aic_obj.dir/build.make:76: CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemm.cpp.o] Error 1
+gmake[4]: *** [CMakeFiles/Makefile2:85: CMakeFiles/device_aic_obj.dir/all] Error 2
+gmake[3]: *** [Makefile:91: all] Error 2
+gmake[2]: *** [CMakeFiles/ascendc_kernels_npu_aic_device.dir/build.make:86: ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-stamp/ascendc_kernels_npu_aic_device-build] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:150: CMakeFiles/ascendc_kernels_npu_aic_device.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[100%] Built target host_bisheng_obj
+Install the project...
+-- Install configuration: "Release"
+-- Installing: $ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/build/ascendc_kernels_npu_host_dir/./objects-Release/host_bisheng_obj$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r1/sgemm.cpp.o
+[ 83%] Completed 'ascendc_kernels_npu_host'
+[ 83%] Built target ascendc_kernels_npu_host
+gmake: *** [Makefile:136: all] Error 2

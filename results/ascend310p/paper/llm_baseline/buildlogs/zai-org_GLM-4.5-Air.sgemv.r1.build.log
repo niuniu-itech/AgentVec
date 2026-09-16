@@ -1,0 +1,55 @@
+e__ inline __inout_pipe__(V) void DataCopy(const LocalTensor<T> &dstLocal, const LocalTensor<U> &srcLocal,
+                                         ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/inner_interface/inner_kernel_operator_data_copy_intf.cppm:815:42: note: candidate template ignored: could not match 'LocalTensor<T>' against '__gm__ uint8_t *' (aka '__gm__ unsigned char *')
+__aicore__ inline __inout_pipe__(V) void DataCopy(const LocalTensor<T> &dstLocal, const LocalTensor<U> &srcLocal,
+                                         ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/inner_interface/inner_kernel_operator_data_copy_intf.cppm:45:45: note: candidate function template not viable: requires 3 arguments, but 4 were provided
+__aicore__ inline void __inout_pipe__(MTE2) DataCopy(const LocalTensor<T>& dstLocal, const GlobalTensor<T>& srcGlobal,
+                                            ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/inner_interface/inner_kernel_operator_data_copy_intf.cppm:93:45: note: candidate function template not viable: requires 3 arguments, but 4 were provided
+__aicore__ inline __inout_pipe__(MTE2) void DataCopy(const LocalTensor<T>& dstLocal, const GlobalTensor<T>& srcGlobal,
+                                            ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/inner_interface/inner_kernel_operator_data_copy_intf.cppm:127:24: note: candidate function template not viable: requires 3 arguments, but 4 were provided
+__aicore__ inline void DataCopy(const LocalTensor<T> &dstLocal, const LocalTensor<T> &srcLocal,
+                       ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/inner_interface/inner_kernel_operator_data_copy_intf.cppm:151:45: note: candidate function template not viable: requires 3 arguments, but 4 were provided
+__aicore__ inline __inout_pipe__(MTE3) void DataCopy(const GlobalTensor<T>& dstGlobal, const LocalTensor<T>& srcLocal,
+                                            ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/inner_interface/inner_kernel_operator_data_copy_intf.cppm:203:24: note: candidate function template not viable: requires 3 arguments, but 4 were provided
+__aicore__ inline void DataCopy(const LocalTensor<T> &dstLocal, const LocalTensor<T> &srcLocal,
+                       ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/inner_interface/inner_kernel_operator_data_copy_intf.cppm:265:24: note: candidate function template not viable: requires 3 arguments, but 4 were provided
+__aicore__ inline void DataCopy(const LocalTensor<dst_T> &dstLocal, const LocalTensor<src_T> &srcLocal,
+                       ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/inner_interface/inner_kernel_operator_data_copy_intf.cppm:471:45: note: candidate function template not viable: requires 3 arguments, but 4 were provided
+__aicore__ inline __inout_pipe__(MTE2) void DataCopy(const LocalTensor<T>& dstLocal, const GlobalTensor<T>& srcGlobal,
+                                            ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/inner_interface/inner_kernel_operator_data_copy_intf.cppm:491:45: note: candidate function template not viable: requires 3 arguments, but 4 were provided
+__aicore__ inline __inout_pipe__(MTE3) void DataCopy(const GlobalTensor<T>& dstGlobal, const LocalTensor<T>& srcLocal,
+                                            ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/inner_interface/inner_kernel_operator_data_copy_intf.cppm:511:24: note: candidate function template not viable: requires 3 arguments, but 4 were provided
+__aicore__ inline void DataCopy(const LocalTensor<T> &dstLocal, const LocalTensor<T> &srcLocal, const uint32_t calCount)
+                       ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/inner_interface/inner_kernel_operator_data_copy_intf.cppm:539:45: note: candidate function template not viable: requires 3 arguments, but 4 were provided
+__aicore__ inline __inout_pipe__(MTE3) void DataCopy(const GlobalTensor<T>& dstGlobal, const LocalTensor<T>& srcLocal,
+                                            ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/inner_interface/inner_kernel_operator_data_copy_intf.cppm:681:24: note: candidate function template not viable: requires 3 arguments, but 4 were provided
+__aicore__ inline void DataCopy(const LocalTensor<T>& dstLocal, const LocalTensor<U>& srcLocal,
+                       ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/inner_interface/inner_kernel_operator_data_copy_intf.cppm:693:24: note: candidate function template not viable: requires 3 arguments, but 4 were provided
+__aicore__ inline void DataCopy(const GlobalTensor<T>& dstGlobal, const LocalTensor<U>& srcLocal,
+                       ^
+16 errors generated.
+gmake[5]: *** [CMakeFiles/device_aic_obj.dir/build.make:76: CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r1/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemv.cpp.o] Error 1
+gmake[4]: *** [CMakeFiles/Makefile2:85: CMakeFiles/device_aic_obj.dir/all] Error 2
+gmake[3]: *** [Makefile:91: all] Error 2
+gmake[2]: *** [CMakeFiles/ascendc_kernels_npu_aic_device.dir/build.make:86: ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-stamp/ascendc_kernels_npu_aic_device-build] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:150: CMakeFiles/ascendc_kernels_npu_aic_device.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[100%] Built target host_bisheng_obj
+Install the project...
+-- Install configuration: "Release"
+-- Installing: $ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r1/build/ascendc_kernels_npu_host_dir/./objects-Release/host_bisheng_obj$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r1/sgemv.cpp.o
+[ 83%] Completed 'ascendc_kernels_npu_host'
+[ 83%] Built target ascendc_kernels_npu_host
+gmake: *** [Makefile:136: all] Error 2

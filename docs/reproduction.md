@@ -1,56 +1,72 @@
-# Reproduction Guide
+# Reproduction guide
 
-## Dependencies
-
-The host-side tools used by the RVV differential suite are:
-
-- Python 3.10 or later and `paramiko` for optional remote execution;
-- an RVV-capable cross compiler, such as `riscv64-linux-gnu-gcc`;
-- `qemu-riscv64` with RVV 1.0 support, or an RVV-capable machine for native runs.
-
-No LLM credential is needed to replay the checked manual-intent path. A fresh
-model call requires `SF_KEY`; it is deliberately not stored in this artifact.
-
-## Core modules
-
-`src/agentvec/air.py` and `air_from_formula.py` define and construct AIR.
-`guard.py` checks the declared intent. `lowering.py` emits RVV code only after a
-passing guard result. `pipeline.py` combines these steps and uploads a candidate
-to a configured build host for compilation and differential testing.
-
-`remote.py` uses the following optional variables:
-
-```text
-AGENTVEC_SERVER_HOST       build host
-AGENTVEC_SERVER_USER       build-host user
-AGENTVEC_SERVER_KEY        SSH private-key path
-AGENTVEC_SERVER_PASSWORD   alternative to key-based authentication
-AGENTVEC_SERVER_GCC        RVV cross compiler
-AGENTVEC_SERVER_QEMU       QEMU RVV binary
-AGENTVEC_REMOTE_ROOT       remote test-suite directory
-```
-
-## Differential testing
-
-Each package in `tests/rvv_difftest/kernels/` contains a scalar oracle, an RVV
-candidate, and a `spec.json` file. `runner.py` compiles both forms, runs the
-configured input sizes and seeds over each requested vector length, and emits a
-JSON report. The negative control is expected to fail, confirming that the
-harness detects a wrong output.
+## CPU validation
 
 ```bash
-python tests/rvv_difftest/runner.py \
-  --root tests/rvv_difftest \
-  --gcc riscv64-linux-gnu-gcc \
-  --qemu qemu-riscv64 \
-  --vlens 128,256,512 \
-  --seeds 5 --only saxpy --neg-control
+python -m pip install -e '.[dev,remote]'
+python -m pytest
 ```
 
-## Results and scripts
+These tests check complete expression parsing, rejected contracts, CHECKED/VERIFIED
+separation, malformed model output, cache identity, identifier-only ranking, and
+numerical comparison. They require no remote host or model API.
 
-`results/rvv/` contains frozen JSON summaries for the reported RVV studies.
-`scripts/` retains the paper experiment drivers, including source-stress,
-reasoning-mode, GEMV, and GEMM studies. These drivers assume access to the same
-OpenBLAS source tree and RVV environment used in the experiments; use the core
-pipeline and differential harness above for a self-contained starting point.
+## Native registered kernels
+
+On an RVV board, run:
+
+```bash
+agentvec migrate --backend manual --execute local --gcc gcc --qemu native \
+  --seeds 5 --output /tmp/agentvec-run-001
+```
+
+For execution through SSH from another machine, set the board variables in
+`.env.example` and replace `--execute local` with `--execute board`.
+Generated sources and reports stay in the explicit output directory. The runner
+uses a unique remote directory, checks compiler exit codes, and selects only the
+current run's kernel names. Each case retains its source and test record hashes.
+
+## Cross-VLEN validation
+
+Use the `server` profile with a RISC-V cross compiler and QEMU, then run:
+
+```bash
+agentvec migrate --backend manual --execute server --vlens 128,256,512,1024 \
+  --seeds 5 --output /external/agentvec-cross-vlen-001
+```
+
+A native run exercises one installed VLEN only. Refer to [native tests](../tests/native/README.md)
+for additional tails, reduction identities and guarded NRM2 boundary checks.
+
+For the distributed corpus, select a bounded subset first:
+
+```bash
+agentvec difftest --root tests/rvv_difftest --gcc riscv64-linux-gnu-gcc \
+  --qemu qemu-riscv64 --exact saxpy --seeds 5 --neg-control \
+  --build-dir /external/agentvec-corpus-build --output /external/agentvec-corpus.json
+```
+
+The negative control must compile, execute, and disagree with the reference. A
+compiler failure is not evidence that an injected semantic bug was detected.
+
+## Numerical policy and evidence
+
+The runner accepts `dtype`, `sizes`, `reduce`, `rtol`, optional `atol`, and optional
+`max_ulps` from a case specification. When `max_ulps` is present, both the ULP and
+relative/absolute conditions must pass. NaNs are outside this comparator's accepted
+domain; matching signed infinities are allowed for reduction identities. The
+standalone guarded-norm test defines its own explicit non-finite policy.
+
+`check_pass_rate` counts executed dynamic checks. `verified` means every planned
+check passed; `spr` is its binary per-kernel compatibility field. A partially run
+kernel is not accepted. Frozen legacy summaries retain their original denominators.
+
+## Full paper studies
+
+The study drivers require external extraction/build inputs, matching model IDs,
+and the recorded experiment settings. See [experiment entry points](../experiments/README.md)
+and [paper coverage](paper-coverage.md). Complete paper reproduction also needs
+matching extraction inputs, model settings and hardware runs; this release does
+not present a local unit test run as completion of those campaigns. [General
+graphs](dag.md) and the [AscendC probe](ascend.md) now have separate generation and
+validation entry points.

@@ -1,0 +1,31 @@
+{
+  "name": "ssyrk",
+  "s_algo": {
+    "pattern": "syrk",
+    "elem_op": null,
+    "reduce_op": null,
+    "reduce_pre": null,
+    "reduce_post": null,
+    "trans_a": false,
+    "trans_b": true,
+    "has_alpha": true,
+    "has_beta": true
+  },
+  "c_phy": {
+    "dtype": "f32",
+    "dep": "reduction",
+    "dep_distance": 0,
+    "alias": "disjoint",
+    "equiv": "ulp"
+  },
+  "m_map": {
+    "access": "unit_stride",
+    "stride": 1,
+    "layout": "row_major",
+    "bound": "m,k"
+  },
+  "v_meta": {
+    "status": "CHECKED",
+    "proof": "registered intent, f32 rules, layout and dependency checks passed"
+  }
+}

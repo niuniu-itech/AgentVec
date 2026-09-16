@@ -15,6 +15,12 @@ results/local/
 # Local editor and environment state
 .venv/
 .env
+.env.*
+!.env.example
+dist/
+*.egg-info/
+.ruff_cache/
+*.local.json
 .vscode/
 .idea/
 .DS_Store

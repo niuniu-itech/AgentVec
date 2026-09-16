@@ -1,0 +1,1 @@
+RESULT op=snrm2 pattern=reduce n=8192 maxrel=0.000e+00 pass=1 us=10.900 GBps=3.01

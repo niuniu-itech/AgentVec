@@ -1,0 +1,93 @@
+ication is GNU 10.3.1
+-- The CXX compiler identification is Clang 15.0.5
+-- The CXX compiler identification is Clang 15.0.5
+-- The CXX compiler identification is Clang 15.0.5
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compiler ABI info - done
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: $ASCEND_WORKSPACE/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.7s)
+-- Generating done (0.0s)
+-- Check for working CXX compiler: $ASCEND_WORKSPACE/bin/c++ - skipped
+-- Detecting CXX compile features
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    BUILD_MODE
+
+
+-- Build files have been written to: $ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_aiv_device-prefix/src/ascendc_kernels_npu_aiv_device-build
+-- Detecting CXX compile features - done
+-- Check for working CXX compiler: $ASCEND_WORKSPACE/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Configuring done (0.7s)
+-- Detecting CXX compile features - done
+-- Configuring done (0.7s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    ASCEND_PYTHON_EXECUTABLE
+
+
+-- Build files have been written to: $ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_host-prefix/src/ascendc_kernels_npu_host-build
+-- Generating done (0.0s)
+-- Build files have been written to: $ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-build
+[ 66%] Performing build step for 'ascendc_kernels_npu_aiv_device'
+[ 69%] Performing build step for 'ascendc_kernels_npu_host'
+[ 72%] Performing build step for 'ascendc_kernels_npu_aic_device'
+[ 75%] No install step for 'ascendc_kernels_npu_aiv_device'
+[ 77%] Completed 'ascendc_kernels_npu_aiv_device'
+[100%] Building CXX object CMakeFiles/host_bisheng_obj.dir$ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/saxpy.cpp.o
+[100%] Building CXX object CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_saxpy.cpp.o
+[ 77%] Built target ascendc_kernels_npu_aiv_device
+[100%] Built target host_bisheng_obj
+[ 80%] Performing install step for 'ascendc_kernels_npu_host'
+[100%] Building CXX object CMakeFiles/host_bisheng_obj.dir$ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/saxpy.cpp.o
+[100%] Built target host_bisheng_obj
+Install the project...
+-- Install configuration: "Release"
+-- Installing: $ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_host_dir/./objects-Release/host_bisheng_obj$ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/saxpy.cpp.o
+[ 83%] Completed 'ascendc_kernels_npu_host'
+[ 83%] Built target ascendc_kernels_npu_host
+[100%] Built target device_aic_obj
+/usr/local/Ascend/ascend-toolkit/latest/tools/ccec_compiler/bin/ld.lld  -m aicorelinux -r  -Ttext=0 $ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-build/CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_saxpy.cpp.o -static -o $ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_aic_device_dir/device_aic.o
+[100%] Built target merge_aic_device_obj
+[ 86%] No install step for 'ascendc_kernels_npu_aic_device'
+[ 88%] Completed 'ascendc_kernels_npu_aic_device'
+[ 88%] Built target ascendc_kernels_npu_aic_device
+/usr/local/Ascend/ascend-toolkit/latest/tools/ccec_compiler/bin/ld.lld -x -m aicorelinux   -Ttext=0 $ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_aic_device_dir/device_aic.o -static -o $ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_merge_obj_dir/device_aic.o
+[ 88%] Built target ascendc_kernels_npu_merge_obj
+[ 91%] Building CXX object CMakeFiles/ascendc_kernels_npu_host_stub_obj.dir/auto_gen/ascendc_kernels_npu/host_stub.cpp.o
+[ 91%] Built target ascendc_kernels_npu_host_stub_obj
+[ 94%] Linking CXX static library lib/libascendc_kernels_npu.a
+/usr/local/Ascend/ascend-toolkit/latest/bin/ascendc_pack_kernel $ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/CMakeFiles/ascendc_kernels_npu_host_stub_obj.dir/auto_gen/ascendc_kernels_npu/host_stub.cpp.o $ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_merge_obj_dir/device_aic.o 2 $ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/CMakeFiles/ascendc_kernels_npu_host_stub_obj.dir/auto_gen/ascendc_kernels_npu/host_stub.cpp.o
+recompile: /usr/bin/ar qc lib/libascendc_kernels_npu.a CMakeFiles/ascendc_kernels_npu_host_stub_obj.dir/auto_gen/ascendc_kernels_npu/host_stub.cpp.o $ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/build/ascendc_kernels_npu_host_dir/objects-Release/host_bisheng_obj$ASCEND_WORKSPACE/gen/saxpy_verify_-K2.7-Code_r2/saxpy.cpp.o  elf_tool.c.o ascendc_runtime.cpp.o
+recompile: /usr/bin/ranlib lib/libascendc_kernels_npu.a
+[ 94%] Built target ascendc_kernels_npu
+[ 97%] Building CXX object CMakeFiles/saxpy_bbit.dir/main.cpp.o
+[100%] Linking CXX executable saxpy_bbit
+[100%] Built target saxpy_bbit
+
+--- RUN ---
+RESULT op=saxpy pattern=map n=1048576 maxrel=0.000e+00 pass=1 us=21.675 GBps=580.52

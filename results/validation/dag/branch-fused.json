@@ -1,0 +1,66 @@
+{
+  "status": "VERIFIED",
+  "target": "rvv",
+  "graph_sha256": "ceaa7798dcf73f72a088c75f6d634d1365c037de4fb2c42aa86eb45f98f1a199",
+  "topological_order": [
+    "y",
+    "total"
+  ],
+  "fused_edges": [
+    [
+      "right",
+      "y"
+    ],
+    [
+      "left",
+      "y"
+    ]
+  ],
+  "scalar_operations": [],
+  "schedule": {
+    "fuse_maps": true,
+    "lmul": 1
+  },
+  "validation": {
+    "status": "VERIFIED",
+    "verified": true,
+    "source_sha256": {
+      "candidate.c": "3e614140142c5cd474980de5394be868bddd1dddcb4846b5eb1179cbf40e81c8",
+      "reference.c": "6a14df438969899b96d299b8a2844511f2008d6716149299ddd394160f70030e",
+      "harness.c": "28e1b5beadde5a918359f6274fb5e4e7e5eab4afa3873b10b6c6999aa662bc95"
+    },
+    "compiler_command": [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-ffp-contract=off",
+      "-fno-fast-math",
+      "-fno-tree-vectorize",
+      "-march=rv64gcv",
+      "-mabi=lp64d",
+      "candidate.c",
+      "reference.c",
+      "harness.c",
+      "-lm",
+      "-o",
+      "validate_dag"
+    ],
+    "machine": "riscv64",
+    "build_exit": 0,
+    "run_exit": 0,
+    "runner": [
+      "<native-workspace>/validate_dag"
+    ],
+    "statistics": {
+      "cases": 66,
+      "planned_cases": 66,
+      "assertions": 19347,
+      "failures": 0
+    }
+  },
+  "source_sha256": {
+    "candidate.c": "3e614140142c5cd474980de5394be868bddd1dddcb4846b5eb1179cbf40e81c8",
+    "harness.c": "28e1b5beadde5a918359f6274fb5e4e7e5eab4afa3873b10b6c6999aa662bc95",
+    "reference.c": "6a14df438969899b96d299b8a2844511f2008d6716149299ddd394160f70030e"
+  }
+}

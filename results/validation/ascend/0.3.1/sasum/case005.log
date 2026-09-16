@@ -1,0 +1,1 @@
+RESULT op=sasum pattern=reduce n=270336 maxrel=0.000e+00 pass=1 us=17.002 GBps=63.60

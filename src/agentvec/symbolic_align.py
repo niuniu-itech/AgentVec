@@ -1,9 +1,8 @@
-"""Symbolic Align: derive the LEGAL + SAFE schedule boundary from I=(S+R) and H.
-This is the 'hard' half of PAIR -- everything deterministically derivable from the
-intent's legality (R) and the hardware abstraction (H). The LLM never touches these;
-it only orders candidates WITHIN this boundary. Each rule cites its source.
-"""
+"""Constrain the GEMM schedule grid using declared intent and hardware limits.
 
+The K1 profile records study-specific limits. The model may order admitted
+tuples but cannot change their parameters or bypass these checks.
+"""
 # H(K1): symbolic hardware traits (evidence derived on-board by hw_microbench.c)
 H_K1 = {"in_order": True, "unit_stride_required": True,   # strided 5.95x penalty, in-order
         "lmul_max": 4, "mr_max": 6,                       # 32 vregs, MR=7 spills
@@ -16,6 +15,13 @@ I_GEMM = {"equiv": "ulp", "inner_operand_strided": True, "dep": "reduction_k"}
 
 def align(cfg, I, H):
     """Is cfg in the legal+safe boundary B? Returns (in_B: bool, reason: str)."""
+    if (set(cfg) != {"L", "MR", "KC", "pack"} or type(cfg.get("pack")) is not bool
+            or cfg.get("L") not in (1, 2, 4, 8)
+            or any(type(cfg.get(key)) is not int or cfg[key] <= 0 for key in ("L", "MR", "KC"))):
+        return False, "malformed schedule tuple"
+    required = {"in_order", "lmul_max", "mr_max", "vregs", "fits_L1_elems"}
+    if not required <= set(H) or any(type(H[key]) is not int or H[key] <= 0 for key in required - {"in_order"}):
+        return False, "missing or invalid hardware limits"
     # (R, hard)  k-contraction may be blocked/packed only if reassociation is legal
     if I["equiv"] != "ulp":
         return False, "R: equiv!=ulp -> k-sum not reorderable -> no blocking/packing"

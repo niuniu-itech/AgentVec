@@ -1,0 +1,30 @@
+{
+  "scope": "archived manuscript records, not new measurements",
+  "metric_operators": [
+    "scopy",
+    "sscal",
+    "saxpy",
+    "sdot",
+    "sasum",
+    "snrm2",
+    "sgemv",
+    "sgemm"
+  ],
+  "direct_tasks": 16,
+  "direct_pass": 5,
+  "current_registry": {
+    "saxpy": "CHECKED",
+    "sscal": "CHECKED",
+    "scopy": "CHECKED",
+    "sdot": "CHECKED",
+    "sasum": "CHECKED",
+    "snrm2": "CHECKED",
+    "sgemv": "CHECKED",
+    "sgemm": "CHECKED",
+    "sgemm_nt": "CHECKED",
+    "ssyrk": "CHECKED",
+    "strsv": "VETO",
+    "strsm": "VETO"
+  },
+  "archived_sources": 236
+}

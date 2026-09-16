@@ -1,0 +1,45 @@
+{
+  "op": "sscal",
+  "verdict": "VERIFIED",
+  "v_meta_status": "VERIFIED",
+  "proof": "types consistent; no loop-carried dep at distance>0; disjoint affine access => tile-parallel safe",
+  "air": {
+    "name": "sscal",
+    "s_algo": {
+      "pattern": "map",
+      "elem_op": {
+        "op": "mulc",
+        "args": [
+          {
+            "op": "load",
+            "src": "x"
+          }
+        ]
+      },
+      "reduce_op": null,
+      "reduce_pre": null,
+      "reduce_post": null,
+      "trans_a": false,
+      "trans_b": false,
+      "has_alpha": true,
+      "has_beta": false
+    },
+    "c_phy": {
+      "dtype": "f32",
+      "dep": "none",
+      "dep_distance": 0,
+      "alias": "disjoint",
+      "equiv": "ulp"
+    },
+    "m_map": {
+      "access": "unit_stride",
+      "stride": 1,
+      "layout": "na",
+      "bound": "n"
+    },
+    "v_meta": {
+      "status": "VERIFIED",
+      "proof": "types consistent; no loop-carried dep at distance>0; disjoint affine access => tile-parallel safe"
+    }
+  }
+}

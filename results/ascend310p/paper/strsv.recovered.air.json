@@ -1,0 +1,31 @@
+{
+  "name": "strsv",
+  "s_algo": {
+    "pattern": "trsv",
+    "elem_op": null,
+    "reduce_op": null,
+    "reduce_pre": null,
+    "reduce_post": null,
+    "trans_a": false,
+    "trans_b": false,
+    "has_alpha": false,
+    "has_beta": false
+  },
+  "c_phy": {
+    "dtype": "f32",
+    "dep": "loop_carried",
+    "dep_distance": 1,
+    "alias": "disjoint",
+    "equiv": "exact"
+  },
+  "m_map": {
+    "access": "strided",
+    "stride": 1,
+    "layout": "row_major",
+    "bound": "n"
+  },
+  "v_meta": {
+    "status": "DRAFT",
+    "proof": ""
+  }
+}

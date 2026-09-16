@@ -1,0 +1,37 @@
+{
+  "op": "strsm",
+  "verdict": "VETO",
+  "v_meta_status": "CHECKED",
+  "proof": "VETO: triangular solve carries a true dependence X_i,: <- X_{<i},: (distance 1); not data-parallel",
+  "air": {
+    "name": "strsm",
+    "s_algo": {
+      "pattern": "trsm",
+      "elem_op": null,
+      "reduce_op": null,
+      "reduce_pre": null,
+      "reduce_post": null,
+      "trans_a": false,
+      "trans_b": false,
+      "has_alpha": true,
+      "has_beta": false
+    },
+    "c_phy": {
+      "dtype": "f32",
+      "dep": "loop_carried",
+      "dep_distance": 1,
+      "alias": "disjoint",
+      "equiv": "exact"
+    },
+    "m_map": {
+      "access": "strided",
+      "stride": 1,
+      "layout": "row_major",
+      "bound": "m,n"
+    },
+    "v_meta": {
+      "status": "CHECKED",
+      "proof": "VETO: triangular solve carries a true dependence X_i,: <- X_{<i},: (distance 1); not data-parallel"
+    }
+  }
+}

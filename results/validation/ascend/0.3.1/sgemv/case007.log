@@ -1,0 +1,1 @@
+RESULT op=sgemv pattern=gemv n=4096 m=4096 maxrel=6.584e-06 pass=1 us=1239.095 GFLOPs=27.08 GBps=54.19

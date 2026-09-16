@@ -1,18 +1,7 @@
-/* Guarded dispatch for the Euclidean norm (nrm2), self-consistent and auditable.
- *
- * Contract (matches paper Appendix B.1): the unit-stride RVV fast path is selected ONLY
- * when (a) inc_x == 1, (b) all inputs are finite (no NaN/Inf), and (c) max_i|x_i| is below
- * the overflow threshold thr = sqrt(0.25*DBL_MAX/n), which keeps sum_i x_i^2 finite.
- * Otherwise the dispatch falls back to the overflow-safe scaling reference (the original
- * idiom). Out-of-range inputs therefore change WHICH kernel runs, never the result.
- *
- * The earlier draft called the fast path with inc_x even though no strided fast path is
- * implemented; this version closes that gap conservatively by requiring inc_x == 1 for the
- * fast path (any inc_x != 1 falls back), so the code is consistent with what is implemented.
- *
- * Build (server): riscv-gcc -O3 -march=rv64gcv_zvl256b_zba_zbb_zbc_zbs -mabi=lp64d \
- *                 -static -lm nrm2_guarded_dispatch.c -o nrm2gd.out
- * Run  (board/qemu): qemu-riscv64 -cpu rv64,v=true,vlen=256,vext_spec=v1.0 ./nrm2gd.out
+/* Guarded Euclidean norm with a unit-stride RVV fast path.
+ * Non-finite values, overflow/underflow risk and non-unit strides use scaled
+ * accumulation. The executable checks the selected path and numerical result.
+ * Build: gcc -O3 -march=rv64gcv nrm2_guarded_dispatch.c -lm -o nrm2
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,7 +13,7 @@ typedef long BLASLONG;
 
 int g_path;  /* 0 = fast (RVV), 1 = fallback (scaling ref); set by dnrm2_dispatch for audit */
 
-/* ---- unit-stride VLA fast path: sum of squares then sqrt (verbatim pipeline output) ---- */
+/* ---- unit-stride VLA fast path: sum of squares then sqrt (tail-undisturbed accumulation) ---- */
 double dnrm2_k_rvv(BLASLONG n, double *x, BLASLONG inc_x) {
     (void)inc_x;                                  /* fast path is unit-stride only */
     if (n <= 0) return 0.0;
@@ -34,7 +23,7 @@ double dnrm2_k_rvv(BLASLONG n, double *x, BLASLONG inc_x) {
     for (size_t vl; n > 0; n -= vl, x += vl) {
         vl = __riscv_vsetvl_e64m8(n);
         vx = __riscv_vle64_v_f64m8(x, vl);
-        acc = __riscv_vfmacc_vv_f64m8(acc, vx, vx, vl);
+        acc = __riscv_vfmacc_vv_f64m8_tu(acc, vx, vx, vl);
     }
     double res; vfloat64m1_t r = __riscv_vfmv_v_f_f64m1(0.0, 1);
     r = __riscv_vfredusum_vs_f64m8_f64m1(acc, r, vlmax);
@@ -44,31 +33,36 @@ double dnrm2_k_rvv(BLASLONG n, double *x, BLASLONG inc_x) {
 
 /* ---- overflow-safe scaling reference (BLAS dnrm2 idiom; handles any magnitude/stride) ---- */
 double dnrm2_ref(BLASLONG n, double *x, BLASLONG inc_x) {
-    if (n <= 0) return 0.0;
+    if (n <= 0 || inc_x <= 0) return 0.0;
     if (n == 1) return fabs(x[0]);
     double scale = 0.0, ssq = 1.0;
+    int has_infinity = 0;
     for (BLASLONG i = 0; i < n; i++) {
         double xi = x[i * inc_x];
+        if (isnan(xi)) return NAN;
+        if (isinf(xi)) { has_infinity = 1; continue; }
         if (xi != 0.0) {
             double a = fabs(xi);
             if (scale < a) { double t = scale / a; ssq = 1.0 + ssq * t * t; scale = a; }
             else           { double t = a / scale; ssq += t * t; }
         }
     }
-    return scale * sqrt(ssq);
+    return has_infinity ? INFINITY : scale * sqrt(ssq);
 }
 
 /* ---- guarded dispatch: O(n) range scan, fast path only when unit-stride+finite+bounded ---- */
 double dnrm2_dispatch(BLASLONG n, double *x, BLASLONG inc_x) {
+    if (inc_x <= 0) { g_path = 1; return 0.0; }
     if (n <= 1) { g_path = 1; return (n == 1) ? fabs(x[0]) : 0.0; }
-    double m = 0.0; int finite = 1;
+    double m = 0.0; int finite = 1, small = 0;
     for (BLASLONG i = 0; i < n; i++) {
         double a = fabs(x[i * inc_x]);
+        if (a > 0.0 && a < sqrt(DBL_MIN)) small = 1;
         if (!isfinite(a)) finite = 0;             /* NaN or +/-Inf anywhere -> fall back */
         else if (a > m) m = a;                    /* running max magnitude */
     }
     double thr = sqrt(0.25 * DBL_MAX / (double)n);
-    int in_range = (inc_x == 1) && finite && (m <= thr);
+    int in_range = (inc_x == 1) && finite && !small && (m <= thr);
     g_path = in_range ? 0 : 1;
     return in_range ? dnrm2_k_rvv(n, x, inc_x)    /* trace-licensed fast path */
                     : dnrm2_ref (n, x, inc_x);    /* overflow-safe scaling fallback */
@@ -116,6 +110,22 @@ int main(void) {
     d = dnrm2_dispatch(1, x, 1); double d0 = dnrm2_dispatch(0, x, 1);
     ok = eq(d, fabs(x[0])) && d0 == 0.0;
     printf("boundary n<=1   %-6s n=1->%.8e n=0->%.1e            %s\n", "FALL", d, d0, ok ? "PASS" : "FAIL"); fails += !ok;
+
+    /* Tiny finite values need scaled accumulation too: squaring may underflow. */
+    for (BLASLONG i = 0; i < n; i++) x[i] = 1e-200;
+    d = dnrm2_dispatch(n, x, 1);
+    r = sqrt((double)n) * 1e-200;
+    ok = g_path == 1 && fabs(d / r - 1.0) < 1e-12;
+    printf("underflow       %-6s %.8e  %.8e  %s\n", g_path ? "FALL" : "FAST", d, r, ok ? "PASS" : "FAIL"); fails += !ok;
+
+    x[0] = INFINITY; x[1] = INFINITY;
+    d = dnrm2_dispatch(2, x, 1);
+    ok = g_path == 1 && isinf(d) && d > 0;
+    printf("multiple inf    %-6s %s\n", "FALL", ok ? "PASS" : "FAIL"); fails += !ok;
+
+    d = dnrm2_dispatch(2, x, 0);
+    ok = g_path == 1 && d == 0.0;
+    printf("invalid stride  %-6s %s\n", "FALL", ok ? "PASS" : "FAIL"); fails += !ok;
 
     free(x);
     printf("RESULT: %s (%d failure%s)\n", fails ? "FAIL" : "ALL PASS", fails, fails == 1 ? "" : "s");

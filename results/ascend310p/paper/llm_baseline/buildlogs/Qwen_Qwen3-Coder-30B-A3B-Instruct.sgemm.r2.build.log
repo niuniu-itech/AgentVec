@@ -1,0 +1,61 @@
+al_j) * sizeof(float));
+                                                      ^
+$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r2/sgemm.cpp:48:44: error: no viable overloaded '='
+                    b_tile[i * TILE_N + j] = 0.0f;
+                    ~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:167:28: note: candidate function not viable: no known conversion from 'float' to 'const SymbolOverrideAdd<float>' for 1st argument
+    __aicore__ inline void operator = (const SymbolOverrideAdd<T>& symbolOverride);
+                           ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:168:28: note: candidate function not viable: no known conversion from 'float' to 'const SymbolOverrideSub<float>' for 1st argument
+    __aicore__ inline void operator = (const SymbolOverrideSub<T>& symbolOverride);
+                           ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:169:28: note: candidate function not viable: no known conversion from 'float' to 'const SymbolOverrideMul<float>' for 1st argument
+    __aicore__ inline void operator = (const SymbolOverrideMul<T>& symbolOverride);
+                           ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:170:28: note: candidate function not viable: no known conversion from 'float' to 'const SymbolOverrideDiv<float>' for 1st argument
+    __aicore__ inline void operator = (const SymbolOverrideDiv<T>& symbolOverride);
+                           ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:171:28: note: candidate function not viable: no known conversion from 'float' to 'const SymbolOverrideOr<float>' for 1st argument
+    __aicore__ inline void operator = (const SymbolOverrideOr<T>& symbolOverride);
+                           ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:172:28: note: candidate function not viable: no known conversion from 'float' to 'const SymbolOverrideAnd<float>' for 1st argument
+    __aicore__ inline void operator = (const SymbolOverrideAnd<T>& symbolOverride);
+                           ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:173:28: note: candidate function not viable: no known conversion from 'float' to 'const SymbolOverrideCompare<float>' for 1st argument
+    __aicore__ inline void operator = (const SymbolOverrideCompare<float>& symbolOverride);
+                           ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:174:28: note: candidate function not viable: no known conversion from 'float' to 'const SymbolOverrideCompare<half>' for 1st argument
+    __aicore__ inline void operator = (const SymbolOverrideCompare<half>& symbolOverride);
+                           ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:115:29: note: candidate function (the implicit copy assignment operator) not viable: no known conversion from 'float' to 'const AscendC::LocalTensor<float>' for 1st argument
+template <typename T> class LocalTensor : public BaseLocalTensor<T> {
+                            ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:115:29: note: candidate function (the implicit move assignment operator) not viable: no known conversion from 'float' to 'AscendC::LocalTensor<float>' for 1st argument
+In file included from $ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemm.cpp:7:
+$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r2/sgemm.cpp:58:25: error: invalid operands to binary expression ('float' and 'SymbolOverrideMul<float>')
+                    sum += a_tile[i * TILE_K + t] * b_tile[t * TILE_N + j];
+                    ~~~ ^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r2/sgemm.cpp:60:40: error: no viable overloaded '+='
+                c_tile[i * TILE_N + j] += sum;
+                ~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~
+$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r2/sgemm.cpp:71:40: error: casting '__gm__ uint8_t *' (aka '__gm__ unsigned char *') to type 'float *' is not allowed in aicore function
+                float c_val = *(float*)(C + (global_i * n + global_j) * sizeof(float));
+                                       ^
+$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r2/sgemm.cpp:72:38: error: invalid operands to binary expression ('float' and 'AscendC::LocalTensor<float>')
+                float result = alpha * c_tile[i * TILE_N + j] + beta * c_val;
+                               ~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[5]: *** [CMakeFiles/device_aic_obj.dir/build.make:76: CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r2/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemm.cpp.o] Error 1
+gmake[4]: *** [CMakeFiles/Makefile2:85: CMakeFiles/device_aic_obj.dir/all] Error 2
+gmake[3]: *** [Makefile:91: all] Error 2
+gmake[2]: *** [CMakeFiles/ascendc_kernels_npu_aic_device.dir/build.make:86: ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-stamp/ascendc_kernels_npu_aic_device-build] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:150: CMakeFiles/ascendc_kernels_npu_aic_device.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[100%] Built target host_bisheng_obj
+Install the project...
+-- Install configuration: "Release"
+-- Installing: $ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r2/build/ascendc_kernels_npu_host_dir/./objects-Release/host_bisheng_obj$ASCEND_WORKSPACE/gen/sgemm_verify_B-Instruct_r2/sgemm.cpp.o
+[ 83%] Completed 'ascendc_kernels_npu_host'
+[ 83%] Built target ascendc_kernels_npu_host
+gmake: *** [Makefile:136: all] Error 2

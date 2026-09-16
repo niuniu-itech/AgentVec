@@ -1,0 +1,65 @@
+Tensor<float>'
+    GlobalTensor<float> global_A(A);
+                        ^        ~
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:204:29: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from '__gm__ uint8_t *' (aka '__gm__ unsigned char *') to 'const AscendC::GlobalTensor<float>' for 1st argument
+template <typename T> class GlobalTensor : public BaseGlobalTensor<T> {
+                            ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:204:29: note: candidate constructor (the implicit move constructor) not viable: no known conversion from '__gm__ uint8_t *' (aka '__gm__ unsigned char *') to 'AscendC::GlobalTensor<float>' for 1st argument
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:207:23: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+    __aicore__ inline GlobalTensor<T>() {}
+                      ^
+In file included from $ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemv.cpp:7:
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/sgemv.cpp:16:25: error: no matching constructor for initialization of 'GlobalTensor<float>'
+    GlobalTensor<float> global_x(x);
+                        ^        ~
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:204:29: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from '__gm__ uint8_t *' (aka '__gm__ unsigned char *') to 'const AscendC::GlobalTensor<float>' for 1st argument
+template <typename T> class GlobalTensor : public BaseGlobalTensor<T> {
+                            ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:204:29: note: candidate constructor (the implicit move constructor) not viable: no known conversion from '__gm__ uint8_t *' (aka '__gm__ unsigned char *') to 'AscendC::GlobalTensor<float>' for 1st argument
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:207:23: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+    __aicore__ inline GlobalTensor<T>() {}
+                      ^
+In file included from $ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemv.cpp:7:
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/sgemv.cpp:17:25: error: no matching constructor for initialization of 'GlobalTensor<float>'
+    GlobalTensor<float> global_y(y);
+                        ^        ~
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:204:29: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from '__gm__ uint8_t *' (aka '__gm__ unsigned char *') to 'const AscendC::GlobalTensor<float>' for 1st argument
+template <typename T> class GlobalTensor : public BaseGlobalTensor<T> {
+                            ^
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:204:29: note: candidate constructor (the implicit move constructor) not viable: no known conversion from '__gm__ uint8_t *' (aka '__gm__ unsigned char *') to 'AscendC::GlobalTensor<float>' for 1st argument
+/usr/local/Ascend/ascend-toolkit/latest/tools/tikcpp/tikcfw/interface/kernel_tensor.h:207:23: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+    __aicore__ inline GlobalTensor<T>() {}
+                      ^
+In file included from $ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemv.cpp:7:
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/sgemv.cpp:26:5: error: use of undeclared identifier 'TensorInit'
+    TensorInit(local_x, n);
+    ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/sgemv.cpp:27:5: error: use of undeclared identifier 'TensorInit'
+    TensorInit(local_y, 1);
+    ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/sgemv.cpp:28:5: error: use of undeclared identifier 'TensorInit'
+    TensorInit(local_y_out, 1);
+    ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/sgemv.cpp:29:5: error: use of undeclared identifier 'TensorInit'
+    TensorInit(local_A, n);
+    ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/sgemv.cpp:37:53: error: no member named 'GetSubTensor' in 'AscendC::GlobalTensor<float>'
+        GlobalTensor<float> global_A_row = global_A.GetSubTensor(row * n, n);
+                                           ~~~~~~~~ ^
+$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/sgemv.cpp:38:53: error: no member named 'GetSubTensor' in 'AscendC::GlobalTensor<float>'
+        GlobalTensor<float> global_y_row = global_y.GetSubTensor(row, 1);
+                                           ~~~~~~~~ ^
+11 errors generated.
+gmake[5]: *** [CMakeFiles/device_aic_obj.dir/build.make:76: CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemv.cpp.o] Error 1
+gmake[4]: *** [CMakeFiles/Makefile2:85: CMakeFiles/device_aic_obj.dir/all] Error 2
+gmake[3]: *** [Makefile:91: all] Error 2
+gmake[2]: *** [CMakeFiles/ascendc_kernels_npu_aic_device.dir/build.make:86: ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-stamp/ascendc_kernels_npu_aic_device-build] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:150: CMakeFiles/ascendc_kernels_npu_aic_device.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[100%] Built target host_bisheng_obj
+Install the project...
+-- Install configuration: "Release"
+-- Installing: $ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/build/ascendc_kernels_npu_host_dir/./objects-Release/host_bisheng_obj$ASCEND_WORKSPACE/gen/sgemv_verify_LM-4.5-Air_r3/sgemv.cpp.o
+[ 83%] Completed 'ascendc_kernels_npu_host'
+[ 83%] Built target ascendc_kernels_npu_host
+gmake: *** [Makefile:136: all] Error 2

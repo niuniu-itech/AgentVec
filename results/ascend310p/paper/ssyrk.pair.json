@@ -1,0 +1,12 @@
+{
+  "op": "ssyrk",
+  "discipline": "propose(order) -> contract(Align I,H -> B) -> arbitrate(on-device autotune)",
+  "schedule_space_B": [],
+  "contract_reasons": [
+    "pattern has no schedule space"
+  ],
+  "proposed_order": [],
+  "trials": [],
+  "best": null,
+  "proposition1": "optimum in B; best-so-far monotone in trials; ordering only changes WHEN, not WHETHER, the optimum is found"
+}

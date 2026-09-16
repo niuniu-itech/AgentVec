@@ -1,0 +1,149 @@
+-- The C compiler identification is GNU 10.3.1
+-- The CXX compiler identification is GNU 10.3.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: <toolchain-workspace>/toolchain/usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: <build-workspace>/scopy/build
+[  2%] Creating directories for 'ascendc_kernels_npu_preprocess'
+[  5%] No download step for 'ascendc_kernels_npu_preprocess'
+[  8%] No update step for 'ascendc_kernels_npu_preprocess'
+[ 11%] No patch step for 'ascendc_kernels_npu_preprocess'
+[ 13%] Performing configure step for 'ascendc_kernels_npu_preprocess'
+-- The C compiler identification is GNU 10.3.1
+-- The CXX compiler identification is GNU 10.3.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: <toolchain-workspace>/toolchain/usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: <build-workspace>/scopy/build/ascendc_kernels_npu_preprocess-prefix/src/ascendc_kernels_npu_preprocess-build
+[ 16%] Performing build step for 'ascendc_kernels_npu_preprocess'
+[100%] Building CXX object CMakeFiles/preprocess_obj.dir<build-workspace>/scopy/scopy.cpp.o
+[100%] Built target preprocess_obj
+[100%] Built target _host_cpp
+[ 19%] No install step for 'ascendc_kernels_npu_preprocess'
+[ 22%] Completed 'ascendc_kernels_npu_preprocess'
+[ 22%] Built target ascendc_kernels_npu_preprocess
+[ 25%] Creating directories for 'ascendc_kernels_npu_aic_device'
+[ 27%] Creating directories for 'ascendc_kernels_npu_aiv_device'
+[ 30%] No download step for 'ascendc_kernels_npu_aic_device'
+[ 33%] No download step for 'ascendc_kernels_npu_aiv_device'
+[ 36%] No update step for 'ascendc_kernels_npu_aic_device'
+[ 38%] No update step for 'ascendc_kernels_npu_aiv_device'
+[ 41%] No patch step for 'ascendc_kernels_npu_aic_device'
+[ 44%] No patch step for 'ascendc_kernels_npu_aiv_device'
+[ 47%] Performing configure step for 'ascendc_kernels_npu_aic_device'
+[ 50%] Performing configure step for 'ascendc_kernels_npu_aiv_device'
+-- The C compiler identification is GNU 10.3.1
+-- The C compiler identification is GNU 10.3.1
+-- The CXX compiler identification is GNU 10.3.1
+-- The CXX compiler identification is GNU 10.3.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working C compiler: /usr/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: <toolchain-workspace>/toolchain/usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working CXX compiler: <toolchain-workspace>/toolchain/usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Configuring done (0.7s)
+-- Detecting CXX compile features - done
+-- Configuring done (0.7s)
+-- Generating done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: <build-workspace>/scopy/build/ascendc_kernels_npu_aiv_device-prefix/src/ascendc_kernels_npu_aiv_device-build
+-- Build files have been written to: <build-workspace>/scopy/build/ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-build
+[ 52%] Performing build step for 'ascendc_kernels_npu_aiv_device'
+[ 55%] Performing build step for 'ascendc_kernels_npu_aic_device'
+[ 58%] No install step for 'ascendc_kernels_npu_aiv_device'
+[100%] Building CXX object CMakeFiles/device_aic_obj.dir<build-workspace>/scopy/build/auto_gen/ascendc_kernels_npu/auto_gen_scopy.cpp.o
+[ 61%] Completed 'ascendc_kernels_npu_aiv_device'
+[ 61%] Built target ascendc_kernels_npu_aiv_device
+[ 63%] Creating directories for 'ascendc_kernels_npu_host'
+[ 66%] No download step for 'ascendc_kernels_npu_host'
+[ 69%] No update step for 'ascendc_kernels_npu_host'
+[ 72%] No patch step for 'ascendc_kernels_npu_host'
+[ 75%] Performing configure step for 'ascendc_kernels_npu_host'
+-- The C compiler identification is GNU 10.3.1
+-- The CXX compiler identification is GNU 10.3.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: <toolchain-workspace>/toolchain/usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: <build-workspace>/scopy/build/ascendc_kernels_npu_host-prefix/src/ascendc_kernels_npu_host-build
+[ 77%] Performing build step for 'ascendc_kernels_npu_host'
+[100%] Building CXX object CMakeFiles/host_bisheng_obj.dir<build-workspace>/scopy/scopy.cpp.o
+[100%] Built target host_bisheng_obj
+[ 80%] Performing install step for 'ascendc_kernels_npu_host'
+[100%] Building CXX object CMakeFiles/host_bisheng_obj.dir<build-workspace>/scopy/scopy.cpp.o
+[100%] Built target device_aic_obj
+/usr/local/Ascend/ascend-toolkit/latest/tools/ccec_compiler/bin/ld.lld  -m aicorelinux -r  -Ttext=0 <build-workspace>/scopy/build/ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-build/CMakeFiles/device_aic_obj.dir<build-workspace>/scopy/build/auto_gen/ascendc_kernels_npu/auto_gen_scopy.cpp.o -static -o <build-workspace>/scopy/build/ascendc_kernels_npu_aic_device_dir/device_aic.o
+[100%] Built target merge_aic_device_obj
+[ 83%] No install step for 'ascendc_kernels_npu_aic_device'
+[ 86%] Completed 'ascendc_kernels_npu_aic_device'
+[ 86%] Built target ascendc_kernels_npu_aic_device
+/usr/local/Ascend/ascend-toolkit/latest/tools/ccec_compiler/bin/ld.lld -x -m aicorelinux   -Ttext=0 <build-workspace>/scopy/build/ascendc_kernels_npu_aic_device_dir/device_aic.o -static -o <build-workspace>/scopy/build/ascendc_kernels_npu_merge_obj_dir/device_aic.o
+[ 86%] Built target ascendc_kernels_npu_merge_obj
+[ 88%] Building CXX object CMakeFiles/ascendc_kernels_npu_host_stub_obj.dir/auto_gen/ascendc_kernels_npu/host_stub.cpp.o
+[ 88%] Built target ascendc_kernels_npu_host_stub_obj
+[100%] Built target host_bisheng_obj
+Install the project...
+-- Install configuration: "Release"
+-- Installing: <build-workspace>/scopy/build/ascendc_kernels_npu_host_dir/./objects-Release/host_bisheng_obj<build-workspace>/scopy/scopy.cpp.o
+[ 91%] Completed 'ascendc_kernels_npu_host'
+[ 91%] Built target ascendc_kernels_npu_host
+[ 94%] Linking CXX static library lib/libascendc_kernels_npu.a
+/usr/local/Ascend/ascend-toolkit/latest/bin/ascendc_pack_kernel <build-workspace>/scopy/build/CMakeFiles/ascendc_kernels_npu_host_stub_obj.dir/auto_gen/ascendc_kernels_npu/host_stub.cpp.o <build-workspace>/scopy/build/ascendc_kernels_npu_merge_obj_dir/device_aic.o 2 <build-workspace>/scopy/build/CMakeFiles/ascendc_kernels_npu_host_stub_obj.dir/auto_gen/ascendc_kernels_npu/host_stub.cpp.o
+recompile: /usr/bin/ar qc lib/libascendc_kernels_npu.a CMakeFiles/ascendc_kernels_npu_host_stub_obj.dir/auto_gen/ascendc_kernels_npu/host_stub.cpp.o <build-workspace>/scopy/build/ascendc_kernels_npu_host_dir/objects-Release/host_bisheng_obj<build-workspace>/scopy/scopy.cpp.o  elf_tool.c.o ascendc_runtime.cpp.o
+recompile: /usr/bin/ranlib lib/libascendc_kernels_npu.a
+[ 94%] Built target ascendc_kernels_npu
+[ 97%] Building CXX object CMakeFiles/scopy_bbit.dir/main.cpp.o
+[100%] Linking CXX executable scopy_bbit
+[100%] Built target scopy_bbit
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    BUILD_MODE
+
+
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    ASCEND_PYTHON_EXECUTABLE
+
+

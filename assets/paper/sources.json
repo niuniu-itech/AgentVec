@@ -1,0 +1,72 @@
+{
+  "source": "TSE_paper_Submit01_20260718_230823_main-complete.pdf",
+  "source_sha256": "10647e35754aef5367dc6b14435fd522bd307837daf4e3513863ab7aeb61595a",
+  "method": "Direct PDF rendering at 5x. Only cropping, uniform scaling and white canvas padding; plotted values and labels are unchanged.",
+  "scope": "Figures report manuscript experiments, separately from current release acceptance.",
+  "figures": [
+    {
+      "file": "overview.png",
+      "pdf_page": 4,
+      "figure": "Figure 2",
+      "clip_points": [
+        46,
+        54,
+        566,
+        252
+      ],
+      "dimensions": [
+        2600,
+        990
+      ],
+      "sha256": "14f1fc4a67102c85461d054fcd30f4059f55584fb8bf5827f5b2bf0a8cdbb664"
+    },
+    {
+      "file": "cuda-rvv-migration.png",
+      "pdf_page": 9,
+      "figure": "Figure 5",
+      "clip_points": [
+        304,
+        616,
+        576,
+        711
+      ],
+      "dimensions": [
+        1360,
+        475
+      ],
+      "sha256": "a3154aa38704426f428a69d77855921de2ef82312719769460769906e02a5633"
+    },
+    {
+      "file": "gemm-throughput.png",
+      "pdf_page": 11,
+      "figure": "Figure 6",
+      "clip_points": [
+        61,
+        53,
+        301,
+        220
+      ],
+      "dimensions": [
+        1100,
+        780
+      ],
+      "sha256": "2e5bd8c59f09cec05bb0942ea1e841e821ca91a7ef4968d750a394e8e7f42311"
+    },
+    {
+      "file": "schedule-ranking.png",
+      "pdf_page": 13,
+      "figure": "Figure 8(b)",
+      "clip_points": [
+        299,
+        94,
+        553,
+        222
+      ],
+      "dimensions": [
+        1100,
+        780
+      ],
+      "sha256": "ef30db7de4aaf4b7d8c0c1cf8b6118ee0c989745d735c50f2f783331f7da607e"
+    }
+  ]
+}

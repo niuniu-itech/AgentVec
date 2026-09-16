@@ -1,0 +1,15 @@
+name: Bug report
+description: Report a compiler, validation, or experiment failure.
+body:
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Command, expected behavior, actual behavior, and a minimal input.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Commit, Python, compiler, QEMU or board, VLEN, and relevant logs. Remove secrets.

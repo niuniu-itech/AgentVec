@@ -1,0 +1,97 @@
+iler ABI info - done
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: $ASCEND_WORKSPACE/bin/c++ - skipped
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.7s)
+-- Generating done (0.0s)
+-- Build files have been written to: $ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/build/ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-build
+-- Check for working CXX compiler: $ASCEND_WORKSPACE/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working CXX compiler: $ASCEND_WORKSPACE/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Configuring done (0.7s)
+-- Detecting CXX compile features - done
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    BUILD_MODE
+
+
+-- Configuring done (0.7s)
+-- Build files have been written to: $ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/build/ascendc_kernels_npu_aiv_device-prefix/src/ascendc_kernels_npu_aiv_device-build
+[ 66%] Performing build step for 'ascendc_kernels_npu_aic_device'
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    ASCEND_PYTHON_EXECUTABLE
+
+
+-- Build files have been written to: $ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/build/ascendc_kernels_npu_host-prefix/src/ascendc_kernels_npu_host-build
+[ 69%] Performing build step for 'ascendc_kernels_npu_aiv_device'
+[ 72%] Performing build step for 'ascendc_kernels_npu_host'
+[100%] Building CXX object CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemm.cpp.o
+[ 75%] No install step for 'ascendc_kernels_npu_aiv_device'
+[ 77%] Completed 'ascendc_kernels_npu_aiv_device'
+[100%] Building CXX object CMakeFiles/host_bisheng_obj.dir$ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/sgemm.cpp.o
+[ 77%] Built target ascendc_kernels_npu_aiv_device
+[100%] Built target host_bisheng_obj
+[ 80%] Performing install step for 'ascendc_kernels_npu_host'
+[100%] Building CXX object CMakeFiles/host_bisheng_obj.dir$ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/sgemm.cpp.o
+In file included from $ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemm.cpp:7:
+$ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/sgemm.cpp:12:23: error: invalid operands to binary expression ('GlobalTensor<float>' and 'unsigned int')
+    DataCopy(dst, src + i * k + k0, bk);
+                  ~~~ ^ ~~~~~
+$ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/sgemm.cpp:19:35: error: invalid operands to binary expression ('GlobalTensor<float>' and 'unsigned int')
+        DataCopy(dst[t * BN], src + (k0 + t) * n + n0, bn);
+                              ~~~ ^ ~~~~~~~~~~~~
+$ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/sgemm.cpp:25:23: error: invalid operands to binary expression ('GlobalTensor<float>' and 'unsigned int')
+    DataCopy(dst, src + i * n + n0, bn);
+                  ~~~ ^ ~~~~~
+$ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/sgemm.cpp:30:18: error: invalid operands to binary expression ('GlobalTensor<float>' and 'unsigned int')
+    DataCopy(dst + i * n + n0, src, bn);
+             ~~~ ^ ~~~~~
+$ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/sgemm.cpp:109:21: error: no matching function for call to 'StoreCRow'
+                    StoreCRow(gC, cTile[r * BN], i0 + r, n0, bn, n);
+                    ^~~~~~~~~
+$ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/sgemm.cpp:28:24: note: candidate function not viable: expects an lvalue for 2nd argument
+__aicore__ inline void StoreCRow(GlobalTensor<float>& dst, LocalTensor<float>& src,
+                       ^
+$ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/sgemm.cpp:164:17: error: no matching function for call to 'StoreCRow'
+                StoreCRow(gC, cTile[r * BN], i0 + r, n0, bn, n);
+                ^~~~~~~~~
+$ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/sgemm.cpp:28:24: note: candidate function not viable: expects an lvalue for 2nd argument
+__aicore__ inline void StoreCRow(GlobalTensor<float>& dst, LocalTensor<float>& src,
+                       ^
+6 errors generated.
+gmake[5]: *** [CMakeFiles/device_aic_obj.dir/build.make:76: CMakeFiles/device_aic_obj.dir$ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/build/auto_gen/ascendc_kernels_npu/auto_gen_sgemm.cpp.o] Error 1
+gmake[4]: *** [CMakeFiles/Makefile2:85: CMakeFiles/device_aic_obj.dir/all] Error 2
+gmake[3]: *** [Makefile:91: all] Error 2
+gmake[2]: *** [CMakeFiles/ascendc_kernels_npu_aic_device.dir/build.make:86: ascendc_kernels_npu_aic_device-prefix/src/ascendc_kernels_npu_aic_device-stamp/ascendc_kernels_npu_aic_device-build] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:150: CMakeFiles/ascendc_kernels_npu_aic_device.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[100%] Built target host_bisheng_obj
+Install the project...
+-- Install configuration: "Release"
+-- Installing: $ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/build/ascendc_kernels_npu_host_dir/./objects-Release/host_bisheng_obj$ASCEND_WORKSPACE/gen/sgemm_verify_-K2.7-Code_r1/sgemm.cpp.o
+[ 83%] Completed 'ascendc_kernels_npu_host'
+[ 83%] Built target ascendc_kernels_npu_host
+gmake: *** [Makefile:136: all] Error 2

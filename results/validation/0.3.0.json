@@ -1,0 +1,160 @@
+{
+  "version": "0.3.0",
+  "date": "2026-09-16",
+  "scope": "Current-source correctness and release checks; not a full historical paper replay",
+  "python_tests": {
+    "tests": 158,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "rvv_native": {
+    "machine": "riscv64",
+    "implementations": 10,
+    "cases": 2244,
+    "assertions": 649158,
+    "failures": 0,
+    "records": [
+      {
+        "case": "layernorm-fused",
+        "record": "dag/layernorm-fused.json",
+        "cases": 264,
+        "planned_cases": 264,
+        "assertions": 76308,
+        "failures": 0,
+        "max_abs": 4.73637408e-07
+      },
+      {
+        "case": "layernorm-staged",
+        "record": "dag/layernorm-staged.json",
+        "cases": 264,
+        "planned_cases": 264,
+        "assertions": 76308,
+        "failures": 0,
+        "max_abs": 4.73637408e-07
+      },
+      {
+        "case": "minmax-fused",
+        "record": "dag/minmax-fused.json",
+        "cases": 264,
+        "planned_cases": 264,
+        "assertions": 76308,
+        "failures": 0,
+        "max_abs": 1.14568568e-07
+      },
+      {
+        "case": "minmax-staged",
+        "record": "dag/minmax-staged.json",
+        "cases": 264,
+        "planned_cases": 264,
+        "assertions": 76308,
+        "failures": 0,
+        "max_abs": 1.14568568e-07
+      },
+      {
+        "case": "rmsnorm-fused",
+        "record": "dag/rmsnorm-fused.json",
+        "cases": 264,
+        "planned_cases": 264,
+        "assertions": 76308,
+        "failures": 0,
+        "max_abs": 1.63324583e-06
+      },
+      {
+        "case": "rmsnorm-staged",
+        "record": "dag/rmsnorm-staged.json",
+        "cases": 264,
+        "planned_cases": 264,
+        "assertions": 76308,
+        "failures": 0,
+        "max_abs": 1.63324583e-06
+      },
+      {
+        "case": "softmax-fused",
+        "record": "dag/softmax-fused.json",
+        "cases": 264,
+        "planned_cases": 264,
+        "assertions": 76308,
+        "failures": 0,
+        "max_abs": 1.25850468e-07
+      },
+      {
+        "case": "softmax-staged",
+        "record": "dag/softmax-staged.json",
+        "cases": 264,
+        "planned_cases": 264,
+        "assertions": 76308,
+        "failures": 0,
+        "max_abs": 1.25850468e-07
+      },
+      {
+        "case": "branch-fused",
+        "record": "dag/branch-fused.json",
+        "cases": 66,
+        "planned_cases": 66,
+        "assertions": 19347,
+        "failures": 0
+      },
+      {
+        "case": "branch-staged",
+        "record": "dag/branch-staged.json",
+        "cases": 66,
+        "planned_cases": 66,
+        "assertions": 19347,
+        "failures": 0
+      }
+    ],
+    "negative_control": {
+      "record": "dag/wrong-softmax.json",
+      "status": "DIFF_FAILED",
+      "build_exit": 0,
+      "failures": 76308
+    }
+  },
+  "ascend": {
+    "exported_templates": 10,
+    "dependence_vetoes": [
+      "strsv",
+      "strsm"
+    ],
+    "source_manifest_records": 236,
+    "fresh_device_status": "PENDING",
+    "reason": "No authenticated access to the CANN target in this validation session"
+  },
+  "llm": {
+    "new_api_campaign": "NOT_RUN",
+    "tests": "Mocked transport and real proposal-to-guard paths; no API credentials included"
+  },
+  "source_sha256": {
+    "src/agentvec/__init__.py": "5511b73be4501a4f383e76fcbcb0c6bf432b50ee5c87c4174e72c3b175a32c4d",
+    "src/agentvec/__main__.py": "a761491424aa9442037453ae064f2b6d947422d5867c9cd4110dd57ee1d31403",
+    "src/agentvec/air.py": "185be4504723484943111f85d22c0e8f018aa6525037b3f131b8ab99e2efe08e",
+    "src/agentvec/air_from_formula.py": "b8d808e74b02db2d0f087bc6ae98f0e5e215a041983961610629d9a00eb7eb87",
+    "src/agentvec/ascend/__init__.py": "cf06300bdbb82f351a267e0466a3f607b26b7c5e6f171c2b1ff104261cd7d81b",
+    "src/agentvec/ascend/air.py": "c3fb6f28c860957cf534b58db12e3060d558cff0923b5fcd94bea8ad8ddb8cda",
+    "src/agentvec/ascend/guard.py": "6502c764a4134b62c34b1ba1113fc8e85db8ea13c339bdfa1e4627c98b91a0b3",
+    "src/agentvec/ascend/hardware.py": "d02c397c31f2ca17cddf5037f2301a903820d5e4b4e2bf00f89ea88630e82ea6",
+    "src/agentvec/ascend/lowering.py": "84ef64af542dd08c983912cccb9ed9b8ac61398a2adad22469dd0e636a21234c",
+    "src/agentvec/ascend/pipeline.py": "bc4f81a587bc7b7d692f7331eebb6cf65dd122b0eb033e138631e33f34c18442",
+    "src/agentvec/ascend/proposer.py": "2d7d0b629e779e1a7bfa14cd327b82163a929197e55e21e9388a2555416f350a",
+    "src/agentvec/ascend/registry.py": "d10e7db631659e1091fd912ad3939b8016d04983a222858bb2ea1a8329f5bd2a",
+    "src/agentvec/ascend/runner.py": "b6f4a73d6d19352d54e94602998bcb0c598e0f3b84dd4cfe909e7f01296901a1",
+    "src/agentvec/ascend/schedule.py": "9cdc42c547790184fddcfb4886ec8042f75a82523371c22dc421a7557f8d3275",
+    "src/agentvec/blas_lower.py": "265eb6708a6c881594f6d84cea367ec7d6e83a9aa7ca36bb0980e87e158c67e0",
+    "src/agentvec/cli.py": "70a9c83a18e1e124610367df1303fef5f9b23bd34bb1c96281c053da28c03988",
+    "src/agentvec/dag.py": "5644135b7130a10c35f076e5424de223df6fc04951498458d9415590dc10305d",
+    "src/agentvec/dag_examples.py": "365b8d82df43927a4b7954ea127f14b8de517d19fd18ec3fc6fa5439c532404b",
+    "src/agentvec/dag_lowering.py": "bdc3e832cabe0024740c9794ab067f21bcf8e889d0891e5cf49959e6121a4da6",
+    "src/agentvec/dag_pipeline.py": "b3b581631f7556d37438a985f8fa54da90e7ca0c16f6dade56b48133df57d8c6",
+    "src/agentvec/dag_runner.py": "80efdc8ed48fe25f927a8478a2d7175f1c96661039a5c43404a5eec3c7545645",
+    "src/agentvec/difftest.py": "a6e708429979fe2fbdffa2f56b2520925b24a1e105dd9604d7e866130ca7c36a",
+    "src/agentvec/guard.py": "c4dc2da5991a8525a91e9bcbae0776e44f3bb4f5cba462f3b319ce6937cefefa",
+    "src/agentvec/llm_backend.py": "7407e7039427e38274b4e502fa3d6112952c1ef113bce1e267c0eb7f1e62c761",
+    "src/agentvec/lowering.py": "10aef3e20305003417896cd94d4db1798711193efe9bd411551ce7624daf31ac",
+    "src/agentvec/obfuscate.py": "c7fd7c96e415d3e787d3a5681f5c4b0989cfc9096a1449edd5677c94dfe18f1a",
+    "src/agentvec/pipeline.py": "7a5b3f430bde3cd799ce8440d22f2c03afb7be086cebe22ba44c14ede5b6275e",
+    "src/agentvec/remote.py": "613fe3ee6b82eb4785fde6e4a7bfc91526f56acddc90055e04de69dc9b88d8a0",
+    "src/agentvec/schedules.py": "5346bc424f52d85187aa973852951721d34e5fd2c285b4fe2a393dfac66a7d01",
+    "src/agentvec/symbolic_align.py": "11239a223c405b377a161ea664d1bef4279a34c96422ff6b375d01c2d771f42a"
+  }
+}

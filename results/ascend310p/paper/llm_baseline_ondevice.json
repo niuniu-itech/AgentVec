@@ -1,0 +1,410 @@
+[
+  {
+    "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "op": "saxpy",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "op": "sdot",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "op": "sgemm",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "op": "sgemv",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "op": "saxpy",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "op": "sdot",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "op": "sgemm",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "deepseek-ai/DeepSeek-V3.2",
+    "op": "sgemv",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "moonshotai/Kimi-K2.7-Code",
+    "op": "saxpy",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": true,
+        "correct": true,
+        "us": 20.804,
+        "perf": 604.84
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "PASS",
+    "rounds_to_correct": 2,
+    "us": 20.804,
+    "perf": 604.84
+  },
+  {
+    "model": "moonshotai/Kimi-K2.7-Code",
+    "op": "sdot",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": true,
+        "correct": true,
+        "us": 30.347,
+        "perf": 276.42
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "PASS",
+    "rounds_to_correct": 3,
+    "us": 30.347,
+    "perf": 276.42
+  },
+  {
+    "model": "moonshotai/Kimi-K2.7-Code",
+    "op": "sgemm",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "error": "api:The read operation timed out"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "zai-org/GLM-4.5-Air",
+    "op": "saxpy",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "zai-org/GLM-4.5-Air",
+    "op": "sdot",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  },
+  {
+    "model": "zai-org/GLM-4.5-Air",
+    "op": "sgemv",
+    "rounds": [
+      {
+        "r": 1,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 2,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      },
+      {
+        "r": 3,
+        "built": false,
+        "correct": false,
+        "feedback_kind": "compile"
+      }
+    ],
+    "compiled@1": false,
+    "correct@1": false,
+    "final": "FAIL",
+    "rounds_to_correct": null,
+    "us": null,
+    "perf": null
+  }
+]

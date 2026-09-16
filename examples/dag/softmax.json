@@ -1,0 +1,33 @@
+{
+  "pattern": "dag",
+  "nodes": [
+    {
+      "name": "peak",
+      "pattern": "reduce",
+      "formula": "x",
+      "reduce_op": "max",
+      "equiv": "tolerance"
+    },
+    {
+      "name": "shifted",
+      "pattern": "map",
+      "formula": "exp(x-peak)",
+      "reduce_op": null,
+      "equiv": "tolerance"
+    },
+    {
+      "name": "denom",
+      "pattern": "reduce",
+      "formula": "shifted",
+      "reduce_op": "sum",
+      "equiv": "tolerance"
+    },
+    {
+      "name": "y",
+      "pattern": "map",
+      "formula": "shifted/denom",
+      "reduce_op": null,
+      "equiv": "tolerance"
+    }
+  ]
+}

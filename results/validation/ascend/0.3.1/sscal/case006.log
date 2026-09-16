@@ -1,0 +1,1 @@
+RESULT op=sscal pattern=map n=16777216 maxrel=0.000e+00 pass=1 us=845.476 GBps=158.75

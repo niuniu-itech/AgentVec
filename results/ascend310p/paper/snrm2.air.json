@@ -1,0 +1,31 @@
+{
+  "name": "snrm2",
+  "s_algo": {
+    "pattern": "reduce",
+    "elem_op": null,
+    "reduce_op": "sum",
+    "reduce_pre": "aa",
+    "reduce_post": "sqrt",
+    "trans_a": false,
+    "trans_b": false,
+    "has_alpha": true,
+    "has_beta": true
+  },
+  "c_phy": {
+    "dtype": "f32",
+    "dep": "reduction",
+    "dep_distance": 0,
+    "alias": "disjoint",
+    "equiv": "ulp"
+  },
+  "m_map": {
+    "access": "unit_stride",
+    "stride": 1,
+    "layout": "na",
+    "bound": "n"
+  },
+  "v_meta": {
+    "status": "DRAFT",
+    "proof": ""
+  }
+}

@@ -1,0 +1,43 @@
+built scopy: ok
+built sscal: ok
+built saxpy: ok
+built sdot: ok
+built sasum: ok
+built snrm2: ok
+
+== measured DRAM bandwidth ceiling (scopy, ws=128MiB): 170.7 GB/s ==
+
+  scopy  n=   262144 ws=   2.0MiB L2      11.52us   182.0GB/s (106.7% DRAM)
+  scopy  n=  1048576 ws=   8.0MiB L2      17.59us   476.9GB/s (279.5% DRAM)
+  scopy  n=  4194304 ws=  32.0MiB DRAM   205.02us   163.7GB/s (95.9% DRAM)
+  scopy  n= 16777216 ws= 128.0MiB DRAM   789.04us   170.1GB/s (99.7% DRAM)
+  sscal  n=   262144 ws=   2.0MiB L2      11.66us   179.9GB/s (105.4% DRAM)
+  sscal  n=  1048576 ws=   8.0MiB L2      15.12us   555.0GB/s (325.2% DRAM)
+  sscal  n=  4194304 ws=  32.0MiB DRAM   206.03us   162.9GB/s (95.4% DRAM)
+  sscal  n= 16777216 ws= 128.0MiB DRAM   786.23us   170.7GB/s (100.0% DRAM)
+  saxpy  n=   262144 ws=   3.0MiB L2      12.18us   258.3GB/s (151.4% DRAM)
+  saxpy  n=  1048576 ws=  12.0MiB L2      19.53us   644.4GB/s (377.5% DRAM)
+  saxpy  n=  4194304 ws=  48.0MiB DRAM   303.02us   166.1GB/s (97.3% DRAM)
+  saxpy  n= 16777216 ws= 192.0MiB DRAM  1177.41us   171.0GB/s (100.2% DRAM)
+  sdot   n=   262144 ws=   2.0MiB L2      13.43us   156.1GB/s (91.5% DRAM)
+  sdot   n=  1048576 ws=   8.0MiB L2      21.76us   385.5GB/s (225.9% DRAM)
+  sdot   n=  4194304 ws=  32.0MiB DRAM   197.43us   170.0GB/s (99.6% DRAM)
+  sdot   n= 16777216 ws= 128.0MiB DRAM   753.84us   178.1GB/s (104.3% DRAM)
+  sasum  n=   262144 ws=   1.0MiB L2      12.13us    86.4GB/s (50.6% DRAM)
+  sasum  n=  1048576 ws=   4.0MiB L2      18.46us   227.2GB/s (133.1% DRAM)
+  sasum  n=  4194304 ws=  16.0MiB DRAM    37.61us   446.1GB/s (261.4% DRAM)
+  sasum  n= 16777216 ws=  64.0MiB DRAM   381.47us   175.9GB/s (103.1% DRAM)
+  snrm2  n=   262144 ws=   1.0MiB L2      12.25us    85.6GB/s (50.2% DRAM)
+  snrm2  n=  1048576 ws=   4.0MiB L2      18.42us   227.7GB/s (133.4% DRAM)
+  snrm2  n=  4194304 ws=  16.0MiB DRAM    37.21us   450.9GB/s (264.2% DRAM)
+  snrm2  n= 16777216 ws=  64.0MiB DRAM   381.83us   175.8GB/s (103.0% DRAM)
+  sgemv  1024x1024 ws=   4.0MiB   115.41us  18.17GFLOP/s   36.4GB/s
+  sgemv  2048x2048 ws=  16.0MiB   353.88us  23.70GFLOP/s   47.5GB/s
+  sgemv  4096x4096 ws=  64.0MiB  1238.95us  27.08GFLOP/s   54.2GB/s
+  sgemm  256x256x256   1538.20us  21.81GFLOP/s (2.1% vec-peak)
+  sgemm  512x512x512   6042.33us  44.43GFLOP/s (4.3% vec-peak)
+  sgemm  1024x1024x1024  24014.56us  89.42GFLOP/s (8.7% vec-peak)
+
+== P-AIR saxpy @DRAM(16M): default t1024 158.86GB/s -> best t8192 170.84GB/s (1.08x) ==
+
+wrote artifacts/metrics.json

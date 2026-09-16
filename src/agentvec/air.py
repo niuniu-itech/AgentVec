@@ -5,15 +5,15 @@ fill declared slots. This module defines the four-tuple
 
     I = < S_algo , C_phy , M_map , V_meta >
 
-as dataclasses with JSON (de)serialization, plus a structural validator. The
-deductive checks that flip V_meta to VERIFIED live in guard.py; here we only
-enforce that an instance is well-formed against the schema.
+as dataclasses with JSON (de)serialization, plus a structural validator. Static contract checks live in guard.py and establish CHECKED; independent
+differential testing establishes VERIFIED. This module checks schema shape.
 """
 from __future__ import annotations
 from dataclasses import dataclass, field, asdict
 from enum import Enum
 from typing import Optional, Union
 import json
+import math
 
 
 # ---- S_algo : hardware-independent computational intent -------------------
@@ -61,6 +61,7 @@ class SAlgo:
     elem_op: Optional[Expr] = None     # for MAP: per-element expression
     reduce_op: Optional[str] = None    # for REDUCE: sum|max|min
     reduce_src: Optional[str] = None   # for REDUCE: input array name
+    postproc: Optional[str] = None     # optional sqrt after reduction
 
 
 # ---- C_phy : immutable correctness constraints (from static analysis) ------
@@ -81,6 +82,7 @@ class CPhy:
     dep: Dep = Dep.NONE
     dep_distance: int = 0      # for LOOP_CARRIED
     alias: Alias = Alias.DISJOINT
+    equiv: str = "tolerance"   # tolerance | bitexact; supplied by the caller
 
 
 # ---- M_map : memory-access regularity --------------------------------------
@@ -123,9 +125,10 @@ class AIR:
             "s_algo": {"pattern": self.s_algo.pattern.value,
                        "elem_op": self.s_algo.elem_op.to_dict() if self.s_algo.elem_op else None,
                        "reduce_op": self.s_algo.reduce_op,
-                       "reduce_src": self.s_algo.reduce_src},
+                       "reduce_src": self.s_algo.reduce_src, "postproc": self.s_algo.postproc},
             "c_phy": {"dtype": self.c_phy.dtype, "dep": self.c_phy.dep.value,
-                      "dep_distance": self.c_phy.dep_distance, "alias": self.c_phy.alias.value},
+                      "dep_distance": self.c_phy.dep_distance, "alias": self.c_phy.alias.value,
+                      "equiv": self.c_phy.equiv},
             "m_map": {"access": self.m_map.access.value, "stride": self.m_map.stride, "bound": self.m_map.bound},
             "v_meta": {"status": self.v_meta.status.value, "proof": self.v_meta.proof},
         }
@@ -137,16 +140,18 @@ class AIR:
         sa = d["s_algo"]
         cp = d["c_phy"]
         mm = d.get("m_map", {})
-        vm = d.get("v_meta", {})
         return AIR(
             s_algo=SAlgo(pattern=Pattern(sa["pattern"]),
                          elem_op=Expr.from_dict(sa.get("elem_op")),
-                         reduce_op=sa.get("reduce_op"), reduce_src=sa.get("reduce_src")),
+                         reduce_op=sa.get("reduce_op"), reduce_src=sa.get("reduce_src"),
+                         postproc=sa.get("postproc")),
             c_phy=CPhy(dtype=cp["dtype"], dep=Dep(cp.get("dep", "none")),
-                       dep_distance=cp.get("dep_distance", 0), alias=Alias(cp.get("alias", "disjoint"))),
+                       dep_distance=cp.get("dep_distance", 0), alias=Alias(cp.get("alias", "disjoint")),
+                       equiv=cp.get("equiv", "tolerance")),
             m_map=MMap(access=Access(mm.get("access", "unit_stride")),
                        stride=mm.get("stride", 1), bound=mm.get("bound", "n")),
-            v_meta=VMeta(status=Status(vm.get("status", "DRAFT")), proof=vm.get("proof", "")),
+            # A serialized status cannot authorize skipping validation.
+            v_meta=VMeta(),
         )
 
     # ---- structural validation (schema well-formedness, NOT correctness) ----
@@ -159,11 +164,44 @@ class AIR:
         elif self.s_algo.pattern == Pattern.REDUCE:
             if self.s_algo.reduce_op not in ("sum", "max", "min"):
                 return False, f"REDUCE needs reduce_op in sum/max/min, got {self.s_algo.reduce_op}"
-            if not self.s_algo.reduce_src:
-                return False, "REDUCE requires reduce_src"
+            if self.s_algo.elem_op is None and self.s_algo.reduce_src not in ("a", "b", "c"):
+                return False, "REDUCE requires an expression or a named input"
         else:
             return False, f"pattern {self.s_algo.pattern} not yet supported by lowering"
+        if self.s_algo.postproc not in (None, "sqrt"):
+            return False, "unsupported reduction postproc"
+        if self.s_algo.postproc and (self.s_algo.pattern != Pattern.REDUCE or self.c_phy.dtype == "i32"):
+            return False, "sqrt requires a floating-point reduction"
+        if self.c_phy.equiv not in ("bitexact", "tolerance"):
+            return False, "equiv must be bitexact or tolerance"
+        if self.s_algo.elem_op is not None:
+            try:
+                self._validate_expr(self.s_algo.elem_op)
+            except (TypeError, ValueError, RecursionError) as exc:
+                return False, str(exc)
         return True, "well-formed"
+
+    def _validate_expr(self, expr: Expr, depth: int = 0) -> None:
+        if not isinstance(expr, Expr) or depth > 32:
+            raise ValueError("expression is malformed or exceeds depth 32")
+        arities = {"load": 0, "const": 0, "abs": 1, "mulc": 1,
+                   "add": 2, "sub": 2, "mul": 2, "fma": 3}
+        if expr.op not in arities or len(expr.args) != arities[expr.op]:
+            raise ValueError("unsupported expression operation or arity")
+        if expr.op == "load" and expr.src not in ("a", "b", "c"):
+            raise ValueError("input must be a, b, or c")
+        if expr.op in ("const", "mulc"):
+            value = expr.val
+            if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value):
+                raise ValueError("constant must be a finite number")
+            if self.c_phy.dtype == "i32" and (value != int(value) or not -(2**31) <= value < 2**31):
+                raise ValueError("constant is not representable in i32")
+            if self.c_phy.dtype == "f32" and abs(value) > 3.4028234663852886e38:
+                raise ValueError("constant is not representable in f32")
+        if expr.op == "abs" and self.c_phy.dtype == "i32":
+            raise ValueError("i32 abs needs an explicit INT_MIN policy")
+        for child in expr.args:
+            self._validate_expr(child, depth + 1)
 
 
 if __name__ == "__main__":

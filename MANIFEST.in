@@ -1,0 +1,16 @@
+include LICENSE README.md CITATION.cff CONTRIBUTING.md SECURITY.md CHANGELOG.md
+include .env.example
+recursive-include configs *.json *.md
+recursive-include schemas *.json
+recursive-include examples *.json *.md *.py
+recursive-include docs *.md
+recursive-include tests *.py *.c *.h *.md *.json *.sh
+recursive-include benchmarks *.py *.cpp *.cu *.c *.h *.json *.md CMakeLists.txt
+recursive-include experiments *.py *.md *.json *.sh
+recursive-include scripts *.py *.sh
+recursive-include assets *.svg *.png *.json *.md
+recursive-include results/rvv *.json *.md
+recursive-include results/ascend310p *.json *.jsonl *.csv *.md *.txt *.log *.cpp
+recursive-include results/validation *.json *.md *.log
+recursive-include src/agentvec/data *.h
+global-exclude __pycache__ *.py[cod]
