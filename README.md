@@ -6,7 +6,6 @@
   </picture>
 </p>
 
-# AgentVec
 
 <p>
   <a href="#overview">Overview</a> &nbsp;·&nbsp;
